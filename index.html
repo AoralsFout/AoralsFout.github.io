@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--
+      く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+-->
+<!--是可爱的兔娘呐~-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+            document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState == 'hidden') {
+            normal_title = document.title;
+            document.title = '不要离开我...呜呜呜/(ㄒoㄒ)/~~';
+        } else document.title = normal_title;
+    });  
+    </script>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="bookmark" href="favicon.ico">
+    <title>AoralsFoutの个人网站</title>
+<style>
+        #github svg {
+            transition: all 1s;
+            fill: #222;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;
+            width: 80px;
+            height: 80px;
+        }
+        #github:hover svg {
+            width: 160px;
+            height: 160px;
+        }
+        </style>
+</head>
+<body background="background.jpeg" style="background-size: 100% 100%;" style="background-position: center center;"style="-webkit-filter: blur(35px);""style="-moz-filter: blur(35px);"style="-o-filter: blur(35px);"style="-ms-filter: blur(35px);"style="filter: blur(35px);">
+        <style>
+            header {
+    color:white;
+    text-align:left;
+    padding: 5%; 
+}
+nav {
+    border-radius: 20px;
+    margin-right: 10%;
+    line-height:30px;
+    background-color: rgba(240, 248, 255, 0.8);
+    height: auto;
+    width:15%;
+    float:right;
+    padding:5%; 
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+nav:hover{
+    cursor:pointer;
+    transform: translateY(-5px);
+}
+nav::before{
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    height: 10px;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    content: ''; 
+    z-index: -1;
+    top: 100%;
+    left: 0%; 
+    transition-duration: 0.3s;
+    transition-property: transform, opacity;
+}
+nav:hover::before{
+    opacity: 1;
+    transform: translateY(5px);
+}
+nav2 {
+    border-radius: 20px;
+    margin-right: 10%;
+    margin-top: 2%;
+    background-color: rgba(240, 248, 255, 0.8);
+    height:auto;
+    width:21%;
+    float:right;
+    padding:2%; 
+}
+section {
+    border-radius: 20px;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    background-color: rgba(240, 248, 255, 0.8);
+    height: 2000px;
+    width: 43%;
+    float:left;
+    padding:5%; 
+}
+nav3 {
+    border-radius: 20px;
+    margin-right: 10%;
+    margin-top: 2%;
+    background-color: rgba(240, 248, 255, 0.8);
+    height:auto;
+    width:21%;
+    float:right;
+    padding:2%; 
+}
+nav4 {
+    border-radius: 20px;
+    margin-right: 10%;
+    margin-top: 2%;
+    background-color: rgba(240, 248, 255, 0.8);
+    height:auto;
+    width:21%;
+    float:right;
+    padding:2%; 
+}
+footer {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 20px;
+    height: auto;
+    background-color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    clear:both;
+    padding:5px; 
+}
+</style>
+<script src="../live2d/autoload.js"></script>
+
+     <header>
+        <h1 style="margin-left: 6%;">AoralsFout的小窝ヾ(^▽^*)))</h1>
+     </header>
+
+     
+        
+     <nav>
+         <div align="center">
+             <img src="Headphoto.png" height="60%" width="60%">
+         </div>
+         <div>
+             <b><p style="text-align: center;" style="font-size: medium;">AoralsFout</p></b>
+             <p style="text-align: center;" style="font-size: medium;">男，15岁，是学生（bushi),爱好是刷b站，追番剧，没事喜欢打游戏（指csgo），这个页面单纯是闲的没事，b站发过几篇鬼畜，想看的可以点一下下面的链接哦ヾ(^▽^*)))一起打游戏也可以哦~(因为防沉迷所以不玩国服和平台)本人CSGO1000小时老彩笔awa</p>
+         </div>
+     </nav>
+        
+     <section>
+        <h1>欢迎！</h1>
+             <p> 这里是AoralsFout的个人网站，右边可以看到关于我的一些信息哦~</p>
+             <p> 虽然不知道你是怎么进来这个网站的，但我认为有必要说一下(￣y▽,￣)╭。这个网站主要的目的就是展示自己的个性呐~（真的不是为了装B QwQ）。 这个网站是在2022年4月4日搭建的，主要是因为上网课，自制力有点差，翘课做了这个网站(￣▽￣)"。另外说一下，我本人是不会JavaScript的，所以这里面的交互场景几乎都是复制过来的，我在后面专门放一个格子来写清了它们的来源呆斯~§(*￣▽￣*)§。</p>
+             <p> 由于耳朵有点小问题，导致我小时候说话的时间很晚，有点不会说话，请见谅哈~谢谢你(✿◠‿◠)</p>
+             <p> 你有什么问题，可以找我聊聊天哦~。我能帮的尽量帮帮你（虽然有可能帮了倒忙QWQ）。</p>
+             <p> ps 我的QQ号：3250658422 我的微信号：xiaozong0629</p>
+        <h1>我喜欢的网站</h1>
+             <p> 百度 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.baidu.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有不会的直接搜度娘</p>
+             <p> 哔哩哔哩弹幕网 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.bilibili.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的快乐源泉</p>
+             <p> 小鸡词典 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://jikipedia.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不懂得梗上这里查</p>
+             <p> LittleSkin Minecraft皮肤站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://littleskin.cn/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的世界代理服务器</p>
+             <p> LKCSGO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.lkcsgo.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSGO投掷物查询，上分必备</p>
+             <p> CSDN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.csdn.net/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编程直接上这里复制</p>
+             <p> W3school &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.w3school.com.cn/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学编程语言</p>
+             <p> MidiShow &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.midishow.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分享midi曲谱的地方</p>
+             <p> 学之网 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://xuezhi5.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电子课本网</p> 
+        <h1>最近在玩的游戏</h1>
+             <p> CSGO </p>
+             <p> 只狼 </p>
+             <p> 艾尔登法环 </p>
+             <p> BeamNG </p>
+             <p> 文明6 </p>
+             <p> 荒野大表哥2 </p>
+             <p> GTA5 </p>
+             <p> 城市天际线 </p>
+         <h1>技能表</h1>
+             <p> Adobe Premier    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;视频剪辑软件</p>
+             <p> Adobe After Effects    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;视频后期特效制作</p>
+             <p> Adobe Photoshops    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图片后期处理</p>
+             <p> Adobe audition    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;音频后期处理</p>
+             <p> Melodyne5    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人声音调修正</p>
+             <p> UTAU    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;歌声合成软件</p>
+             <p> FL Studio 20    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编曲软件</p>
+             <p> OBS Studio    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录屏、直播工作室</p>
+             <p> Word Excel PowerPoint    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文档、表格、幻灯片</p>
+             <p> Blender    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3D建模（还没完全会）</p>
+             <p> Html    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网页前端（也没完全会）</p>
+             <p> CSS    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网页前端样式 （也没完全会）</p>
+             <p> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+             <p> 初中知识</p>
+             <p> 电脑装机</p>
+             <p> 电脑重装系统+Windows激活</p>
+             <p> Office全家桶激活</p>
+             <p> 清理磁盘</p>
+             <p> 前端编程</p>
+             <p> 文件处理（压制、压缩、转格式）</p>
+
+    </section>
+
+     <nav2>
+         <style>
+             .button1 {
+                 -webkit-animation-duration: 0.4s;
+                 transition-duration: 0.4s;
+                 padding: 16px 32px;
+                 text-align: center;
+                 background-color: white;
+                 color: black;
+                 border: 2px solid #00d9ff;
+                 border-radius: 5px;
+             }
+             .button1:hover {
+                 background-color: #00d9ff;
+                 color: white;
+             }
+         </style>
+         <div>
+             <div>
+                <img src="QQ.png" height="64px" width="64px" style="float: left;"> 
+                 <a  href = "https://user.qzone.qq.com/3250658422/infocenter" target="_blank">
+                     <button class="button1">点我可以跳转到我的QQ空间呐ヾ(•ω•`)o</button>
+                </a>
+            </div>
+            <div>
+                <p style="text-align: center;">--------我是分割线哦o(〃＾▽＾〃)o--------</p>
+            </div>
+             <div>
+                <img src="bilibili icon.png" height="64px" width="64px" style="float: left;"> 
+                <a  href = "https://space.bilibili.com/345054137" target="_blank">
+                    <button class="button1">点我可以跳转到我的B站主页呐ヾ(•ω•`)o</button>
+                </a>
+             </div>
+             <div>
+                <p style="text-align: center;">--------我是分割线哦o(〃＾▽＾〃)o--------</p>
+            </div>
+             <div>
+                <img src="steam.png" height="64px" width="64px" style="float: left;"> 
+                <a  href = "https://steamcommunity.com/profiles/76561198861729020/" target="_blank">
+                    <button class="button1">点我可以跳转到我的Steam主页呐ヾ(•ω•`)o</button>
+                </a>
+             </div>
+             <div>
+                <p style="text-align: center;font-size: small;">下面的是小号qwq</p>
+            </div>
+             <div>
+                <img src="steam.png" height="64px" width="64px" style="float: left;"> 
+                <a  href = "https://steamcommunity.com/profiles/76561199198280801/" target="_blank">
+                    <button class="button1">点我可以跳转到我的Steam主页呐ヾ(•ω•`)o</button>
+                </a>
+             </div>
+             <div>
+                <p style="text-align: center;">更多内容请待更新喵~ο(=•ω＜=)ρ⌒☆</p>
+            </div>
+         </div>
+     </nav2>
+
+     <nav3>
+            <div class="cldBody">
+                <table>
+                   <thead>
+                        <tr>
+                            <td colspan="7">
+                                <div class="top">
+                                    <span id="left"><</span>
+                                    <span id="topDate"></span>
+                                    <span id="right">></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="week" >
+                            <td>日</td>
+                            <td>一</td>
+                            <td>二</td>
+                            <td>三</td>
+                            <td>四</td>
+                            <td>五</td>
+                            <td>六</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody" ></tbody>
+                </table>
+           </div>
+         <style type="text/css">
+            .cldBody{background:#f7f7f700;width: 420px;margin: 10px auto;}
+            .cldBody .top{height: 60px;line-height: 60px;text-align: center;position: relative;}
+            #topDate{font-size: 24px;}
+            #week td{font-size: 15px;}
+            td{width: 60px; height: 60px;line-height: 60px;text-align: center;font-size: 20px;}
+            #tbody td:hover{background: #ededed;cursor: pointer;}
+            .curDate{color: red;font-weight: bold;}
+            #left,#right{width: 60px;height: 60px;position: absolute;cursor: pointer;}
+            #left{left: 0;}
+            #right{right: 0;}
+            #left:hover, #right:hover{background-color: rgba(30, 30, 30, 0.2);}
+        </style>
+        <script>
+            var date = new Date();
+var year = date.getFullYear();
+var nowyear = date.getFullYear();
+var month = date.getMonth()+1;
+var nowmonth = date.getMonth()+1;
+var dateday = date.getDate();
+var todateHtml = year + '年'+ month + '月';
+$('#topDate').text(todateHtml)
+        </script>
+        <script>
+            function showcld(){
+  var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+  // 判断闰年
+  if(year % 4 == 0 && year %100 != 0 || year % 400 == 0){
+      monthDay[1] = 29;
+  }
+  // 计算每个月的天数
+  var days = monthDay[month-1];
+  // 判断每月第一天为周几
+  date.setYear(year);        //某年
+  date.setMonth(month-1);   //某年的某月
+  date.setDate(1);   // 某月的某天
+  var weekday = date.getDay();  // 判断某天是周几
+  // 补齐一号前的空格
+  var tbodyHtml = '<tr>';
+  for(var i = 0; i<weekday; i++){
+      tbodyHtml += "<td></td>";
+  }
+  // 补齐每月的日期
+  var changLine = weekday;
+  var tagClass = '';
+  for(i=1; i<=days; i++){//每一个日期的填充
+      if(year == nowyear && month == nowmonth && i == dateday) {
+               tagClass = "curDate";//当前日期对应格子
+                }else{
+                    tagClass = "isDate";
+                }
+      tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+      changLine = (changLine+1)%7;
+      if(changLine == 0 && i != days){//是否换行填充的判断
+          tbodyHtml += "</tr><tr>";
+      }
+    }
+  $('#tbody').empty();   // 清空原有的内容
+  $('#tbody').append(tbodyHtml);   //添加当前月份的日期内容
+}
+        </script>
+        <script>
+            // 设置按钮点击事件
+$('#left').click(function(){
+    month = month-1;
+    if(month < 1){
+            month = 12;
+            year--;
+    }
+    var todateHtml = year + '年'+ month + '月';
+    $('#topDate').text(todateHtml);
+    showcld();
+});
+
+$('#right').click(function(){
+    month = month+1;
+    if(month > 12){
+            month = 1;
+            year++;
+    }
+    var todateHtml = year + '年'+ month + '月';
+    $('#topDate').text(todateHtml);
+    showcld();
+})
+ showcld();  //页面加载后执行函数
+        </script>
+        </nav3>    
+
+        <nav4>
+            <span id="time"></span>
+		<script>
+			function show(){
+				var date=new Date();
+				var year=date.getFullYear();
+				var month=date.getMonth()+1;
+				month=month<10?"0"+month:month;
+				var day=date.getDate();
+				day=day<10?"0"+day:day;
+				var week=date.getDay();
+				week="日一二三四五六".charAt(week);
+				week="星期"+week;
+			
+				var hour=date.getHours();
+				hour=hour<10?"0"+hour:hour;
+				var minute=date.getMinutes();
+				minute=minute<10?"0"+minute:minute;
+				var second=date.getSeconds();
+				second=second<10?"0"+second:second;
+			
+				var result=year+"-"+month+"-"+day+" "+week+" "+hour+":"+minute+":"+second;
+				document.getElementById("time").innerHTML=result;
+			}
+			
+			show();
+			setInterval("show()",1000);
+			
+		</script>
+        <b>
+        <p>
+            今天也是元气满满的一天呢~(o゜▽゜)o☆
+        </p>
+        </b>
+        </nav4>
+        <footer>
+            <p style="color: rgb(51, 51, 51);">跳转按钮 来源 https://www.php.cn/jishu/html/412782.html</p>
+            <p style="color: rgb(51, 51, 51);">日历 来源 https://www.cnblogs.com/lamian77/p/11872008.html</p>
+            <p style="color: rgb(51, 51, 51);">时间显示 来源 https://blog.csdn.net/qq_44687512/article/details/107432460</p>
+            <p style="bottom: 2%;text-align: center;">©2022 - 2022 By AoralsFout</p>
+        </footer>
+</body>
+</html>
