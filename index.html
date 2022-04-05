@@ -55,29 +55,15 @@
             height: 160px;
         }
         </style>
-        <script>
-            var system ={};
-
-var p = navigator.platform;
-
-system.win = p.indexOf("Win") == 0;
-
-system.mac = p.indexOf("Mac") == 0;
-
-system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-
-if(system.win||system.mac||system.xll){undefined
-
-window.location.href="index.html";
-
-}
-
-else{undefined
-
-window.location.href="phone.html";
-
-}
-        </script>
+        <script type="text/javascript">
+        if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {    //跳到手机端
+            window.location = "phone.html";
+ 
+        } else {
+            //跳到电脑端
+            window.location = "index.html";
+        }
+    </script>
 </head>
 <body background="background.jpeg" style="background-size: 100% 100%;" style="background-position: center center;"style="-webkit-filter: blur(35px);""style="-moz-filter: blur(35px);"style="-o-filter: blur(35px);"style="-ms-filter: blur(35px);"style="filter: blur(35px);">
         <style>
