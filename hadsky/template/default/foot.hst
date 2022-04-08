@@ -1,0 +1,14 @@
+<div style="background-color:black;color:white;padding:37px 0">
+	<div class="pk-container pk-text-xs">
+		<div class="pk-row">
+			<div class="pk-text-center">
+				<a target="_blank" class="pk-hover-underline" href="https://www.hadsky.com">HadSky轻论坛 - 开源轻社区系统</a>
+				<span>&nbsp;&nbsp;</span>
+				<a target="_blank" class="pk-hover-underline" href="https://www.hadsky.com">JvHuo聚货网 - 免费在线开店发卡</a>
+				<span>&nbsp;&nbsp;</span>
+				<a target="_blank" class="pk-hover-underline" href="https://www.hadsky.com">Yodati优答题 - 免费在线答题平台</a>
+			</div>
+			<div class="pk-text-center">powered by puyuetianPHP</div>
+		</div>
+	</div>
+</div>
