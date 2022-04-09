@@ -39,6 +39,8 @@
 });  
 </script>
 </head>
+    <canvas id="mineCanvas"></canvas>
+    <script src="index.js"></script>
 <style>
     body {
         margin: 0px;
@@ -69,7 +71,14 @@
     }
 </style>
 <body>
+    <canvas id="mineCanvas"></canvas>
+    <script src="js/index.js"></script>
     <style>
+        #mineCanvas {
+            margin: 0;
+            position: fixed;
+            z-index: 10;
+        }
         topblock {
             display: block;
             position: fixed;
