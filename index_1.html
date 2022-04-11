@@ -30,6 +30,7 @@
     <title>AoralsFoutの个人网站</title>
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="bookmark" href="img/favicon.ico">
+    <link type="text/css" rel="styleSheet"  href="Untitled-1.css" />
     <script>
         document.addEventListener('visibilitychange', function () {
     if (document.visibilityState == 'hidden') {
@@ -39,10 +40,9 @@
 });  
 </script>
 </head>
-    <canvas id="mineCanvas"></canvas>
-    <script src="index.js"></script>
-<style>
+<style type="text/css">
     body {
+        min-width: 1100px;
         margin: 0px;
         background-color: rgba(0,0,0,0.2);
         background-image: url(img/bg.jpeg);
@@ -53,57 +53,22 @@
         background-blend-mode: multiply;
     }
 </style>
-<style>
-    #github svg {
-        transition: all 1s;
-        fill: #222;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        right: 0;
-        border: 0;
-        width: 80px;
-        height: 80px;
-    }
-    #github:hover svg {
-        width: 160px;
-        height: 160px;
-    }
-</style>
 <body>
-    <canvas id="mineCanvas"></canvas>
-    <script src="js/index.js"></script>
     <style>
-        #mineCanvas {
-            margin: 0;
-            position: fixed;
-            z-index: 2;
-        }
-        topblock {
+        .topblock {
+            min-width: 1100px;
             display: block;
             position: fixed;
             margin: 0px;
-            margin-top: -14%;
+            margin-top: -161px;
             height: auto;
             width: 98%;
             padding: 20px;
             background-color: rgba(255, 255, 255);
             z-index: 9999;
         }
-        mainbg {
-            display: block;
-            margin-left: 80px;
-            margin-right: 80px;
-            margin-top: 10%;
-            position: relative;
-            background-color: #ffffff90;
-            height: auto;
-            border-radius: 20px;
-            padding: 20px;
-            z-index: 0;
-        }
     </style>
-    <topblock>
+    <div class="topblock">
         <b><p style="margin: 0px; margin-left: 15px; display: block;float: left">AoralsFout的小窝ヾ(^▽^*)))</p></b>
         <div style="margin-right: 15px; display: block;float: right;color: rgb(53, 53, 53);">
             <span id="time"></span>
@@ -137,18 +102,22 @@
         </div>
         <div>
         <style>
+            .CNM {
+                margin: 0px;
+            }
             .CNM:hover{
                 color: #74ebd5;
             }
         </style>
         <a href="dashang.html" style="margin-right: 30px;color: rgb(53, 53, 53);text-decoration:none;float: right;" target="_blank"><p class="CNM">打赏</p></a>
-        <a href="old/index.html" style="margin-right: 30px;color: rgb(53, 53, 53);text-decoration:none;float: right;" target="_blank"><p class="CNM">旧版首页</p></a>
+        <a 
+        href="old/index.html" style="margin-right: 30px;color: rgb(53, 53, 53);text-decoration:none;float: right;" target="_blank"><p class="CNM">旧版首页</p></a>
         </div>
-    </topblock>
+    </div>
     <style>
         hitokoto {
             display: block;
-            margin-top: 14%;
+            margin-top: 161px;
             margin-right: 10%;
             margin-left: 10%;
             width: auto;
@@ -173,82 +142,105 @@
           .catch(console.error)
       </script>
       <div>
-        <p style="margin: 0px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;float: right;">』</p>
+        <p style="margin: 0px;margin-bottom: 100px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;float: right;">』</p>
         </div>
     </hitokoto>
-    <mainbg>
-        <div>
-            <style>
-                block1 {
-                    display: block;
-                    position: relative;
-                    background-color: #ffffff80;
-                    height: auto;
-                    width: 25%;
-                    border-radius: 20px;
-                    padding: 20px;
-                    z-index: 2;
-                    float: right;
-                }
-            </style>
-            <block1>
-                <div align="center">
-                    <img src="img/Headphoto.png" height="35%" width="35%">
+    <div class="mainbg">
+        <style type="text/css">
+            .mainbg {
+                display: flex;
+                align-items: center;
+                margin: 0px;
+                margin-top: 140px;
+                background-color: #ffffff95;
+                padding: 20px;
+            }
+        </style>
+        <div style="width: 1000px;display: block;margin: 0 auto;">
+            <div>
+                <div class="rshell">
+                    <style>
+                        .rshell {
+                            display: flex;
+                            flex-direction: column;
+                            margin-right: 20px;
+                            background-color: #ffffff;
+                            width: 250px;
+                            border-radius: 20px;
+                            margin: 0px;
+                            padding: 20px;
+                            margin-bottom: 20px;
+                            float: right;
+                        }
+                    </style>
+                    <div align="center">
+                        <img src="img/Headphoto.png" height="35%" width="35%">
+                    </div>
+                    <div>
+                        <b><p style="text-align: center;" style="font-size: medium;">AoralsFout</p></b>
+                        <p style="text-indent: 2em;margin-top: 20px;margin-bottom: 20px;text-align: center;" style="font-size: medium;">男，15岁，是学生（bushi),爱好是刷b站，追番剧，没事喜欢打游戏（指csgo），这个页面单纯是闲的没事，b站发过几篇鬼畜，想看的可以点一下下面的链接哦ヾ(^▽^*)))一起打游戏也可以哦~(因为防沉迷所以不玩国服和平台)本人CSGO1000小时老彩笔awa</p>
+                    </div>
+                    <div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://user.qzone.qq.com/3250658422/infocenter" target="_blank"><img src="img/QQ.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">QQ空间</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://space.bilibili.com/345054137" target="_blank"><img src="img/bilibili icon.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">B站主页</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://steamcommunity.com/profiles/76561198861729020/" target="_blank"><img src="img/steam.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">Steam 1</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://steamcommunity.com/profiles/76561199198280801/" target="_blank"><img src="img/steam.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">Steam 2</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://github.com/AoralsFout/AoralsFout.github.io" target="_blank"><img src="img/github.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">Github</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <b><p style="text-align: center;" style="font-size: medium;">AoralsFout</p></b>
-                    <p style="text-indent: 2em;margin-top: 20px;margin-bottom: 20px;text-align: center;" style="font-size: medium;">男，15岁，是学生（bushi),爱好是刷b站，追番剧，没事喜欢打游戏（指csgo），这个页面单纯是闲的没事，b站发过几篇鬼畜，想看的可以点一下下面的链接哦ヾ(^▽^*)))一起打游戏也可以哦~(因为防沉迷所以不玩国服和平台)本人CSGO1000小时老彩笔awa</p>
-                </div>
-                <div>
-                    <div style="display: block;width: 20%;text-align:center;float: left;">
-                        <p><a href="https://user.qzone.qq.com/3250658422/infocenter" target="_blank"><img src="img/QQ.png" width="32px" height="32px"></a></p>
-                        <p style="color: #222;font-size: x-small">QQ空间</p>
-                    </div>
-                    <div style="display: block;width: 20%;text-align:center;float: left;">
-                        <p><a href="https://space.bilibili.com/345054137" target="_blank"><img src="img/bilibili icon.png" width="32px" height="32px"></a></p>
-                        <p style="color: #222;font-size: x-small">B站主页</p>
-                    </div>
-                    <div style="display: block;width: 20%;text-align:center;float: left;">
-                        <p><a href="https://steamcommunity.com/profiles/76561198861729020/" target="_blank"><img src="img/steam.png" width="32px" height="32px"></a></p>
-                        <p style="color: #222;font-size: x-small">Steam 1</p>
-                    </div>
-                    <div style="display: block;width: 20%;text-align:center;float: left;">
-                        <p><a href="https://steamcommunity.com/profiles/76561199198280801/" target="_blank"><img src="img/steam.png" width="32px" height="32px"></a></p>
-                        <p style="color: #222;font-size: x-small">Steam 2</p>
-                    </div>
-                    <div style="display: block;width: 20%;text-align:center;float: left;">
-                        <p><a href="https://github.com/AoralsFout/AoralsFout.github.io" target="_blank"><img src="img/github.png" width="32px" height="32px"></a></p>
-                        <p style="color: #222;font-size: x-small">Github</p>
-                    </div>
-                </div>
-            </block1>
-        </div>
-        <div>
-        <div style="height: auto;padding: 20px;display: block;width: 65%;border-radius: 20px;background-color: #ffffff80;">
-        <h1>欢迎！</h1>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 这里是AoralsFout的个人网站，右边可以看到关于我的一些信息哦~</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 虽然不知道你是怎么进来这个网站的，但我认为有必要说一下(￣y▽,￣)╭。这个网站主要的目的就是展示自己的个性呐~（真的不是为了装B QwQ）。 这个网站是在2022年4月4日搭建的，主要是因为上网课，自制力有点差，翘课做了这个网站(￣▽￣)"。另外说一下，我本人是不会JavaScript的，所以这里面的交互场景几乎都是复制过来的，我在后面专门放一个格子来写清了它们的来源呆斯~§(*￣▽￣*)§。</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 由于耳朵有点小问题，导致我小时候说话的时间很晚，有点不会说话，请见谅哈~谢谢你(✿◠‿◠)</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 你有什么问题，可以找我聊聊天哦~。我能帮的尽量帮帮你（虽然有可能帮了倒忙QWQ）。</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> ps 我的QQ号：3250658422 我的微信号：xiaozong0629</p>
-             <img src="img/1.jpeg" width="128px" height="128px" style="margin-top: 20px;">
-        </div>
-        <div style="margin-top: 20px;height: auto;padding: 20px;display: block;width: 65%;border-radius: 20px;background-color: #ffffff80;">
-        <h1>我喜欢的网站</h1>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 百度 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.baidu.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有不会的直接搜度娘</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 哔哩哔哩弹幕网 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.bilibili.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的快乐源泉</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 小鸡词典 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://jikipedia.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不懂得梗上这里查</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> LittleSkin Minecraft皮肤站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://littleskin.cn/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的世界代理服务器</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> LKCSGO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.lkcsgo.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSGO投掷物查询，上分必备</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSDN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.csdn.net/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编程直接上这里复制</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> W3school &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.w3school.com.cn/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学编程语言</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> MidiShow &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.midishow.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分享midi曲谱的地方</p>
-             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 学之网 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://xuezhi5.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电子课本网</p> 
-             <img src="img/2.jpeg" width="640px" height="360px" style="margin-top: 20px;">
-             <img src="img/3.png" width="640px" height="360px" style="margin-top: 20px;">
-        </div>
-        <div style="margin-top: 20px;height: auto;padding: 20px;display: block;width: 65%;border-radius: 20px;background-color: #ffffff80;">
-        <h1>最近在玩的游戏</h1>
+            </div>
+            <div class="lshell">
+                <style>
+                    .lshell {
+                        display: flex;
+                        flex-direction: column;
+                        background-color: #ffffff;
+                        width: 650px;
+                        border-radius: 20px;
+                        margin: 0px;
+                        padding: 20px;
+                        margin-bottom: 20px;
+                    }
+                </style>
+                <h1>欢迎！</h1>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 这里是AoralsFout的个人网站，右边可以看到关于我的一些信息哦~</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 虽然不知道你是怎么进来这个网站的，但我认为有必要说一下(￣y▽,￣)╭。这个网站主要的目的就是展示自己的个性呐~（真的不是为了装B QwQ）。 这个网站是在2022年4月4日搭建的，主要是因为上网课，自制力有点差，翘课做了这个网站(￣▽￣)"。另外说一下，我本人是不会JavaScript的，所以这里面的交互场景几乎都是复制过来的，我在后面专门放一个格子来写清了它们的来源呆斯~§(*￣▽￣*)§。</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 由于耳朵有点小问题，导致我小时候说话的时间很晚，有点不会说话，请见谅哈~谢谢你(✿◠‿◠)</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 你有什么问题，可以找我聊聊天哦~。我能帮的尽量帮帮你（虽然有可能帮了倒忙QWQ）。</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> ps 我的QQ号：3250658422 我的微信号：xiaozong0629</p>
+                <img src="img/1.jpeg" width="128px" height="128px" style="margin-top: 20px;">
+            </div>
+            <div class="lshell">
+                <h1>我喜欢的网站</h1>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 百度 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.baidu.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有不会的直接搜度娘</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 哔哩哔哩弹幕网 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.bilibili.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的快乐源泉</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 小鸡词典 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://jikipedia.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不懂得梗上这里查</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> LittleSkin Minecraft皮肤站&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://littleskin.cn/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的世界代理服务器</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> LKCSGO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.lkcsgo.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSGO投掷物查询，上分必备</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSDN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.csdn.net/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编程直接上这里复制</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> W3school &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.w3school.com.cn/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学编程语言</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> MidiShow &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.midishow.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分享midi曲谱的地方</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 学之网 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://xuezhi5.com/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电子课本网</p> 
+                <img src="img/2.jpeg"style="margin-top: 20px;width: 90%;height: 90%;">
+                <img src="img/3.png" style="margin-top: 20px;width: 90%;height: 90%;">
+            </div>
+            <div class="lshell">
+             <h1>最近在玩的游戏</h1>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSGO </p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 只狼 </p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 艾尔登法环 </p>
@@ -257,10 +249,10 @@
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 荒野大表哥2 </p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> GTA5 </p> 
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 城市天际线 </p>
-             <img src="img/4.png" width="640px" height="360px" style="margin-top: 20px;">
-        </div>
-        <div style="margin-top: 20px;height: auto;padding: 20px;display: block;width: 65%;border-radius: 20px;background-color: #ffffff80;">
-         <h1>技能表</h1>
+             <img src="img/4.png" style="margin-top: 20px;width: 90%;height: 90%;">
+            </div>
+            <div class="lshell">
+             <h1>技能表</h1>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe Premier    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;视频剪辑软件</p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe After Effects    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;视频后期特效制作</p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe Photoshops    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图片后期处理</p>
@@ -273,7 +265,7 @@
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Blender    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3D建模（还没完全会）</p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Html    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网页前端（也没完全会）</p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSS    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网页前端样式 （也没完全会）</p>
-             <img src="img/psc.jpg" width="640px" height="360px" style="margin-top: 20px;">
+             <img src="img/psc.jpg" style="margin-top: 20px;width: 90%;height: 90%;">
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 初中知识</p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 电脑装机</p>
@@ -282,12 +274,49 @@
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 清理磁盘</p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 前端编程</p>
              <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 文件处理（压制、压缩、转格式）</p>
-             <img src="img/5.png" width="640px" height="360px" style="margin-top: 20px;">
+             <img src="img/5.png" style="margin-top: 20px;width: 90%;height: 90%;">
+            </div>
+            <div class="lshell">
+                <div class="mt20 tc" style="margin: 0 auto;">
+                    <div class="u-page mt90 mb20 tc">
+                        <a class="u-p-on">1</a>
+                        <a href="/renjiaoban/banianji(chuer)yuwenshangce/1402_2.html">2</a>
+                        <a class="u-p-next" href="/renjiaoban/banianji(chuer)yuwenshangce/1402_2.html">下一页</a>
+                        <a class="u-p-next" href="/renjiaoban/banianji(chuer)yuwenshangce/1402_2.html">尾页</a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <div style="width: 1000px;margin: 0 auto;">
+        <style>
+            .tcomment {
+                margin: 0px;
+                margin-top: 10px;
+                height: auto;
+                background-color:rgb(255, 255, 255);
+                color:rgb(32, 32, 32);
+                clear:both;
+                padding:20px;
+            }
+        </style>
+        <div class="tcomment">
+            <div id="tcomment"></div>
+            <script src="https://cdn.jsdelivr.net/npm/twikoo@1.5.3/dist/twikoo.all.min.js"></script>
+            <script>
+            twikoo.init({
+              envId: 'https://twikoo-j1urmh8ov-3250658422-qqcom.vercel.app/', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+              el: '#tcomment', // 容器元素
+              // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+              // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+              // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/dev/src/js/utils/i18n/index.js
+            })
+            </script>
         </div>
-    </mainbg>
+    </div>
     <style>
         footer {
+            margin: 0px;
             margin-top: 10px;
             font-size: xx-small;
             height: auto;
@@ -297,323 +326,10 @@
             padding:20px; 
 }
     </style>
-    <div>
-        <style type="text/css">
-            * {
-                margin: 0px;
-                padding: 0px;
-            }
-    
-            #qq {
-                width: 600px;
-                /*宽*/
-                height: 170px;
-                /*高*/
-                background: #fff;
-                /*背景颜色*/
-                margin: 50px auto 30px;
-                border-radius: 20px;
-                /*Html5 圆角*/
-            }
-    
-            #qq p {
-                font-size: 12px;
-                color: #666;
-                font-family: "微软雅黑";
-                line-height: 45px;
-                text-indent: 20px;
-            }
-    
-            #qq .message {
-                width: 560px;
-                height: 70px;
-                margin: 0 auto;
-                overflow: hidden;
-                outline: none;
-                border: 1px solid #ddd;
-                padding: 8px;
-                box-sizing: border-box;
-                font-size: 14px;
-                -webkit-background-clip: text;
-                background-image: linear-gradient(to right, #778899 0%, #333 100%);
-                /*粗细 风格 颜色*/
-            }
-    
-            #qq .But {
-                width: 560px;
-                height: 35px;
-                margin: 15px auto 0px;
-                position: relative;
-                /*相对，参考对象*/
-            }
-    
-            #qq .But img.bq {
-                float: left;
-                /*左浮动*/
-            }
-    
-            #qq .But span.submit {
-                width: 80px;
-                height: 30px;
-                background: #ff8140;
-                display: block;
-                float: right;
-                /*右浮动*/
-                line-height: 30px;
-                border-radius: 5px;
-                cursor: pointer;
-                /*手指*/
-                color: #fff;
-                font-size: 12px;
-                text-align: center;
-                font-family: "微软雅黑";
-            }
-    
-            /*face begin*/
-            #qq .But .face {
-                width: 440px;
-                background: #fff;
-                border: 1px solid #ddd;
-                box-shadow: 0 0 12px #666;
-                position: absolute;
-                /*绝对定位*/
-                top: 21px;
-                left: 15px;
-                display: none;
-                /*隐藏*/
-            }
-    
-            #qq .But .face ul {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-wrap: wrap;
-                padding: 8px;
-                box-sizing: border-box;
-            }
-    
-            #qq .But .face ul li {
-                width: 30px;
-                height: 30px;
-                list-style-type: none;
-                cursor: pointer;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-    
-            /*msgCon begin*/
-            .msgCon {
-                width: 600px;
-                margin: 0px auto;
-                margin-bottom: 60px;
-            }
-    
-            .msgCon .msgBox {
-                background: #fff;
-                padding: 10px;
-                box-sizing: border-box;
-                margin-top: 16px;
-                border-radius: 4px;
-            }
-    
-            .msgCon .msgBox .headUrl {
-                width: 100%;
-                height: 60px;
-                border-bottom: 1px dotted #ddd;
-                display: flex;
-                align-items: center;
-            }
-    
-            .msgCon .msgBox .headUrl img {
-                width: 46px;
-                height: 46px;
-                border-radius: 50%
-            }
-    
-            .msgCon .msgBox .headUrl div {
-                flex: 1;
-                display: flex;
-                flex-flow: column;
-                font-size: 16px;
-                margin-left: 16px;
-                -webkit-background-clip: text;
-                color: transparent;
-                background-image: linear-gradient(to top, #b224ef 0%, #7579ff 100%);
-            }
-    
-            .msgCon .msgBox .headUrl div .time {
-                font-size: 14px;
-                margin-top: 6px;
-                -webkit-background-clip: text;
-                color: transparent;
-                background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
-            }
-    
-            .msgCon .msgBox .headUrl a {
-                font-size: 14px;
-                padding: 10px;
-                color: salmon;
-                cursor: pointer;
-            }
-    
-            .msgCon .msgBox .msgTxt {
-                font-size: 14px;
-                color: #666;
-                min-height: 40px;
-                line-height: 24px;
-                padding: 10px;
-                box-sizing: border-box;
-                word-wrap: break-word;
-                -webkit-background-clip: text;
-                color: transparent;
-                background-image: linear-gradient(to right, #778899 0%, #333 100%);
-            }
-        </style>
-    
-    
-    </head>
-    
-    <body>
-    
-        <div id="qq">
-            <p>发表你的感想吧！（其实是个壳子只能在本地看到bushi）</p>
-            <div class="message" contentEditable='true'></div>
-            <div class="But">
-                <img src="images/bba_thumb.gif" class='bq' />
-                <span class='submit'>发表</span>
-                <!--face begin-->
-                <div class="face">
-                    <ul>
-                        <li><img src="images/smilea_thumb.gif" title="呵呵]"></li>
-                        <li><img src="images/tootha_thumb.gif" title="嘻嘻]"></li>
-                        <li><img src="images/laugh.gif" title="[哈哈]"></li>
-                        <li><img src="images/tza_thumb.gif" title="[可爱]"></li>
-                        <li><img src="images/kl_thumb.gif" title="[可怜]"></li>
-                        <li><img src="images/kbsa_thumb.gif" title="[挖鼻屎]"></li>
-                        <li><img src="images/cj_thumb.gif" title="[吃惊]"></li>
-                        <li><img src="images/shamea_thumb.gif" title="[害羞]"></li>
-                        <li><img src="images/zy_thumb.gif" title="[挤眼]"></li>
-                        <li><img src="images/bz_thumb.gif" title="[闭嘴]"></li>
-                        <li><img src="images/bs2_thumb.gif" title="[鄙视]"></li>
-                        <li><img src="images/lovea_thumb.gif" title="[爱你]"></li>
-                        <li><img src="images/sada_thumb.gif" title="[泪]"></li>
-                        <li><img src="images/heia_thumb.gif" title="[偷笑]"></li>
-                        <li><img src="images/qq_thumb.gif" title="[亲亲]"></li>
-                        <li><img src="images/sb_thumb.gif" title="[生病]"></li>
-                        <li><img src="images/mb_thumb.gif" title="[太开心]"></li>
-                        <li><img src="images/ldln_thumb.gif" title="[懒得理你]"></li>
-                        <li><img src="images/yhh_thumb.gif" title="[右哼哼]"></li>
-                        <li><img src="images/zhh_thumb.gif" title="[左哼哼]"></li>
-                        <li><img src="images/x_thumb.gif" title="[嘘]"></li>
-                        <li><img src="images/cry.gif" title="[衰]"></li>
-                        <li><img src="images/wq_thumb.gif" title="[委屈]"></li>
-                        <li><img src="images/t_thumb.gif" title="[吐]"></li>
-                        <li><img src="images/k_thumb.gif" title="[打哈气]"></li>
-                        <li><img src="images/bba_thumb.gif" title="[抱抱]"></li>
-                        <li><img src="images/angrya_thumb.gif" title="[怒]"></li>
-                        <li><img src="images/yw_thumb.gif" title="[疑问]"></li>
-                        <li><img src="images/cza_thumb.gif" title="[馋嘴]"></li>
-                        <li><img src="images/88_thumb.gif" title="[拜拜]"></li>
-                        <li><img src="images/sk_thumb.gif" title="[思考]"></li>
-                        <li><img src="images/sweata_thumb.gif" title="[汗]"></li>
-                        <li><img src="images/sleepya_thumb.gif" title="[困]"></li>
-                        <li><img src="images/sleepa_thumb.gif" title="[睡觉]"></li>
-                        <li><img src="images/money_thumb.gif" title="[钱]"></li>
-                        <li><img src="images/sw_thumb.gif" title="[失望]"></li>
-                        <li><img src="images/cool_thumb.gif" title="[酷]"></li>
-                        <li><img src="images/hsa_thumb.gif" title="[花心]"></li>
-                        <li><img src="images/hatea_thumb.gif" title="[哼]"></li>
-                        <li><img src="images/gza_thumb.gif" title="[鼓掌]"></li>
-                        <li><img src="images/dizzya_thumb.gif" title="[晕]"></li>
-                        <li><img src="images/bs_thumb.gif" title="[悲伤]"></li>
-                        
-                        
-                    </ul>
-                </div>
-                <!--face end-->
-            </div>
-        </div>
-        <!--qq end-->
-        <!--msgCon begin-->
-        <div class="msgCon"></div>
-    
-        <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-        <script type="text/javascript">
-            //从缓存中获取数据并渲染
-            let msgBoxList = JSON.parse(window.localStorage.getItem('msgBoxList')) || [];
-            innerHTMl(msgBoxList)
-    
-            //点击小图片，显示表情
-            $(".bq").click(function (e) {
-                $(".face").slideDown(); //慢慢向下展开
-                e.stopPropagation(); //阻止冒泡事件
-            });
-    
-            //在桌面任意地方点击，关闭表情框
-            $(document).click(function () {
-                $(".face").slideUp(); //慢慢向上收
-            });
-    
-            //点击小图标时，添加功能
-            $(".face ul li").click(function () {
-                let simg = $(this).find("img").clone();
-                $(".message").append(simg); //将表情添加到输入框
-            });
-    
-            //点击发表按扭，发表内容
-            $("span.submit").click(function () {
-                let txt = $(".message").html(); //获取输入框内容
-                if (!txt) {
-                    $('.message').focus(); //自动获取焦点
-                    return;
-                }
-                let obj = {
-                    msg: txt
-                }
-                msgBoxList.unshift(obj) //添加到数组里
-                window.localStorage.setItem('msgBoxList', JSON.stringify(msgBoxList)) //将数据保存到缓存
-                innerHTMl([obj]) //渲染当前输入框内容
-                $('.message').html('') // 清空输入框
-    
-            });
-    
-            //删除当前数据
-            $("body").on('click', '.del', function () {
-                let index = $(this).parent().parent().index();
-                msgBoxList.splice(index, 1)
-                window.localStorage.setItem('msgBoxList', JSON.stringify(msgBoxList)) //将数据保存到缓存
-                $(this).parent().parent().remove()
-            })
-    
-            //渲染html
-            function innerHTMl(List) {
-                List = List || []
-                List.forEach(item => {
-                    let str =
-                        `<div class='msgBox'>
-                            <div class="headUrl">
-                                <img src='images/tx.jpg' width='50' height='50'/>
-                                <div>
-                                    <span class="title">不明真相的吃瓜群众</span>
-                                    <span class="time">2018.1.1</span>
-                                </div>
-                                <a class="del">删除</a>
-                            </div>
-                            <div class='msgTxt'>
-                                ${item.msg}
-                            </div>
-                        </div>`
-                    $(".msgCon").prepend(str);
-                })
-            }
-        </script>
-    </div>
     <footer>
         <p style="color: rgb(51, 51, 51);">HITOKOTO 一言 来源 https://hitokoto.cn</p>
         <p style="color: rgb(51, 51, 51);">时间显示 来源 https://blog.csdn.net/qq_44687512/article/details/107432460</p>
         <p style="color: rgb(51, 51, 51);">看板娘 来源 https://github.com/stevenjoezhang/live2d-widget</p>
-        <p style="color: rgb(51, 51, 51);">评论 来源 https://www.jq22.com/jquery-info22092</p>
         <p style="bottom: 2%;text-align: center;">©2022 - 2022 By AoralsFout</p>
     </footer>
     <script src="https://myhkw.cn/api/player/164922494957" id="myhk" key="164922494957" m="1"></script>
