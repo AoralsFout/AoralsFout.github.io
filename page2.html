@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--
+      く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+-->
+<!--是可爱的兔娘呐~-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>AoralsFoutの个人网站</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="bookmark" href="img/favicon.ico">
+    <link type="text/css" rel="styleSheet"  href="Untitled-1.css" />
+    <script>
+        document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = '不要离开我...呜呜呜QAQ';
+    } else document.title = normal_title;
+});  
+</script>
+</head>
+<style type="text/css">
+    body {
+        min-width: 1100px;
+        margin: 0px;
+        background-color: rgba(0,0,0,0.2);
+        background-image: url(img/bg.jpeg);
+        background-position: center center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+    }
+</style>
+<body>
+    <style>
+        .topblock {
+            min-width: 1100px;
+            display: block;
+            position: fixed;
+            margin: 0px;
+            margin-top: -161px;
+            height: auto;
+            width: 98%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255);
+            z-index: 9999;
+        }
+    </style>
+    <div class="topblock">
+        <b><p style="margin: 0px; margin-left: 15px; display: block;float: left">AoralsFout的小窝ヾ(^▽^*)))</p></b>
+        <div style="margin-right: 15px; display: block;float: right;color: rgb(53, 53, 53);">
+            <span id="time"></span>
+            <script>
+                function show(){
+                    var date=new Date();
+                    var year=date.getFullYear();
+                    var month=date.getMonth()+1;
+                    month=month<10?"0"+month:month;
+                    var day=date.getDate();
+                    day=day<10?"0"+day:day;
+                    var week=date.getDay();
+                    week="日一二三四五六".charAt(week);
+                    week="星期"+week;
+                
+                    var hour=date.getHours();
+                    hour=hour<10?"0"+hour:hour;
+                    var minute=date.getMinutes();
+                    minute=minute<10?"0"+minute:minute;
+                    var second=date.getSeconds();
+                    second=second<10?"0"+second:second;
+                
+                    var result=year+"-"+month+"-"+day+" "+week+" "+hour+":"+minute+":"+second;
+                    document.getElementById("time").innerHTML=result;
+                }
+                
+                show();
+                setInterval("show()",1000);
+                
+            </script>
+        </div>
+        <div>
+        <style>
+            .CNM {
+                margin: 0px;
+            }
+            .CNM:hover{
+                color: #74ebd5;
+            }
+        </style>
+        <a href="dashang.html" style="margin-right: 30px;color: rgb(53, 53, 53);text-decoration:none;float: right;" target="_blank"><p class="CNM">打赏</p></a>
+        <a 
+        href="index.html" style="margin-right: 30px;color: rgb(53, 53, 53);text-decoration:none;float: right;"><p class="CNM">首页</p></a>
+        </div>
+    </div>
+    <style>
+        hitokoto {
+            display: block;
+            margin-top: 161px;
+            margin-right: 10%;
+            margin-left: 10%;
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <hitokoto>
+    <div>
+        <p style="margin: 0px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;">『</p>
+    </div>
+    <div style="margin-left: 5%;margin-right: 5%;">
+    <p id="hitokoto" style="text-align: center;margin-top: 0px;margin-bottom: 0px;""><a href="" id="hitokoto_text" target="_blank" style="text-align: center;text-decoration: none;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 50px;">:D 获取中...</a></p>
+    </div>
+    <script>
+          fetch('https://v1.hitokoto.cn')
+          .then(response => response.json())
+          .then(data => {
+            const hitokoto = document.getElementById('hitokoto_text')
+            hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+            hitokoto.innerText = data.hitokoto
+          })
+          .catch(console.error)
+      </script>
+      <div>
+        <p style="margin: 0px;margin-bottom: 100px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;float: right;">』</p>
+        </div>
+    </hitokoto>
+    <div class="mainbg">
+        <style type="text/css">
+            .mainbg {
+                display: flex;
+                align-items: center;
+                margin: 0px;
+                margin-top: 140px;
+                background-color: #ffffff95;
+                padding: 20px;
+            }
+        </style>
+        <div style="width: 1000px;display: block;margin: 0 auto;">
+            <div style="display: flex;flex-direction: column;float: right;">
+                <div class="rshell">
+                    <style>
+                        .rshell {
+                            display: flex;
+                            flex-direction: column;
+                            margin-right: 20px;
+                            background-color: #ffffff;
+                            width: 250px;
+                            border-radius: 20px;
+                            margin: 0px;
+                            padding: 20px;
+                            margin-bottom: 20px;
+                            float: right;
+                        }
+                    </style>
+                    <div align="center">
+                        <img src="img/Headphoto.png" height="35%" width="35%">
+                    </div>
+                    <div>
+                        <b><p style="text-align: center;" style="font-size: medium;">AoralsFout</p></b>
+                        <p style="text-indent: 2em;margin-top: 20px;margin-bottom: 20px;text-align: center;" style="font-size: medium;">男，15岁，是学生（bushi),爱好是刷b站，追番剧，没事喜欢打游戏（指csgo），这个页面单纯是闲的没事，b站发过几篇鬼畜，想看的可以点一下下面的链接哦ヾ(^▽^*)))一起打游戏也可以哦~(因为防沉迷所以不玩国服和平台)本人CSGO1000小时老彩笔awa</p>
+                    </div>
+                    <div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://user.qzone.qq.com/3250658422/infocenter" target="_blank"><img src="img/QQ.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">QQ空间</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://space.bilibili.com/345054137" target="_blank"><img src="img/bilibili icon.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">B站主页</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://steamcommunity.com/profiles/76561198861729020/" target="_blank"><img src="img/steam.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">Steam 1</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://steamcommunity.com/profiles/76561199198280801/" target="_blank"><img src="img/steam.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">Steam 2</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://github.com/AoralsFout/AoralsFout.github.io" target="_blank"><img src="img/github.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">Github</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rshell">
+                    <h1>精品文章</h1>
+                    <a href="word1.html" target="_blank"><p>如何制作人力Vocaloid鬼畜视频</p></a>
+                </div>
+            </div>
+            <div class="lshell">
+                <style>
+                    .lshell {
+                        display: flex;
+                        flex-direction: column;
+                        background-color: #ffffff;
+                        width: 650px;
+                        border-radius: 20px;
+                        margin: 0px;
+                        padding: 20px;
+                        margin-bottom: 20px;
+                    }
+                </style>
+                <a href="word1.html" target="_blank"><h1>如何制作人力Vocaloid鬼畜视频</h1></a>
+                <img src="img/word1/YYDNGH3HKZY}6M44YREZ9RJ.png" style="margin-top: 20px;width: 90%;height: 90%;">
+            </div>
+            <div class="lshell">
+                <div class="mt20 tc" style="margin: 0 auto;">
+                    <div class="u-page mt90 mb20 tc">
+                        <a class="u-p-prev" href="page1.html">首页</a>
+                        <a class="u-p-prev" href="page1.html">上一页</a>
+                        <a href="page1.html">1</a>
+                        <a class="u-p-on">2</a>
+                        <a class="u-p-next" href="page2.html">下一页</a>
+                        <a class="u-p-next" href="page2.html">尾页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 1000px;margin: 0 auto;">
+        <style>
+            .tcomment {
+                margin: 0px;
+                margin-top: 10px;
+                height: auto;
+                background-color:rgb(255, 255, 255);
+                color:rgb(32, 32, 32);
+                clear:both;
+                padding:20px;
+            }
+        </style>
+        <script>window.TWIKOO_MAGIC_PATH="留言板"</script>
+        <div class="tcomment">
+            <div id="tcomment"></div>
+            <script src="https://cdn.jsdelivr.net/npm/twikoo@1.5.3/dist/twikoo.all.min.js"></script>
+            <script>
+            twikoo.init({
+              envId: 'https://twikoo-j1urmh8ov-3250658422-qqcom.vercel.app/', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+              el: '#tcomment', // 容器元素
+              // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+              path: 'window.TWIKOO_MAGIC_PATH||window.location.pathname', // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+              // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/dev/src/js/utils/i18n/index.js
+            })
+            </script>
+        </div>
+    </div>
+    <style>
+        footer {
+            margin: 0px;
+            margin-top: 10px;
+            font-size: xx-small;
+            height: auto;
+            background-color:rgb(255, 255, 255);
+            color:rgb(32, 32, 32);
+            clear:both;
+            padding:20px; 
+}
+    </style>
+    <footer>
+        <p style="color: rgb(51, 51, 51);">HITOKOTO 一言 来源 https://hitokoto.cn</p>
+        <p style="color: rgb(51, 51, 51);">时间显示 来源 https://blog.csdn.net/qq_44687512/article/details/107432460</p>
+        <p style="color: rgb(51, 51, 51);">看板娘 来源 https://github.com/stevenjoezhang/live2d-widget</p>
+        <p style="bottom: 2%;text-align: center;">©2022 - 2022 By AoralsFout</p>
+    </footer>
+    <script src="https://myhkw.cn/api/player/164922494957" id="myhk" key="164922494957" m="1"></script>
+</body>
+</html>
