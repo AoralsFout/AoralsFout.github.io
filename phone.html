@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--
+      く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+-->
+<!--是可爱的兔娘呐~-->
+<html lang="zh-CN">
+<head>
+    <script>
+        document.addEventListener('visibilitychange', function () {
+         if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = '不要离开我...呜呜呜/(ㄒoㄒ)/~~';
+    } else document.title = normal_title;
+});  
+    </script>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="bookmark" href="img/favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AoralsFout的个人网站</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.simplesidebar.js"></script>
+    <link type="text/css" rel="styleSheet"  href="Untitled-1.css" />
+</head>
+<body>
+    <style>
+        body {
+            background-attachment: fixed;
+            background-image: url(img/phone.jpg);
+            background-size: cover;
+        }
+    </style>
+    <div class="wrapper">
+
+        <div class="toolbar">
+            <div id="open-sb" class="menu-button menu-left"></div>
+        </div>
+        <section class="sidebar">
+            <nav>
+                <h6>AoralsFout的小窝ヾ</h6>
+                <hr>
+                <h6>导航栏</h6>
+                <ul>
+                    <li><a href="phonedashang.html" target="_blank">打赏</a></li>
+                    <li><a href="phone.html" target="_blank">首页</a></li>
+                </ul>
+                <hr>
+                <h6>更多链接</h6>
+                <ul>
+                    <li><a href="https://user.qzone.qq.com/3250658422/infocenter" target="_blank"><img src="img/QQ.png" width="32px" height="32px">QQ空间</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://space.bilibili.com/345054137" target="_blank"><img src="img/bilibili icon.png" width="32px" height="32px">B站主页</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://steamcommunity.com/profiles/76561198861729020/" target="_blank"><img src="img/steam.png" width="32px" height="32px">Steam 1</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://steamcommunity.com/profiles/76561199198280801/" target="_blank"><img src="img/steam.png" width="32px" height="32px">steam 2</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://github.com/AoralsFout/AoralsFout.github.io" target="_blank"><img src="img/github.png" width="32px" height="32px">Github 开源地址</a></li>
+                </ul>
+            </nav>
+        </section>
+    </div>
+    <script>
+    $( document ).ready(function() {
+        $.ajaxSetup({
+            cache: false
+        });
+        $( '.sidebar' ).simpleSidebar({
+            settings: {
+                opener: '#open-sb',
+                wrapper: '.wrapper',
+                animation: {
+                    duration: 500,
+                    easing: 'easeOutQuint'
+                }
+            },
+            sidebar: {
+                align: 'left',
+                width: 200,
+                closingLinks: 'a',
+            }
+        });
+    });
+    </script>
+    <div>
+    <canvas id="mineCanvas"></canvas>
+    <script src="index.js"></script>
+    <h1 style="text-align: center;color: #fff;">AoralsFout的小窝ヾ(^▽^*)))</h1>
+    <style>
+        #mineCanvas {
+            display: none;
+            position: fixed;
+            top: auto;
+            left: auto;
+            z-index: 10;
+        }
+        body {
+            background-attachment: fixed;
+            background-image: url(img/phone.jpg);
+            background-size: cover;
+        }
+        .block {
+            display: block;
+        margin: 5%;
+        border-radius: 20px;
+        background-color: rgba(233, 233, 233, 0.8);
+        background-size: 90% 90%;
+        padding: 5%;
+        }
+    </style>
+    <style>
+        hitokoto {
+            display: block;
+            margin-top: 14%;
+            margin-right: 10%;
+            margin-left: 10%;
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <hitokoto>
+    <div>
+        <p style="margin: 0px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;">『</p>
+    </div>
+    <div style="margin-left: 5%;margin-right: 5%;">
+    <p id="hitokoto" style="line-height:45px;text-align: center;margin-top: 0px;margin-bottom: 0px;""><a href="" id="hitokoto_text" target="_blank" style="text-align: center;text-decoration: none;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;">:D 获取中...</a></p>
+    </div>
+    <script>
+          fetch('https://v1.hitokoto.cn')
+          .then(response => response.json())
+          .then(data => {
+            const hitokoto = document.getElementById('hitokoto_text')
+            hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+            hitokoto.innerText = data.hitokoto
+          })
+          .catch(console.error)
+      </script>
+      <div>
+        <p style="margin: 0px;margin-bottom: 20px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;float: right;">』</p>
+        </div>
+    </hitokoto>
+        <div class="block">
+            <h1>欢迎！</h1>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 这里是AoralsFout的个人网站，点击左上角的菜单可以看到更多哦</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 虽然不知道你是怎么进来这个网站的，但我认为有必要说一下(￣y▽,￣)╭。这个网站主要的目的就是展示自己的个性呐~（真的不是为了装B QwQ）。 这个网站是在2022年4月4日搭建的，主要是因为上网课，自制力有点差，翘课做了这个网站(￣▽￣)"。另外说一下，我本人是不会JavaScript的，所以这里面的交互场景几乎都是复制过来的，我在后面专门放一个格子来写清了它们的来源呆斯~§(*￣▽￣*)§。</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 由于耳朵有点小问题，导致我小时候说话的时间很晚，有点不会说话，请见谅哈~谢谢你(✿◠‿◠)</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 你有什么问题，可以找我聊聊天哦~。我能帮的尽量帮帮你（虽然有可能帮了倒忙QWQ）。</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> ps 我的QQ号：3250658422 我的微信号：xiaozong0629</p>
+                 <img src="img/1.jpeg" width="128px" height="128px" style="margin-top: 20px;">
+            </div>
+            <div align="center" class="block">
+                <h1>关于我</h1>
+                <img src="img/Headphoto.png" height="35%" width="35%">
+                <b><p style="margin-top: 20px;text-align: center;" style="font-size: medium;">AoralsFout</p></b>
+                <p style="text-indent: 2em;margin-top: 20px;margin-bottom: 20px;text-align: center;" style="font-size: medium;">男，15岁，是学生（bushi),爱好是刷b站，追番剧，没事喜欢打游戏（指csgo），这个页面单纯是闲的没事，b站发过几篇鬼畜，想看的可以点一下下面的链接哦ヾ(^▽^*)))一起打游戏也可以哦~(因为防沉迷所以不玩国服和平台)本人CSGO1000小时老彩笔awa</p>
+            </div>
+            <div class="block">
+            <h1>我喜欢的网站</h1>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 百度 https://www.baidu.com/ 有不会的直接搜度娘</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 哔哩哔哩弹幕网 https://www.bilibili.com/ 我的快乐源泉</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 小鸡词典 https://jikipedia.com/ 不懂的梗上这里查</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> LittleSkin Minecraft皮肤站 https://littleskin.cn/ 我的世界代理服务器</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> LKCSGO https://www.lkcsgo.com/CSGO 投掷物查询，上分必备</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSDN https://www.csdn.net/ 编程直接上这里复制(bushi)</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> W3school https://www.w3school.com.cn/ 学编程语言</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> MidiShow https://www.midishow.com分享midi 曲谱的地方</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 学之网 https://xuezhi5.com/ 电子课本网</p> 
+                 <img src="img/2.jpeg" width="640px" height="360px" style="margin-top: 20px;">
+                 <img src="img/3.png" width="640px" height="360px" style="margin-top: 20px;">
+            </div>
+            <div class="block">
+            <h1>最近在玩的游戏</h1>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSGO </p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 只狼 </p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 艾尔登法环 </p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> BeamNG </p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 文明6 </p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 荒野大表哥2 </p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> GTA5 </p> 
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 城市天际线 </p>
+                 <img src="img/4.png" width="640px" height="360px" style="margin-top: 20px;">
+            </div>
+            <div class="block">
+             <h1>技能表</h1>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe Premier    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;视频剪辑软件</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe After Effects    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;视频后期特效制作</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe Photoshops    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图片后期处理</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe audition    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;音频后期处理</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Melodyne5    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人声音调修正</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> UTAU    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;歌声合成软件</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> FL Studio 20    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编曲软件</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> OBS Studio    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录屏、直播工作室</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Word Excel PowerPoint    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文档、表格、幻灯片</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Blender    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3D建模（还没完全会）</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Html    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网页前端（也没完全会）</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSS    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网页前端样式 （也没完全会）</p>
+                 <img src="img/psc.jpg" width="640px" height="360px" style="margin-top: 20px;">
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 初中知识</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 电脑装机</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 电脑重装系统+Windows激活</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Office全家桶激活</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 清理磁盘</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 前端编程</p>
+                 <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 文件处理（压制、压缩、转格式）</p>
+                 <img src="img/5.png" width="640px" height="360px" style="margin-top: 20px;">
+            </div>
+            <div class="block">
+                <div class="mt20 tc" style="margin: 0 auto;">
+                    <div class="u-page mt90 mb20 tc">
+                        <a class="u-p-on">1</a>
+                        <a href="phonepage2.html">2</a>
+                        <a class="u-p-next" href="phonepage2.html">下一页</a>
+                        <a class="u-p-next" href="phonepage2.html">尾页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin: 0 auto;">
+            <style>
+                .tcomment {
+                    margin: 0px;
+                    margin-top: 10px;
+                    height: auto;
+                    background-color:rgb(255, 255, 255);
+                    color:rgb(32, 32, 32);
+                    clear:both;
+                    padding:20px;
+                }
+            </style>
+            <div class="tcomment">
+                <div id="tcomment"></div>
+                <script src="https://cdn.jsdelivr.net/npm/twikoo@1.5.3/dist/twikoo.all.min.js"></script>
+                <script>
+                twikoo.init({
+                  envId: 'https://twikoo-j1urmh8ov-3250658422-qqcom.vercel.app/', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+                  el: '#tcomment', // 容器元素
+                  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+                  path: 'window.TWIKOO_MAGIC_PATH||window.location.pathname', // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                  // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/dev/src/js/utils/i18n/index.js
+                })
+                </script>
+            </div>
+    <p style="bottom: 2%;text-align: center;">©2022 - 2022 By AoralsFout</p>
+    </div>
+    <script src="https://myhkw.cn/api/player/164922494957" id="myhk" key="164922494957" m="1"></script>
+</body>
+</html>
