@@ -218,7 +218,13 @@ background-color:rgb(0, 225, 255);
         href="index.html" style="margin-right: 30px;color: rgb(53, 53, 53);text-decoration:none;float: right;" target="_blank"><p class="CNM">首页</p></a>
         </div>
     </div>
-    <img src="img/logo.png" style="position: fixed;margin-left:20px;margin-top:-153px;z-index:10000;">
+    <script>
+        function go(){
+            setTimeout(function(){window.location.href='https://www.bilibili.com/video/BV1GJ411x7h7';},1000);
+            alert('你找到了一个彩蛋！但是你马上要被骗了awa！！！')
+        }
+    </script>
+    <img src="img/logo.png" style="position: fixed;margin-left:20px;margin-top:-153px;z-index:10000;" onclick="go()">
     <style>
         hitokoto {
             display: block;
