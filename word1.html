@@ -110,6 +110,56 @@
 
     }
 </style>
+<style>
+    /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+width:10px;
+height:10px;
+background-color:#F5F5F5;
+}
+/*定义滚动条轨道*/
+::-webkit-scrollbar-track
+{
+background-color:#F5F5F5;
+}
+/*定义滑块*/
+::-webkit-scrollbar-thumb
+{
+border-radius:10px;
+background-color:rgb(0, 225, 255);
+}
+        #toup{
+            display: none;
+            position: fixed;
+            background: #2e82ff95;
+            color: #ffffff;
+            box-shadow: 3px 3px 5px grey;
+            right: 10px;
+            bottom: 230px;
+            width: 40px;
+            height: 140px;
+            border-radius: 10px;
+            margin:0;
+            padding: 0;
+            border: 0;
+            
+        }
+</style>
+<button id="toup" ><b>^<br>^<br>^<br>回<br>到<br>顶<br>部<br></b></button>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {console.log(121);
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        document.getElementById("toup").style.display = "block";
+    } else {
+        document.getElementById("toup").style.display = "none";
+    }
+}
+        toup.onclick = function(){
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }
+    </script>
 <body>
     <style>
         .topblock {
