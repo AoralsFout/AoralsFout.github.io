@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!--
+      く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+-->
+<!--是可爱的兔娘呐~-->
+<html lang="zh-CN">
+<head>
+    <script>
+        document.addEventListener('visibilitychange', function () {
+         if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = '不要离开我...呜呜呜/(ㄒoㄒ)/~~';
+    } else document.title = normal_title;
+});  
+    </script>
+    <link rel="shortcut icon" href="img/fav.ico">
+    <link rel="bookmark" href="img/fav.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AoralsFout的个人网站</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.simplesidebar.js"></script>
+    <link type="text/css" rel="styleSheet"  href="Untitled-1.css" />
+</head>
+<body>
+    <style>
+        body {
+            background-attachment: fixed;
+            background-image: url(img/phone.jpg);
+            background-size: cover;
+        }
+    </style>
+    <div class="wrapper">
+
+        <div class="toolbar">
+            <div id="open-sb" class="menu-button menu-left"></div>
+        </div>
+        <section class="sidebar">
+            <nav>
+                <img src="img/logo2.png"">
+                <hr>
+                <h6>导航栏</h6>
+                <ul>
+                    <li><a href="phonedashang.html" target="_blank">打赏</a></li>
+                    <li><a href="phone.html" target="_blank">首页</a></li>
+                </ul>
+                <hr>
+                <h6>更多链接</h6>
+                <ul>
+                    <li><a href="https://user.qzone.qq.com/3250658422/infocenter" target="_blank"><img src="img/QQ.png" width="32px" height="32px">QQ空间</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://space.bilibili.com/345054137" target="_blank"><img src="img/bilibili icon.png" width="32px" height="32px">B站主页</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://steamcommunity.com/profiles/76561198861729020/" target="_blank"><img src="img/steam.png" width="32px" height="32px">Steam 1</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://steamcommunity.com/profiles/76561199198280801/" target="_blank"><img src="img/steam.png" width="32px" height="32px">steam 2</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://github.com/AoralsFout/AoralsFout.github.io" target="_blank"><img src="img/github.png" width="32px" height="32px">Github 开源地址</a></li>
+                </ul>
+            </nav>
+        </section>
+    </div>
+    <script>
+    $( document ).ready(function() {
+        $.ajaxSetup({
+            cache: false
+        });
+        $( '.sidebar' ).simpleSidebar({
+            settings: {
+                opener: '#open-sb',
+                wrapper: '.wrapper',
+                animation: {
+                    duration: 500,
+                    easing: 'easeOutQuint'
+                }
+            },
+            sidebar: {
+                align: 'left',
+                width: 200,
+                closingLinks: 'a',
+            }
+        });
+    });
+    </script>
+    <div>
+    <canvas id="mineCanvas"></canvas>
+    <script src="index.js"></script>
+    <h1 style="text-align: center;color: #fff;">AoralsFout的小窝ヾ(^▽^*)))</h1>
+    <style>
+                            .p {
+                        display: block;
+                        margin-block-start: 1em;
+                        margin-block-end: 1em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                        text-indent: 2em;
+                        line-height: 30px;
+                    }
+        #mineCanvas {
+            display: none;
+            position: fixed;
+            top: auto;
+            left: auto;
+            z-index: 10;
+        }
+        body {
+            background-attachment: fixed;
+            background-image: url(img/phone.jpg);
+            background-size: cover;
+        }
+        .block {
+            display: block;
+        margin: 5%;
+        border-radius: 20px;
+        background-color: rgba(233, 233, 233, 0.8);
+        background-size: 90% 90%;
+        padding: 5%;
+        }
+    </style>
+    <style>
+        hitokoto {
+            display: block;
+            margin-top: 14%;
+            margin-right: 10%;
+            margin-left: 10%;
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <hitokoto>
+    <div>
+        <p style="margin: 0px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;">『</p>
+    </div>
+    <div style="margin-left: 5%;margin-right: 5%;">
+    <p id="hitokoto" style="line-height:45px;text-align: center;margin-top: 0px;margin-bottom: 0px;""><a href="" id="hitokoto_text" target="_blank" style="text-align: center;text-decoration: none;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;">:D 获取中...</a></p>
+    </div>
+    <script>
+          fetch('https://v1.hitokoto.cn')
+          .then(response => response.json())
+          .then(data => {
+            const hitokoto = document.getElementById('hitokoto_text')
+            hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+            hitokoto.innerText = data.hitokoto
+          })
+          .catch(console.error)
+      </script>
+      <div>
+        <p style="margin: 0px;margin-bottom: 20px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;float: right;">』</p>
+        </div>
+    </hitokoto>
+        <div class="block">
+            <h1>一、注意事项:</h1>
+                <p>1.一律小写;</p>
+                <p>2.尽量用英文;</p>
+                <p>3.不加中杠和下划线;</p>
+                <p>4.尽量不缩写，除非一看就明白的单词。
+                    <br>主要 master.css
+
+<br>模块 module.css
+
+<br>基本共用 base.css
+
+<br>布局，版面 layout.css
+
+<br>主题 themes.css
+
+<br>专栏 columns.css
+
+<br>文字 font.css
+
+<br>表单 forms.css
+
+<br>补丁 mend.css
+
+<br>打印 print.css
+                </p>
+                <p>5.坚持以字母开头命名选择器，这样可保证在所有浏览器下都能兼容。</p>
+                <h1>二、常用的css命名规则</h1>
+                <p>头：header
+
+                    <br>内容：content/container
+                    
+                    <br>尾：footer
+                    
+                    <br>导航：nav
+                    
+                    <br>侧栏：sidebar
+                    
+                    <br>栏目：column
+                    
+                    <br>页面外围控制整体布局宽度：wrapper
+                    
+                    <br>左右中：left right center
+                    
+                    <br>登录条：loginbar
+                    
+                    <br>标志：logo
+                    
+                    <br>广告：banner
+                    
+                    <br>页面主体：main
+                    
+                    <br>热点：hot
+                    
+                    <br>新闻：news
+                    
+                    <br>下载：download
+                    
+                    <br>子导航：subnav
+                    
+                    <br>菜单：menu
+                    
+                    <br>子菜单：submenu
+                    
+                    <br>搜索：search
+                    
+                    <br>友情链接：friendlink
+                    
+                    <br>页脚：footer
+                    
+                    <br>版权：copyright
+                    
+                    <br>滚动：scroll
+                    
+                    <br>内容：content
+                    
+                    <br>标签页：tab
+                    
+                    <br>文章列表：list
+                    
+                    <br>提示信息：msg
+                    
+                    <br>小技巧：tips
+                    
+                    <br>栏目标题：title
+                    
+                    <br>加入：joinus
+                    
+                    <br>指南：guild
+                    
+                    <br>服务：service
+                    
+                    <br>注册：regsiter
+                    
+                    <br>状态：status
+                    
+                    <br>投票：vote
+                    
+                    <br>合作伙伴：partner</p>
+                    <h1>三、id的命名:</h1>
+                    <h2>(1)页面结构</h2>
+                    <p>容器: container
+
+                        <br>页头：header
+                        
+                        <br>内容：content/container
+                        
+                        <br>页面主体：main
+                        
+                        <br>页尾：footer
+                        
+                        <br>导航：nav
+                        
+                        <br>侧栏：sidebar
+                        
+                        <br>栏目：column
+                        
+                        <br>页面外围控制整体布局宽度：wrapper
+                        
+                        <br>左右中：left right center</p>
+                    <h2>(2)导航</h2>
+                    <p>
+                        导航：nav
+                        
+                        <br>主导航：mainbav
+                        
+                        <br>子导航：subnav
+                        
+                        <br>顶导航：topnav
+                        
+                        <br>边导航：sidebar
+                        
+                        <br>左导航：leftsidebar
+                        
+                        <br>右导航：rightsidebar
+                        
+                        <br>菜单：menu
+                        
+                        <br>子菜单：submenu
+                        
+                        <br>标题: title
+                        
+                        <br>摘要: summary</p>
+                    <h2>(3)功能</h2>
+                    <p>标志：logo
+
+                        <br>广告：banner
+                        
+                        <br>登陆：login
+                        
+                        <br>登录条：loginbar
+                        
+                        <br>注册：regsiter
+                        
+                        <br>搜索：search
+                        
+                        <br>功能区：shop
+                        
+                        <br>标题：title
+                        
+                        <br>加入：joinus
+                        
+                        <br>状态：status
+                        
+                        <br>按钮：btn
+                        
+                        <br>滚动：scroll
+                        
+                        <br>标签页：tab
+                        
+                        <br>文章列表：list
+                        
+                        <br>提示信息：msg
+                        
+                        <br>当前的: current
+                        
+                        <br>小技巧：tips
+                        
+                        <br>图标: icon
+                        
+                        <br>注释：note
+                        
+                        <br>指南：guide
+                        
+                        <br>服务：service
+                        
+                        <br>热点：hot
+                        
+                        <br>新闻：news
+                        
+                        <br>下载：download
+                        
+                        <br>投票：vote
+                        
+                        <br>合作伙伴：partner
+                        
+                        <br>友情链接：link
+                        
+                        <br>版权：copyright</p>
+                    <h2>(四)class的命名:</h2>
+                    <h3>(1)颜色:使用颜色的名称或者16进制代码,如</h3>
+                    <p>.red { color: red; }
+
+                        <br>.f60 { color: #f60; }
+                        
+                        <br>.ff8600 { color: #ff8600; }</p>
+                    <h3>(2)字体大小,直接使用”font+字体大小”作为名称,如</h3>
+                    <p>.font12px { font-size: 12px; }
+
+                        <br>.font9pt {font-size: 9pt; }</p>
+                    <h3>(3)对齐样式,使用对齐目标的英文名称,如</h3>
+                    <p>.left { float:left; }
+
+                        <br>.bottom { float:bottom; }</p>
+                    <h3>(4)标题栏样式,使用”类别+功能”的方式命名,如</h3>
+                    <p>.barnews { }
+
+                        <br>.barproduct { }</p>
+            </div>
+        </div>
+        <div style="margin: 0 auto;">
+            <style>
+                .tcomment {
+                    margin: 0px;
+                    margin-top: 10px;
+                    height: auto;
+                    background-color:rgb(255, 255, 255);
+                    color:rgb(32, 32, 32);
+                    clear:both;
+                    padding:20px;
+                }
+            </style>
+            <div class="tcomment">
+                <div id="tcomment"></div>
+                <script src="https://cdn.staticfile.org/twikoo/1.5.11/twikoo.all.min.js"></script>
+                <script>
+                twikoo.init({
+                  envId: 'https://twikoo-bnx4m429q-3250658422-qqcom.vercel.app', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+                  el: '#tcomment', // 容器元素
+                  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+                  // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                  // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/dev/src/js/utils/i18n/index.js
+                })
+                </script>
+            </div>
+    <p style="bottom: 2%;text-align: center;">©2022 - 2022 By AoralsFout</p>
+    </div>
+    <script src="https://myhkw.cn/api/player/164922494957" id="myhk" key="164922494957" m="1"></script>
+</body>
+</html>
