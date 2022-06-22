@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扫雷</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="icon" href="images/a1tfg-4tf6w-001.ico">
+    <body "return false;" onselectstart="return false">
+        <style type="text/css">
+            body {
+                -webkit-animation-name: "loops"; 
+                -webkit-animation-duration: 30s; 
+                -webkit-animation-iteration-count: infinite; 
+            }
+            @keyframes loops {
+        
+                    0% {
+                        background-image:url(../../img/bg.jpeg.png);
+                        min-width: 1100px;
+                margin: 0px;
+                background-color: rgba(0,0,0,0.2);
+                background-position: center center;
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-blend-mode: multiply;
+                    }
+        
+                    25% {
+                        background-image:url(../../img/bg1.jpg.png);
+                        min-width: 1100px;
+                margin: 0px;
+                background-color: rgba(0,0,0,0.2);
+                background-position: center center;
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-blend-mode: multiply;
+                    }
+        
+                    50% {
+                        background-image:url(../../img/bg2.png);
+                        min-width: 1100px;
+                margin: 0px;
+                background-color: rgba(0,0,0,0.2);
+                background-position: center center;
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-blend-mode: multiply;
+                    }
+        
+                    75% {
+                        background-image:url(../../img/bg3.jpg.png);
+                        min-width: 1100px;
+                margin: 0px;
+                background-color: rgba(0,0,0,0.2);
+                background-position: center center;
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-blend-mode: multiply;
+                    }
+        
+                    100% {
+                        background-image:url(../../img/bg.jpeg.png);
+                        min-width: 1100px;
+                margin: 0px;
+                background-color: rgba(0,0,0,0.2);
+                background-position: center center;
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-blend-mode: multiply;
+                    }
+        
+            }
+        </style>
+</head>
+
+<body>
+    <div>
+        <style>
+            .mainbg {
+                display: block;
+                height: 900px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: 20%;
+                margin-right: 20%;
+                position: relative;
+                background-color: #ffffff;
+                border-radius: 20px;
+                padding: 20px;
+                text-align: center;
+            }
+                /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+width:10px;
+height:10px;
+background-color:#F5F5F5;
+}
+/*定义滚动条轨道*/
+::-webkit-scrollbar-track
+{
+background-color:#F5F5F5;
+}
+/*定义滑块*/
+::-webkit-scrollbar-thumb
+{
+border-radius:10px;
+background-color:rgb(0, 225, 255);
+}
+        </style>
+    </div>
+    <div class="mainbg">
+    <div id="mine">
+        <div class="level">
+            <button class="active">初级</button>
+            <button>中级</button>
+            <button>高级</button>
+            <button>重新开始</button>
+        </div>
+        <div class="gameBox">
+        </div>
+        <div class="info">
+            剩余雷数：<span class="mineNum"></span>
+            <br>
+            <span class="tips">左键扫雷，右键插旗，再次点击右键拔旗</span>
+        </div>
+    </div>
+    </div>
+    <script src="JS/index.js"></script>
+</body>
+
+</html>
