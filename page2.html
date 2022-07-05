@@ -132,21 +132,23 @@ background-color:rgb(0, 225, 255);
         #toup{
             display: none;
             position: fixed;
-            background: #2e82ff95;
+            background: #2e82ff30;
             color: #ffffff;
-            box-shadow: 3px 3px 5px grey;
-            right: 10px;
+            box-shadow: -1px 1px 1px 1px rgb(0 0 0 / 30%);
+            backdrop-filter: blur(10px);
+            right: 0px;
             bottom: 230px;
-            width: 40px;
-            height: 140px;
-            border-radius: 10px;
+            width: 25px;
+            height: 68px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
             margin:0;
             padding: 0;
             border: 0;
-            
+            font-size: 30px;
         }
 </style>
-<button id="toup" ><b>^<br>^<br>^<br>回<br>到<br>顶<br>部<br></b></button>
+<button id="toup" ><b>⬆</b></button>
     <script>
         window.onscroll = function() {scrollFunction()};
         function scrollFunction() {console.log(121);
