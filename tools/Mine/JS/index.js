@@ -267,7 +267,7 @@ var ln = 0; // 用来处理当前选中的状态
 var arr = [
     [9, 9, 10],
     [16, 16, 40],
-    [28, 28, 99]
+    [16, 30, 99]
 ]; //不同级别的行数，列数，雷数
 for (let i = 0; i < btns.length - 1; i++) {
     btns[i].onclick = function () {
