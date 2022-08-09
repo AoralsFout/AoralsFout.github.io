@@ -168,6 +168,116 @@ background-color:rgb(0, 225, 255);
             }
     </script>
 <body>
+    <style type="text/css">
+        #box{
+            width: 220px;
+            height: auto;
+            position: absolute;
+            color: #00000000;
+            padding: 5px;
+            z-index: 100000;
+        }
+        
+        #box:hover{
+            width: 220px;
+            height: auto;
+            position: absolute;
+            color: #cccccc;
+            background-color: #00000080;
+            padding: 5px;
+            z-index: 100000;
+        }
+    
+        ul {
+            padding-inline-start: 0px;
+        }
+        ul li {
+            list-style: none;/* 去掉小圆点 */
+            }
+        ul a {
+            color: #ccc;
+            text-decoration: none;/* 去掉下划线 */
+        }
+        ul li { /*一级菜单的样式 */
+            float: left;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;/* 行高等于高使文字垂直居中 */
+            text-align: center;
+            font-size: 20px;/*字体大小*/
+            background-color: #00000090;
+        }
+        ul li ul li{
+            display: none;/* 隐藏二级菜单 */
+        }
+        ul li:hover ul li { /* 鼠标经过时显示二级菜单 */
+            display: block;/* 二级菜单转化为块级元素,使其独占一行 */
+        }
+        ul li:hover {
+            background-color: #000000;/* 鼠标经过时显示的背景颜色 */
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            function drag(obj){
+                obj.onmousedown = function(event){
+                    var al = event.clientX - obj.offsetLeft; //求出鼠标到盒子距离
+                    var at = event.clientY - obj.offsetTop; //求出鼠标到盒子距离
+                    document.onmousemove = function(event){
+                        event = event || window.event;
+                        var left = event.clientX;
+                        var top = event.clientY;
+                        obj.style.left = left - al + "px";
+                        obj.style.top = top -at + "px";
+                    }
+                    document.onmouseup = function(){
+                        //取消事件
+                        this.onmousemove = null; 
+                        this.onmouseup = null;
+                    
+                    }					
+                }
+            }
+            
+            var box = document.getElementById("box");
+            drag(box);
+        }
+    </script>
+    <script>
+        function reloadFLChan(){
+            document.getElementById('box').style.top="600px"
+            document.getElementById("box").style.removeProperty("left");
+        }
+    </script>
+    <script>
+        function setIframeToWaiting() {
+            document.getElementById('setIframe').src="MusicHall/Waiting.html"
+        }
+        function setIframeToStepping() {
+            document.getElementById('setIframe').src="MusicHall/Stepping.html"
+        }
+        function setIframeToJumping() {
+            document.getElementById('setIframe').src="MusicHall/Jumping.html"
+        }
+        function setIframeToZombie() {
+            document.getElementById('setIframe').src="MusicHall/Zombie.html"
+        }
+        function setIframeToWaving() {
+            document.getElementById('setIframe').src="MusicHall/Waving.html"
+        }
+        function setIframeToHula() {
+            document.getElementById('setIframe').src="MusicHall/Hula.html"
+        }
+        function setIframeToWindmill() {
+            document.getElementById('setIframe').src="MusicHall/Windmill.html"
+        }
+        function setIframeToZitabata() {
+            document.getElementById('setIframe').src="MusicHall/Zitabata.html"
+        }
+        function setIframeToDervish() {
+            document.getElementById('setIframe').src="MusicHall/Dervish.html"
+        }
+    </script>
     <style>
         .topblock {
             width: 100%;
@@ -224,6 +334,7 @@ background-color:rgb(0, 225, 255);
         <a href="bz.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);" target="_blank"><p class="CNM">本站背景图</p></a>
         <a href="dashang.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);" target="_blank"><p class="CNM">打赏</p></a>
         <a href="index.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);" target="_blank"><p class="CNM">首页</p></a>
+        <a href="MusicHall/index.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);"><p class="CNM">嗨起来！(正在施工，欢迎围观)</p></a>
         <a style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: left;"><p style="margin: 0px;left:240px ;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);">🔊&nbsp;&nbsp;&nbsp;本站加载速度较慢，请谅解喵QAQ</p></a>
         </div>
     </div>
@@ -347,6 +458,38 @@ background-color:rgb(0, 225, 255);
                         <div style="display: block;width: 20%;text-align:center;float: left;">
                             <p><a href="https://github.com/AoralsFout/AoralsFout.github.io" target="_blank"><img src="img/github.png" width="32px" height="32px"></a></p>
                             <p style="color: #222;font-size: x-small">Github</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rshell">
+                    <a style="float: left;margin-left: 10px;"><h1 style="margin-bottom:500px">水果娘FL Chan</h1></a>
+                    <a onclick="reloadFLChan()" style="float: left;margin-left: 10px;background-color: #00000090;color: #ccc;padding: 10px;">如果找不到水果娘了按我尝试复位</a>
+                    <a style="float: left;margin-left: 10px;"><h3>不能拖拽的请拖拽文字部分</h3></a>
+                    <div id="box" style="top: 600px;" "return false;" onselectstart="return false">
+                        <iframe src="MusicHall/Waiting.html" frameborder="0" scrolling="no" height="256px" width="220px" id="setIframe"></iframe>
+                        <h6 style="margin: 5px;">我是FL Chan水果娘哦~</h6>
+                        <h6 style="margin: 5px;">来自FL Studio 20</h6>
+                        <h1 style="margin: 5px;">在这里拖拽我~</h1>
+                        <div>
+                            <ul>
+                                <li><a href="#">更改动作</a>
+                                    <ul>
+                                        <li onclick="setIframeToWaiting()"><a onclick="setIframeToWaiting()">等待</a></li>
+                                        <li onclick="setIframeToStepping()"><a onclick="setIframeToStepping()">踏步</a></li>
+                                        <li onclick="setIframeToJumping()"><a onclick="setIframeToJumping()">跳</a></li>
+                                    </ul>
+                                    <ul style="position: absolute;left: 105px;">
+                                        <li onclick="setIframeToZombie()"><a onclick="setIframeToZombie()">僵尸舞</a></li>
+                                        <li onclick="setIframeToWaving()"><a onclick="setIframeToWaving()">摇摆</a></li>
+                                        <li onclick="setIframeToHula()"><a onclick="setIframeToHula()">呼啦</a></li>
+                                    </ul>
+                                    <ul style="position: absolute;left: 205px;">
+                                        <li onclick="setIframeToWindmill()"><a onclick="setIframeToWindmill()">街舞风车</a></li>
+                                        <li onclick="setIframeToZitabata()"><a onclick="setIframeToZitabata()">Zitabata</a></li>
+                                        <li onclick="setIframeToDervish()"><a onclick="setIframeToDervish()">转~~~</a></li>
+                                    </ul>
+                                </li>
+                           </ul>
                         </div>
                     </div>
                 </div>
