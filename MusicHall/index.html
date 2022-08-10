@@ -30,7 +30,6 @@
     <title>嗨起来！ヾ(≧▽≦*)o</title>
     <link rel="shortcut icon" href="img/fav.ico">
     <link rel="bookmark" href="img/fav.ico">
-    <link type="text/css" rel="styleSheet"  href="Untitled-1.css" />
 </head>
 <style type="text/css">
         * {
@@ -245,6 +244,7 @@
   const canvas = document.createElement("canvas");
   document.body.appendChild(canvas);
   canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+  canvas.setAttribute("id", "boom");
   const pointer = document.createElement("span");
   pointer.classList.add("pointer");
   document.body.appendChild(pointer);
@@ -494,20 +494,14 @@ clickEffect();//调用特效函数
         if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
     })();    
 </script>
-<span class="js-cursor-container"></span>
-<script>
-    //取消选中并且取消右键操作
-    document.body.onselectstart =
-        document.body.oncontextmenu =
-        function () {
-            return false; //取消浏览器默认操作
-        };
-</script>
+<span class="js-cursor-container" id="star"></span>
     <div id="box" style="top: 57px;">
         <iframe src="Waiting.html" frameborder="0" scrolling="no" height="256px" width="220px" id="setIframe"></iframe>
+        <div id="tips">
         <h6>我是FL Chan水果娘哦~</h6>
         <h6>来自FL Studio 20</h6>
         <h1>在这里拖拽我~</h1>
+        </div>
         <div>
             <ul>
                 <li><a href="#">更改动作</a>
@@ -530,16 +524,18 @@ clickEffect();//调用特效函数
            </ul>
         </div>
     </div>
-    <video id="v1" autoplay loop muted>
+    <div id="bgv">
+        <video id="v1" autoplay loop muted style="display: block;" >
         <source src="background~.mp4" video/mp4" />
-    </video>
+        </video>
+    </div>
     <div>
         <span draggable='true' class="FruitChan"></span>
     </div>
     <div>
         <div>
-            <h1 style="position: absolute;color: #ffffff;left: 280px;top: 4.5px;z-index: 0;" onclick="ctrlhover()" >控制台</h1>
-            <div style="background-color: #000000;height: 250px;width: 300px;position: absolute;border-radius: 5px;text-align: left;left: 280px;top: 4.5px;display: none;" id="ctrlhover">
+            <h1 style="position: absolute;color: #ffffff;left: 100px;top: 4.5px;z-index: 0;" onclick="ctrlhover()" >控制台</h1>
+            <div style="background-color: #000000;height: 250px;width: 540px;position: absolute;border-radius: 5px;text-align: left;left: 280px;top: 4.5px;display: none;" id="ctrlhover">
                 <h1 style="color: white;" onclick="exitctrl()">退出</h1>
                 <div>
                 <div>
@@ -549,6 +545,152 @@ clickEffect();//调用特效函数
                 </div>
                 <div>
                     <input type="range" min="100" max="999" value="100" style="transform: rotate(270deg);position: absolute;top: 160px;" id="flash">
+                </div>
+                <div>
+                    <div style="position: absolute;left: 120px;"><button type="button" class="button squarebig" onclick="onright()"><p style="color: #ffffff;">禁用右键</p></button></div>
+                    <div style="position: absolute;left: 120px;top:80px;"><button type="button" class="button squarebig" onclick="offright()"><p style="color: #ffffff;">启用右键</p></button></div>
+                    <script>
+                        function onright(){
+                            //取消选中并且取消右键操作
+                            document.body.onselectstart =
+                            document.body.oncontextmenu =
+                            function () {
+                                return false; //取消浏览器默认操作
+                            };
+                        }
+
+                        function offright(){
+                            document.body.onselectstart =
+                            document.body.oncontextmenu =
+                            function () {
+                                return true;
+                            };
+
+                        }
+                    </script>
+                    <div style="position: absolute;left: 120px;top:120px;"><button type="button" class="button squarebig" onclick="onbgv()"><p style="color: #ffffff;">开启背景</p></button></div>
+                    <div style="position: absolute;left: 120px;top:160px;"><button type="button" class="button squarebig" onclick="offbgv()"><p style="color: #ffffff;">关闭背景</p></button></div>
+                    <script>
+                        function offbgv(){
+                            document.getElementById('bgv').style.setProperty('display','none')
+                        }
+                        function onbgv() {
+                            document.getElementById('bgv').style.setProperty('display','block')
+                        }
+                    </script>
+                    <div><p style="color: #ccc;position: absolute;left: 210px;top: 20px;">鼠标特效</p></div>
+                    <div style="position: absolute;left: 210px;"><button type="button" class="button squarebig" onclick="onstar()"><p style="color: #ffffff;">开启拖尾</p></button></div>
+                    <div style="position: absolute;left: 210px;top:80px;"><button type="button" class="button squarebig" onclick="onboom()"><p style="color: #ffffff;">开启爆炸</p></button></div>
+                    <div style="position: absolute;left: 210px;top:120px;"><button type="button" class="button squarebig" onclick="offstar()"><p style="color: #ffffff;">关闭拖尾</p></button></div>
+                    <div style="position: absolute;left: 210px;top:160px;"><button type="button" class="button squarebig" onclick="offboom()"><p style="color: #ffffff;">关闭爆炸</p></button></div>
+                    <script>
+                        function onstar(){
+                            document.getElementById('star').style.setProperty('display','block')
+                        }
+
+                        function onboom(){
+                            document.getElementById('boom').style.setProperty('display','block')
+                        }
+
+                        function offstar(){
+                            document.getElementById('star').style.setProperty('display','none')
+                        }
+
+                        function offboom(){
+                            document.getElementById('boom').style.setProperty('display','none')
+                        }
+                    </script>
+                    <div><p style="color: #ccc;position: absolute;left: 300px;top: 20px;">水果娘</p></div>
+                    <div style="position: absolute;left: 300px;"><button type="button" class="button squarebig" onclick="onfltips()"><p style="color: #ffffff;">开启FLtips</p></button></div>
+                    <div style="position: absolute;left: 300px;top: 80px;"><button type="button" class="button squarebig" onclick="offfltips()"><p style="color: #ffffff;">关闭FLtips</p></button></div>
+                    <div style="position: absolute;left: 300px;top: 120px;"><button type="button" class="button squarebig" onclick="reloadFLChan()"><p style="color: #ffffff;">复位</p></button></div>
+                    <script>
+                        function onfltips(){
+                            document.getElementById('tips').style.setProperty('display','block')
+                        }
+
+                        function offfltips(){
+                            document.getElementById('tips').style.setProperty('display','none')
+                        }
+                    </script>
+                    <style>
+.button {
+    color: #0f1214;
+    text-shadow: 0 1px 0 #484f58;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    border: 1px solid #202124;
+    box-shadow: 0 1px 0 #616a74 inset, 0 1px 5px #212528;
+    background: -webkit-linear-gradient(top, #474d54, #2f363d);
+    background: -moz-linear-gradient(top, #474d54, #2f363d);
+    background: -ms-linear-gradient(top, #474d54, #2f363d);
+    background: -o-linear-gradient(top, #474d54, #2f363d);
+    background: linear-gradient(top, #474d54, #2f363d);
+}
+.button:nth-child(3n) {
+    margin-right: 35px;
+}
+.button:hover {
+    background: -webkit-linear-gradient(top, #5b6167, #30373e);
+    background: -moz-linear-gradient(top, #5b6167, #30373e);
+    background: -ms-linear-gradient(top, #5b6167, #30373e);
+    background: -o-linear-gradient(top, #5b6167, #30373e);
+    background: linear-gradient(top, #5b6167, #30373e);
+}
+.button:active {
+    box-shadow: 0 1px #484c50;
+    background: -webkit-linear-gradient(top, #232930, #3c4249);
+    background: -moz-linear-gradient(top, #232930, #3c4249);
+    background: -ms-linear-gradient(top, #232930, #3c4249);
+    background: -o-linear-gradient(top, #232930, #3c4249);
+    background: linear-gradient(top, #232930, #3c4249);
+}
+.round,
+.square {
+    width: 30px;
+    height: 30px;
+}
+.round,
+.roundbig {
+    border-radius: 15px;
+}
+.square,
+.squarebig {
+    border-radius: 5px;
+}
+.button:after {
+    display: block;
+}
+.round:nth-of-type(1):after,
+.square:nth-of-type(4):after {
+    content: "\2716";
+}
+.round:nth-of-type(2):after,
+.square:nth-of-type(5):after {
+    content: "\2714";
+}
+.round:nth-of-type(3):after,
+.square:nth-of-type(6):after {
+    content: "\271a";
+}
+.round:nth-of-type(7):after,
+.square:nth-of-type(10):after {
+    content: "\2717";
+}
+.round:nth-of-type(8):after,
+.square:nth-of-type(11):after {
+    content: "\2713";
+}
+.round:nth-of-type(9):after,
+.square:nth-of-type(12):after {
+    content: "\271d";
+}
+.roundbig,
+.squarebig {
+    width: 80px;
+    height: 30px;
+}
+                    </style>
                 </div>
                 </div>
             </div>
@@ -610,7 +752,6 @@ clickEffect();//调用特效函数
         </div>
     </div>
     <a href="../index.html" style="float: left;z-index: 102;"><h1 class="CNM">返回</h1></a>
-    <a onclick="reloadFLChan()" style="float: left;margin-left: 10px;z-index: 102;"><h1 class="CNM">水果娘复位</h1></a>
     <style>
         .CNM {
             margin: 0px;
