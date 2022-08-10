@@ -42,14 +42,10 @@
             position: fixed;
             right: 0px;
             bottom: 0px;
-            min-width: 100%;
-            min-height: 100%;
-            height: auto;
-            width: auto;
-            /*加滤镜*/
-            /*filter: blur(15px); //背景模糊设置 */
-            /*-webkit-filter: grayscale(100%);*/
-            /*filter:grayscale(100%); //背景灰度设置*/
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            filter: blur(2px);
             z-index: -11
         }
 
@@ -75,6 +71,14 @@
         position: absolute;
         color: #cccccc;
         background-color: #00000080;
+    }
+
+    #ctrlbox{
+        width: 300px;
+        height: 100px;
+        position: absolute;
+        color: #00000000;
+        padding: 5px;
     }
 
     ul {
@@ -167,7 +171,338 @@
         document.getElementById('setIframe').src="Dervish.html"
     }
 </script>
+<style>
+      body {
+        overflow: hidden;
+        margin: 0;
+      }
+ 
+      .twitter:hover a {
+        transform: rotate(-45deg) scale(1.05);
+      }
+      .twitter:hover i {
+        color: #21c2ff;
+      }
+      .twitter a {
+        bottom: -40px;
+        right: -75px;
+        transform: rotate(-45deg);
+      }
+      .twitter i {
+        bottom: 7px;
+        right: 7px;
+        color: #00aced;
+      }
+ 
+      .social-icon a {
+        position: absolute;
+        background: white;
+        color: white;
+        box-shadow: -1px -1px 20px 0px rgba(0, 0, 0, 0.3);
+        display: inline-block;
+        width: 150px;
+        height: 80px;
+        transform-origin: 50% 50%;
+        transition: 0.15s ease-out;
+      }
+      .social-icon i {
+        position: absolute;
+        pointer-events: none;
+        z-index: 1000;
+        transition: 0.15s ease-out;
+      }
+ 
+      .youtube:hover a {
+        transform: rotate(45deg) scale(1.05);
+      }
+      .youtube:hover i {
+        color: #ec4c44;
+      }
+      .youtube a {
+        bottom: -40px;
+        left: -75px;
+        transform: rotate(45deg);
+      }
+      .youtube i {
+        bottom: 7px;
+        left: 7px;
+        color: #e62117;
+      }
+    </style>
+</style>
 <body "return false;" onselectstart="return false">
+      <script>
+        function clickEffect() {
+  let balls = [];
+  let longPressed = false;
+  let longPress;
+  let multiplier = 0;
+  let width, height;
+  let origin;
+  let normal;
+  let ctx;
+  const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"];
+  const canvas = document.createElement("canvas");
+  document.body.appendChild(canvas);
+  canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+  const pointer = document.createElement("span");
+  pointer.classList.add("pointer");
+  document.body.appendChild(pointer);
+ 
+  if (canvas.getContext && window.addEventListener) {
+    ctx = canvas.getContext("2d");
+    updateSize();
+    window.addEventListener('resize', updateSize, false);
+    loop();
+    window.addEventListener("mousedown", function(e) {
+      pushBalls(randBetween(10, 20), e.clientX, e.clientY);
+      document.body.classList.add("is-pressed");
+      longPress = setTimeout(function(){
+        document.body.classList.add("is-longpress");
+        longPressed = true;
+      }, 500);
+    }, false);
+    window.addEventListener("mouseup", function(e) {
+      clearInterval(longPress);
+      if (longPressed == true) {
+        document.body.classList.remove("is-longpress");
+        pushBalls(randBetween(50 + Math.ceil(multiplier), 100 + Math.ceil(multiplier)), e.clientX, e.clientY);
+        longPressed = false;
+      }
+      document.body.classList.remove("is-pressed");
+    }, false);
+    window.addEventListener("mousemove", function(e) {
+      let x = e.clientX;
+      let y = e.clientY;
+      pointer.style.top = y + "px";
+      pointer.style.left = x + "px";
+    }, false);
+  } else {
+    console.log("canvas or addEventListener is unsupported!");
+  }
+ 
+ 
+  function updateSize() {
+    canvas.width = window.innerWidth * 2;
+    canvas.height = window.innerHeight * 2;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.scale(2, 2);
+    width = (canvas.width = window.innerWidth);
+    height = (canvas.height = window.innerHeight);
+    origin = {
+      x: width / 2,
+      y: height / 2
+    };
+    normal = {
+      x: width / 2,
+      y: height / 2
+    };
+  }
+  class Ball {
+    constructor(x = origin.x, y = origin.y) {
+      this.x = x;
+      this.y = y;
+      this.angle = Math.PI * 2 * Math.random();
+      if (longPressed == true) {
+        this.multiplier = randBetween(14 + multiplier, 15 + multiplier);
+      } else {
+        this.multiplier = randBetween(6, 12);
+      }
+      this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
+      this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
+      this.r = randBetween(8, 12) + 3 * Math.random();
+      this.color = colours[Math.floor(Math.random() * colours.length)];
+    }
+    update() {
+      this.x += this.vx - normal.x;
+      this.y += this.vy - normal.y;
+      normal.x = -2 / window.innerWidth * Math.sin(this.angle);
+      normal.y = -2 / window.innerHeight * Math.cos(this.angle);
+      this.r -= 0.3;
+      this.vx *= 0.9;
+      this.vy *= 0.9;
+    }
+  }
+ 
+  function pushBalls(count = 1, x = origin.x, y = origin.y) {
+    for (let i = 0; i < count; i++) {
+      balls.push(new Ball(x, y));
+    }
+  }
+ 
+  function randBetween(min, max) {
+    return Math.floor(Math.random() * max) + min;
+  }
+ 
+  function loop() {
+    ctx.fillStyle = "rgba(255, 255, 255, 0)";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < balls.length; i++) {
+      let b = balls[i];
+      if (b.r < 0) continue;
+      ctx.fillStyle = b.color;
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
+      ctx.fill();
+      b.update();
+    }
+    if (longPressed == true) {
+      multiplier += 0.2;
+    } else if (!longPressed && multiplier >= 0) {
+      multiplier -= 0.4;
+    }
+    removeBall();
+    requestAnimationFrame(loop);
+  }
+ 
+  function removeBall() {
+    for (let i = 0; i < balls.length; i++) {
+      let b = balls[i];
+      if (b.x + b.r < 0 || b.x - b.r > width || b.y + b.r < 0 || b.y - b.r > height || b.r < 0) {
+        balls.splice(i, 1);
+      }
+    }
+  }
+}
+clickEffect();//调用特效函数
+</script>
+<script>
+    (function fairyDustCursor() {
+
+        var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        var cursor = { x: width / 2, y: width / 2 };
+        var particles = [];
+
+        function init() {
+            bindEvents();
+            loop();
+        }
+
+        // Bind events that are needed
+        function bindEvents() {
+            document.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function onWindowResize(e) {
+            width = window.innerWidth;
+            height = window.innerHeight;
+        }
+
+        function onMouseMove(e) {
+            cursor.x = e.clientX;
+            cursor.y = e.clientY;
+
+            addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+        }
+
+        function addParticle(x, y, color) {
+            var particle = new Particle();
+            particle.init(x, y, color);
+            particles.push(particle);
+        }
+
+        function updateParticles() {
+
+            // Updated
+            for (var i = 0; i < particles.length; i++) {
+                particles[i].update();
+            }
+
+            // Remove dead particles
+            for (var i = particles.length - 1; i >= 0; i--) {
+                if (particles[i].lifeSpan < 0) {
+                    particles[i].die();
+                    particles.splice(i, 1);
+                }
+            }
+
+        }
+
+        function loop() {
+            requestAnimationFrame(loop);
+            updateParticles();
+        }
+
+        /**
+         * Particles
+         */
+
+        function Particle() {
+
+            this.character = "*";
+            this.lifeSpan = 120; //ms
+            this.initialStyles = {
+                "position": "fixed",
+                "display": "inline-block",
+                "top": "0px",
+                "left": "0px",
+                "pointerEvents": "none",
+                "touch-action": "none",
+                "z-index": "10000000",
+                "fontSize": "25px",
+                "will-change": "transform"
+            };
+
+            // Init, and set properties
+            this.init = function (x, y, color) {
+
+                this.velocity = {
+                    x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                    y: 1
+                };
+
+                this.position = { x: x + 10, y: y + 10 };
+                this.initialStyles.color = color;
+
+                this.element = document.createElement('span');
+                this.element.innerHTML = this.character;
+                applyProperties(this.element, this.initialStyles);
+                this.update();
+
+                document.querySelector('.js-cursor-container').appendChild(this.element);
+            };
+
+            this.update = function () {
+                this.position.x += this.velocity.x;
+                this.position.y += this.velocity.y;
+                this.lifeSpan--;
+
+                this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+            }
+
+            this.die = function () {
+                this.element.parentNode.removeChild(this.element);
+            }
+
+        }
+
+        /**
+         * Utils
+         */
+
+        // Applies css `properties` to an element.
+        function applyProperties(target, properties) {
+            for (var key in properties) {
+                target.style[key] = properties[key];
+            }
+        }
+
+        if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
+    })();    
+</script>
+<span class="js-cursor-container"></span>
+<script>
+    //取消选中并且取消右键操作
+    document.body.onselectstart =
+        document.body.oncontextmenu =
+        function () {
+            return false; //取消浏览器默认操作
+        };
+</script>
     <div id="box" style="top: 57px;">
         <iframe src="Waiting.html" frameborder="0" scrolling="no" height="256px" width="220px" id="setIframe"></iframe>
         <h6>我是FL Chan水果娘哦~</h6>
@@ -196,13 +531,86 @@
         </div>
     </div>
     <video id="v1" autoplay loop muted>
-        <source src="background_x264_x264.mp4" video/mp4" />
+        <source src="background~.mp4" video/mp4" />
     </video>
     <div>
         <span draggable='true' class="FruitChan"></span>
     </div>
-    <a href="../index.html" style="float: left;"><h1 class="CNM">返回</h1></a>
-    <a onclick="reloadFLChan()" style="float: left;margin-left: 10px;"><h1 class="CNM">水果娘复位</h1></a>
+    <div>
+        <div>
+            <h1 style="position: absolute;color: #ffffff;left: 280px;top: 4.5px;z-index: 0;" onclick="ctrlhover()" >控制台</h1>
+            <div style="background-color: #000000;height: 250px;width: 300px;position: absolute;border-radius: 5px;text-align: left;left: 280px;top: 4.5px;display: none;" id="ctrlhover">
+                <h1 style="color: white;" onclick="exitctrl()">退出</h1>
+                <div>
+                <div>
+                    <p style="color: #ffffff;position: absolute;top: 60px;left: 30px;">色调变化</p>
+                    <p style="color: #ffffff;position: absolute;top: 100px;left: 15px;">100%</p>
+                    <p style="color: #ffffff;position: absolute;top: 210px;left: 25px;">0%</p>
+                </div>
+                <div>
+                    <input type="range" min="100" max="999" value="100" style="transform: rotate(270deg);position: absolute;top: 160px;" id="flash">
+                </div>
+                </div>
+            </div>
+            <script>
+                function flash(){
+                    var x = document.getElementById("flash").value;
+                    if(x == 100){
+                        document.getElementById("flashinner").style.setProperty('display', "none")
+                    }else{
+                        document.getElementById("flashinner").style.setProperty('display', "block")
+                        document.getElementById("flashinner").style.setProperty('opacity', "0." + x)
+                    }
+                }
+                setInterval(flash,10);
+            </script>
+            <script>
+                function ctrlhover(){
+                    document.getElementById("ctrlhover").style.setProperty("display","block")
+                }
+                
+                function exitctrl(){
+                    document.getElementById("ctrlhover").style.setProperty("display","none")
+                }
+            </script>
+        </div>
+        <div class="flash" id="flashinner">
+            <style>
+                .flash {
+                    position: fixed;
+                    z-index: -1;
+                    opacity: 0;
+                    height: 10000px;
+                    width: 10000px;
+                    animation:flash 5s infinite;
+	                /*Safari 和 Chrome:*/
+	                -webkit-animation:flash 5s infinite;
+                }
+                body {
+                    background-color: black;
+                }
+                @keyframes flash {
+                    0% {background-color:rgb(202, 46, 46);}
+                    25% {background-color:rgb(75, 197, 64);}
+                    50% {background-color:rgb(74, 96, 219);}
+                    75% {background-color:rgb(132, 64, 187);}
+                    100% {background-color:rgb(202, 46, 46);}
+                }
+ 
+                /*Safari 和 Chrome:*/
+                @-webkit-keyframes flash
+                {
+                    0% {background-color:rgb(202, 46, 46);}
+                    25% {background-color:rgb(75, 197, 64);}
+                    50% {background-color:rgb(74, 96, 219);}
+                    75% {background-color:rgb(132, 64, 187);}
+                    100% {background-color:rgb(202, 46, 46);}
+                }
+            </style>
+        </div>
+    </div>
+    <a href="../index.html" style="float: left;z-index: 102;"><h1 class="CNM">返回</h1></a>
+    <a onclick="reloadFLChan()" style="float: left;margin-left: 10px;z-index: 102;"><h1 class="CNM">水果娘复位</h1></a>
     <style>
         .CNM {
             margin: 0px;
