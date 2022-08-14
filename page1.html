@@ -335,7 +335,7 @@ background-color:rgb(0, 225, 255);
         <a href="dashang.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);" target="_blank"><p class="CNM">打赏</p></a>
         <a href="index.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);" target="_blank"><p class="CNM">首页</p></a>
         <a href="MusicHall/index.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);"><p class="CNM">嗨起来！(正在施工，欢迎围观)</p></a>
-        <a style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: left;"><p style="margin: 0px;left:240px ;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);">🔊&nbsp;&nbsp;&nbsp;本站加载速度较慢，请谅解喵QAQ</p></a>
+        <a style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-bottom: 5px;"><p style="margin: 0px;left:240px ;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);">🔊&nbsp;&nbsp;&nbsp;本站加载速度较慢，请谅解喵QAQ</p></a>
         </div>
     </div>
     <script>
@@ -461,15 +461,42 @@ background-color:rgb(0, 225, 255);
                         </div>
                     </div>
                 </div>
+                <div>
+                    <script>
+                        function onFLC() {
+                            document.getElementById('FLC').style.setProperty('display','block');
+                            document.querySelector("body > div.mainbg > div > div:nth-child(1) > div:nth-child(3) > a").remove();
+                        }
+
+                        function offFLC() { 
+                            document.getElementById('FLC').style.setProperty('display','none');
+                            const a = document.createElement('a');
+                            a.innerHTML="开启水果娘"
+                            document.querySelector("body > div.mainbg > div > div:nth-child(1) > div:nth-child(3)").appendChild(a);
+                            a.setAttribute('class','FLCbtn')
+                            a.setAttribute("id", "FLC");
+                            a.setAttribute('onClick','onFLC()')
+                        }
+                    </script>
+                </div>
                 <div class="rshell">
+                <div id="FLC">
                     <a style="float: left;margin-left: 10px;"><h1 style="margin-bottom:500px">水果娘FL Chan</h1></a>
-                    <a onclick="reloadFLChan()" style="float: left;margin-left: 10px;background-color: #00000090;color: #ccc;padding: 10px;">如果找不到水果娘了按我尝试复位</a>
+                    <h2>控制台</h2>
+                    <div>
+                        <a onclick="offFLC()" class="FLCbtn">关闭水果娘</a>
+                        <a onclick="onfltips()" class="FLCbtn">开启水果娘提示</a>
+                        <a onclick="offfltips()" class="FLCbtn">关闭水果娘提示</a>
+                        <a onclick="reloadFLChan()" class="FLCbtn">如果找不到水果娘了按我尝试复位</a>
+                    </div>
                     <a style="float: left;margin-left: 10px;"><h3>不能拖拽的请拖拽文字部分</h3></a>
                     <div id="box" style="top: 600px;" "return false;" onselectstart="return false">
                         <iframe src="MusicHall/Waiting.html" frameborder="0" scrolling="no" height="256px" width="220px" id="setIframe"></iframe>
-                        <h6 style="margin: 5px;">我是FL Chan水果娘哦~</h6>
-                        <h6 style="margin: 5px;">来自FL Studio 20</h6>
-                        <h1 style="margin: 5px;">在这里拖拽我~</h1>
+                        <div id="FLCtips">
+                            <h6 style="margin: 5px;">我是FL Chan水果娘哦~</h6>
+                            <h6 style="margin: 5px;">来自FL Studio 20</h6>
+                            <h1 style="margin: 5px;">在这里拖拽我~</h1>
+                        </div>
                         <div>
                             <ul>
                                 <li><a>更改动作</a>
@@ -491,7 +518,32 @@ background-color:rgb(0, 225, 255);
                                 </li>
                            </ul>
                         </div>
+                        <style>
+                            .FLCbtn {
+                                background-color: #00000080;
+                                float: left;
+                                padding: 5px;
+                                margin: 5px;
+                                font-size: large;
+                                color: #ccc;
+                            }
+
+                            .FLCbtn:hover {
+                                background-color: #00000090;
+                                color: #fff;
+                            }
+                        </style>
+                        <script>
+                            function onfltips(){
+                                document.getElementById('FLCtips').style.setProperty('display','block')
+                            }
+    
+                            function offfltips(){
+                                document.getElementById('FLCtips').style.setProperty('display','none')
+                            }
+                        </script>
                     </div>
+                </div>
                 </div>
                 <div class="rshell">
                     <img src="img/123.jpg" style="width: 100%;height: 100%;border-radius: 20px;">
@@ -747,5 +799,6 @@ background-color:rgb(0, 225, 255);
         <p style="bottom: 2%;text-align: center;">©2022 - 2022 By AoralsFout</p>
     </footer>
     <script src="https://myhkw.cn/api/player/164922494957" id="myhk" key="164922494957" m="1"></script>
+    <script src="click.js"></script>
 </body>
 </html>
