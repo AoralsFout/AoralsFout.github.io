@@ -245,7 +245,7 @@ background-color:rgb(0, 225, 255);
     </script>
     <script>
         function reloadFLChan(){
-            document.getElementById('box').style.top="600px"
+            document.getElementById('box').style.top="800px"
             document.getElementById("box").style.removeProperty("left");
         }
     </script>
@@ -291,36 +291,6 @@ background-color:rgb(0, 225, 255);
         }
     </style>
     <div class="topblock">
-        <div style="margin-right: 30px; display: block;float: right;color: rgb(255, 255, 255);margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);">
-            <span id="time"></span>
-            <script>
-                function show(){
-                    var date=new Date();
-                    var year=date.getFullYear();
-                    var month=date.getMonth()+1;
-                    month=month<10?"0"+month:month;
-                    var day=date.getDate();
-                    day=day<10?"0"+day:day;
-                    var week=date.getDay();
-                    week="日一二三四五六".charAt(week);
-                    week="星期"+week;
-                
-                    var hour=date.getHours();
-                    hour=hour<10?"0"+hour:hour;
-                    var minute=date.getMinutes();
-                    minute=minute<10?"0"+minute:minute;
-                    var second=date.getSeconds();
-                    second=second<10?"0"+second:second;
-                
-                    var result=year+"-"+month+"-"+day+" "+week+" "+hour+":"+minute+":"+second;
-                    document.getElementById("time").innerHTML=result;
-                }
-                
-                show();
-                setInterval("show()",1000);
-                
-            </script>
-        </div>
         <div>
         <style>
             .CNM {
@@ -416,6 +386,99 @@ background-color:rgb(0, 225, 255);
         </style>
         <div style="width: 1000px;display: block;margin: 0 auto;">
             <div style="display: flex;flex-direction: column;float: right;">
+                <div class="rshell" id="ChangeTimeElement" style="background-color: #ffffff;"> <!-- 时间 -->
+                    <span id="time"></span>
+                    <b id="time2" style="font-size: 50px;"></b>
+                    <p id="TimeTips" style="font-size: 10px;"></p>
+                    <script>
+                        function showTime(){
+                            var date=new Date();
+                            var year=date.getFullYear();
+                            var month=date.getMonth()+1;
+                            month=month<10?"0"+month:month;
+                            var day=date.getDate();
+                            day=day<10?"0"+day:day;
+                            var week=date.getDay();
+                            week="日一二三四五六".charAt(week);
+                            week="星期"+week;
+                        
+                            var hour=date.getHours();
+                            hour=hour<10?"0"+hour:hour;
+                            var minute=date.getMinutes();
+                            minute=minute<10?"0"+minute:minute;
+                            var second=date.getSeconds();
+                            second=second<10?"0"+second:second;
+                        
+                            var result=year+"-"+month+"-"+day+" "+week;
+                            document.getElementById("time").innerHTML=result;
+                            var result2=hour+":"+minute+":"+second;
+                            document.getElementById("time2").innerHTML=result2;
+
+                            /* 随时间更改背景颜色 */
+                            if(hour >= 21){ /* 黑夜 */
+                                document.getElementById("ChangeTimeElement").style.setProperty('background-color','#265582')
+                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
+                            }
+                            if(hour >=0){ /* 天数更换 */
+                                document.getElementById("ChangeTimeElement").style.setProperty('background-color','#265582')
+                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
+                            }
+                            if(hour >= 5){ /* 日出 */
+                                document.getElementById('ChangeTimeElement').style.setProperty('background-color','#F6A955')
+                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
+                            }
+                            if(hour >= 7){ /* 白天 */
+                                document.getElementById('ChangeTimeElement').style.setProperty('background-color','#ffffff')
+                                document.getElementById("ChangeTimeElement").style.setProperty('color','#000000')
+                            }
+                            if(hour >= 19){ /* 日落 */
+                                document.getElementById('ChangeTimeElement').style.setProperty('background-color','#F6A955')
+                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
+                            }
+
+                            /* 时间提示 */
+                            if(hour >= 0){
+                                document.getElementById('TimeTips').innerHTML='已经是第二天了，你还没睡觉吗，早点睡吧，要做个好孩子哦~'
+                            }
+                            if(hour >= 2){
+                                document.getElementById('TimeTips').innerHTML='欧尼酱，已经2点了，快点睡觉吧。'
+                            }
+                            if(hour >= 5){
+                                document.getElementById('TimeTips').innerHTML='快要日出啦，你起的真早，还是说一晚上都没有睡呢？'
+                            }
+                            if(hour >= 6){
+                                document.getElementById('TimeTips').innerHTML='早上好，今天又是元气满满的一天o(*￣▽￣*)ブ，记得吃早饭哦~'
+                            }
+                            if(hour >= 8){
+                                document.getElementById('TimeTips').innerHTML='你今天是要去上学？上班？还是说要打一天游戏呢？没事的话出去玩也是个好选项哦~'
+                            }
+                            if(hour >= 10){
+                                document.getElementById('TimeTips').innerHTML='快中午了，今天午饭吃什么！uwu'
+                            }
+                            if(hour >= 12){
+                                document.getElementById('TimeTips').innerHTML='中午要是困的话，就去睡个觉吧！'
+                            }
+                            if(hour >= 14){
+                                document.getElementById('TimeTips').innerHTML='你现在在做什么呢（好奇）'
+                            }
+                            if(hour >= 17){
+                                document.getElementById('TimeTips').innerHTML='呼~似乎又快到晚上了，还有什么事情没有做完吗？(/ω＼*)'
+                            }
+                            if(hour >= 19){
+                                document.getElementById('TimeTips').innerHTML='太阳似乎要落山了.'
+                            }
+                            if(hour >= 21){
+                                document.getElementById('TimeTips').innerHTML='早点睡觉哦，做个好孩子哦~'
+                            }
+                            if(hour >= 23){
+                                document.getElementById('TimeTips').innerHTML='你在忙什么呢，早点睡哦~'
+                            }
+                        }
+                        
+                        showTime();
+                        setInterval("showTime()",1000);
+                    </script>
+                </div>
                 <div class="rshell">
                     <style>
                         .rshell {
@@ -465,14 +528,14 @@ background-color:rgb(0, 225, 255);
                     <script>
                         function onFLC() {
                             document.getElementById('FLC').style.setProperty('display','block');
-                            document.querySelector("body > div.mainbg > div > div:nth-child(1) > div:nth-child(3) > a").remove();
+                            document.querySelector("body > div.mainbg > div > div:nth-child(1) > div:nth-child(4) > a").remove();
                         }
 
                         function offFLC() { 
                             document.getElementById('FLC').style.setProperty('display','none');
                             const a = document.createElement('a');
                             a.innerHTML="开启水果娘"
-                            document.querySelector("body > div.mainbg > div > div:nth-child(1) > div:nth-child(3)").appendChild(a);
+                            document.querySelector("body > div.mainbg > div > div:nth-child(1) > div:nth-child(4)").appendChild(a);
                             a.setAttribute('class','FLCbtn')
                             a.setAttribute("id", "FLC");
                             a.setAttribute('onClick','onFLC()')
@@ -490,7 +553,7 @@ background-color:rgb(0, 225, 255);
                         <a onclick="reloadFLChan()" class="FLCbtn">如果找不到水果娘了按我尝试复位</a>
                     </div>
                     <a style="float: left;margin-left: 10px;"><h3>不能拖拽的请拖拽文字部分</h3></a>
-                    <div id="box" style="top: 600px;" "return false;" onselectstart="return false">
+                    <div id="box" style="top: 800px;" "return false;" onselectstart="return false">
                         <iframe src="MusicHall/Waiting.html" frameborder="0" scrolling="no" height="256px" width="220px" id="setIframe"></iframe>
                         <div id="FLCtips">
                             <h6 style="margin: 5px;">我是FL Chan水果娘哦~</h6>
