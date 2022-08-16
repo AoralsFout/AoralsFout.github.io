@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>好康的</title>
+</head>
+<body>
+    <style>
+        body { /* 主体背景样式 */
+    min-width: 1200px; 
+    margin: 0px; 
+    background-color: #00000020; 
+    background-position: center center; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-blend-mode: multiply;
+
+    /* 幻灯片背景动画 */
+    -webkit-animation-name: "Backgroundloops"; 
+    -webkit-animation-duration: 30s; 
+    -webkit-animation-iteration-count: infinite;
+    animation-name: "Backgroundloops";
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+@keyframes Backgroundloops {
+    0% {
+        background-image:url(img/bg.jpeg.png);
+    }
+    25% {
+        background-image:url(img/bg1.jpg.png);
+    }
+    50% {
+        background-image:url(img/bg2.png);
+    }
+    75% {
+        background-image:url(img/bg3.jpg.png);
+    }
+    100% {
+        background-image:url(img/bg.jpeg.png);
+    }
+}
+</style>
+</body>
+</html>

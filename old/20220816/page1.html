@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<!--
+      く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+-->
+<!--是可爱的兔娘呐~-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>AoralsFoutの个人网站</title>
+    <link rel="shortcut icon" href="img/fav.ico">
+    <link rel="bookmark" href="img/fav.ico">
+    <link type="text/css" rel="styleSheet"  href="Untitled-1.css" />
+    <script>
+        document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = '不要离开我...呜呜呜QAQ';
+    } else document.title = normal_title;
+});  
+</script>
+</head>
+<style type="text/css">
+    body {
+        -webkit-animation-name: "loops"; 
+        -webkit-animation-duration: 30s; 
+        -webkit-animation-iteration-count: infinite; 
+    }
+    @keyframes loops {
+
+            0% {
+                background-image:url(img/bg.jpeg.png);
+                min-width: 1100px;
+        margin: 0px;
+        background-color: rgba(0,0,0,0.2);
+        background-position: center center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+            }
+
+            25% {
+                background-image:url(img/bg1.jpg.png);
+                min-width: 1100px;
+        margin: 0px;
+        background-color: rgba(0,0,0,0.2);
+        background-position: center center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+            }
+
+            50% {
+                background-image:url(img/bg2.png);
+                min-width: 1100px;
+        margin: 0px;
+        background-color: rgba(0,0,0,0.2);
+        background-position: center center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+            }
+
+            75% {
+                background-image:url(img/bg3.jpg.png);
+                min-width: 1100px;
+        margin: 0px;
+        background-color: rgba(0,0,0,0.2);
+        background-position: center center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+            }
+
+            100% {
+                background-image:url(img/bg.jpeg.png);
+                min-width: 1100px;
+        margin: 0px;
+        background-color: rgba(0,0,0,0.2);
+        background-position: center center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+            }
+
+    }
+</style>
+<style>
+
+    
+    /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+width:10px;
+height:10px;
+background-color:#F5F5F5;
+}
+/*定义滚动条轨道*/
+::-webkit-scrollbar-track
+{
+background-color:#F5F5F5;
+}
+/*定义滑块*/
+::-webkit-scrollbar-thumb
+{
+border-radius:10px;
+background-color:rgb(0, 225, 255);
+}
+
+
+        #toup{
+            display: none;
+            position: fixed;
+            background: #2e82ff30;
+            color: #ffffff;
+            box-shadow: -1px 1px 1px 1px rgb(0 0 0 / 30%);
+            backdrop-filter: blur(10px);
+            right: 0px;
+            bottom: 230px;
+            width: 25px;
+            height: 68px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+            margin:0;
+            padding: 0;
+            border: 0;
+            font-size: 30px;
+            z-index: 10001;
+        }
+</style>
+<button id="toup" ><b>⬆</b></button>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {console.log(121);
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        document.getElementById("toup").style.display = "block";
+    } else {
+        document.getElementById("toup").style.display = "none";
+    }
+}
+        toup.onclick = function(){
+            window.scrollTo({top:0,behavior:"smooth"})
+            }
+    </script>
+<body>
+    <style type="text/css">
+        #box{
+            width: 220px;
+            height: auto;
+            position: absolute;
+            color: #00000000;
+            padding: 5px;
+            z-index: 100000;
+        }
+        
+        #box:hover{
+            width: 220px;
+            height: auto;
+            position: absolute;
+            color: #cccccc;
+            background-color: #00000080;
+            padding: 5px;
+            z-index: 100000;
+        }
+    
+        ul {
+            padding-inline-start: 0px;
+        }
+        ul li {
+            list-style: none;/* 去掉小圆点 */
+            }
+        ul a {
+            color: #ccc;
+            text-decoration: none;/* 去掉下划线 */
+        }
+        ul li { /*一级菜单的样式 */
+            float: left;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;/* 行高等于高使文字垂直居中 */
+            text-align: center;
+            font-size: 20px;/*字体大小*/
+            background-color: #00000090;
+        }
+        ul li ul li{
+            display: none;/* 隐藏二级菜单 */
+        }
+        ul li:hover ul li { /* 鼠标经过时显示二级菜单 */
+            display: block;/* 二级菜单转化为块级元素,使其独占一行 */
+        }
+        ul li:hover {
+            background-color: #000000;/* 鼠标经过时显示的背景颜色 */
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            function drag(obj){
+                obj.onmousedown = function(event){
+                    var al = event.clientX - obj.offsetLeft; //求出鼠标到盒子距离
+                    var at = event.clientY - obj.offsetTop; //求出鼠标到盒子距离
+                    document.onmousemove = function(event){
+                        event = event || window.event;
+                        var left = event.clientX;
+                        var top = event.clientY;
+                        obj.style.left = left - al + "px";
+                        obj.style.top = top -at + "px";
+                    }
+                    document.onmouseup = function(){
+                        //取消事件
+                        this.onmousemove = null; 
+                        this.onmouseup = null;
+                    
+                    }					
+                }
+            }
+            
+            var box = document.getElementById("box");
+            drag(box);
+        }
+    </script>
+    <script>
+        function reloadFLChan(){
+            document.getElementById('box').style.top="800px"
+            document.getElementById("box").style.removeProperty("left");
+        }
+    </script>
+    <script>
+        function setIframeToWaiting() {
+            document.getElementById('setIframe').src="MusicHall/Waiting.html"
+        }
+        function setIframeToStepping() {
+            document.getElementById('setIframe').src="MusicHall/Stepping.html"
+        }
+        function setIframeToJumping() {
+            document.getElementById('setIframe').src="MusicHall/Jumping.html"
+        }
+        function setIframeToZombie() {
+            document.getElementById('setIframe').src="MusicHall/Zombie.html"
+        }
+        function setIframeToWaving() {
+            document.getElementById('setIframe').src="MusicHall/Waving.html"
+        }
+        function setIframeToHula() {
+            document.getElementById('setIframe').src="MusicHall/Hula.html"
+        }
+        function setIframeToWindmill() {
+            document.getElementById('setIframe').src="MusicHall/Windmill.html"
+        }
+        function setIframeToZitabata() {
+            document.getElementById('setIframe').src="MusicHall/Zitabata.html"
+        }
+        function setIframeToDervish() {
+            document.getElementById('setIframe').src="MusicHall/Dervish.html"
+        }
+    </script>
+    <style>
+        .topblock {
+            width: 100%;
+            display: block;
+            position: fixed;
+            margin-top: -161px;
+            height: auto;
+            background-color: #ffffff90;
+            z-index: 9999;
+            backdrop-filter: blur(3px);
+        }
+    </style>
+    <div class="topblock">
+        <div>
+        <style>
+            .CNM {
+                margin: 0px;
+            }
+            .CNM:hover{
+                color: #74ebd5;
+            }
+        </style>
+        <img src="img/logo.png" style="float: left;margin: 10px;text-shadow: 1px 1px 2px rgb(92, 92, 92);" onclick="go()">
+        <a href="bz.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);" target="_blank"><p class="CNM">本站背景图</p></a>
+        <a href="dashang.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);" target="_blank"><p class="CNM">打赏</p></a>
+        <a href="index.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);" target="_blank"><p class="CNM">首页</p></a>
+        <a href="MusicHall/index.html" style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);"><p class="CNM">嗨起来！(正在施工，欢迎围观)</p></a>
+        <a style="margin-right: 30px;color: rgb(255, 255, 255);text-decoration:none;float: right;margin-bottom: 5px;"><p style="margin: 0px;left:240px ;margin-top: 20px;text-shadow: 1px 1px 2px rgb(92, 92, 92);">🔊&nbsp;&nbsp;&nbsp;本站加载速度较慢，请谅解喵QAQ</p></a>
+        </div>
+    </div>
+    <script>
+        function go(){
+            setTimeout(function(){window.location.href='https://www.bilibili.com/video/BV1GJ411x7h7';},1000);
+            alert('你找到了一个彩蛋！但是你马上要被骗了awa！！！')
+        }
+    </script>
+    <style>
+        hitokoto {
+            display: block;
+            margin-top: 161px;
+            margin-right: 10%;
+            margin-left: 10%;
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <hitokoto>
+    <div>
+        <p style="margin: 0px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;">『</p>
+    </div>
+    <div style="margin-left: 5%;margin-right: 5%;">
+        <style>
+            .phitokoto {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            .hitokoto {
+                font-family: 'Times New Roman', 宋体 ;
+                text-align: center;
+                text-decoration: none;
+                color: #fff;
+                text-shadow: 3px 3px 3px #222;
+                font-size: 50px;
+                display: inline-block;
+                vertical-align: middle;
+                -webkit-transform: perspective(1px) translateZ(0);
+                transform: perspective(1px) translateZ(0);
+                -webkit-transition-duration: 0.5s;
+                transition-duration: 0.5s;
+                -webkit-transition-property: transform;
+                transition-property: transform;
+            }
+            .hitokoto:hover, hitokoto:focus,.hitokoto:active {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        </style>
+    <p id="hitokoto" class="phitokoto"><a href="" id="hitokoto_text" target="_blank" class="hitokoto">:D 获取中...</a></p>
+    </div>
+    <script>
+          fetch('https://v1.hitokoto.cn')
+          .then(response => response.json())
+          .then(data => {
+            const hitokoto = document.getElementById('hitokoto_text')
+            hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+            hitokoto.innerText = data.hitokoto
+          })
+          .catch(console.error)
+      </script>
+      <div>
+        <p style="margin: 0px;margin-bottom: 100px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;float: right;">』</p>
+        </div>
+    </hitokoto>
+    <div class="mainbg">
+        <style type="text/css">
+            .mainbg {
+                display: flex;
+                align-items: center;
+                margin: 0px;
+                margin-top: 140px;
+                background-color: #ffffff95;
+                backdrop-filter: blur(3px);
+                padding: 20px;
+            }
+        </style>
+        <div style="width: 1000px;display: block;margin: 0 auto;">
+            <div style="display: flex;flex-direction: column;float: right;">
+                <div class="rshell" id="ChangeTimeElement" style="background-color: #ffffff;"> <!-- 时间 -->
+                    <span id="time"></span>
+                    <b id="time2" style="font-size: 50px;"></b>
+                    <p id="TimeTips" style="font-size: 10px;"></p>
+                    <script>
+                        function showTime(){
+                            var date=new Date();
+                            var year=date.getFullYear();
+                            var month=date.getMonth()+1;
+                            month=month<10?"0"+month:month;
+                            var day=date.getDate();
+                            day=day<10?"0"+day:day;
+                            var week=date.getDay();
+                            week="日一二三四五六".charAt(week);
+                            week="星期"+week;
+                        
+                            var hour=date.getHours();
+                            hour=hour<10?"0"+hour:hour;
+                            var minute=date.getMinutes();
+                            minute=minute<10?"0"+minute:minute;
+                            var second=date.getSeconds();
+                            second=second<10?"0"+second:second;
+                        
+                            var result=year+"-"+month+"-"+day+" "+week;
+                            document.getElementById("time").innerHTML=result;
+                            var result2=hour+":"+minute+":"+second;
+                            document.getElementById("time2").innerHTML=result2;
+
+                            /* 随时间更改背景颜色 */
+                            if(hour >= 21){ /* 黑夜 */
+                                document.getElementById("ChangeTimeElement").style.setProperty('background-color','#265582')
+                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
+                            }
+                            if(hour >=0){ /* 天数更换 */
+                                document.getElementById("ChangeTimeElement").style.setProperty('background-color','#265582')
+                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
+                            }
+                            if(hour >= 5){ /* 日出 */
+                                document.getElementById('ChangeTimeElement').style.setProperty('background-color','#F6A955')
+                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
+                            }
+                            if(hour >= 7){ /* 白天 */
+                                document.getElementById('ChangeTimeElement').style.setProperty('background-color','#ffffff')
+                                document.getElementById("ChangeTimeElement").style.setProperty('color','#000000')
+                            }
+                            if(hour >= 19){ /* 日落 */
+                                document.getElementById('ChangeTimeElement').style.setProperty('background-color','#F6A955')
+                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
+                            }
+
+                            /* 时间提示 */
+                            if(hour >= 0){
+                                document.getElementById('TimeTips').innerHTML='已经是第二天了，你还没睡觉吗，早点睡吧，要做个好孩子哦~'
+                            }
+                            if(hour >= 2){
+                                document.getElementById('TimeTips').innerHTML='欧尼酱，已经2点了，快点睡觉吧。'
+                            }
+                            if(hour >= 5){
+                                document.getElementById('TimeTips').innerHTML='快要日出啦，你起的真早，还是说一晚上都没有睡呢？'
+                            }
+                            if(hour >= 6){
+                                document.getElementById('TimeTips').innerHTML='早上好，今天又是元气满满的一天o(*￣▽￣*)ブ，记得吃早饭哦~'
+                            }
+                            if(hour >= 8){
+                                document.getElementById('TimeTips').innerHTML='你今天是要去上学？上班？还是说要打一天游戏呢？没事的话出去玩也是个好选项哦~'
+                            }
+                            if(hour >= 10){
+                                document.getElementById('TimeTips').innerHTML='快中午了，今天午饭吃什么！uwu'
+                            }
+                            if(hour >= 12){
+                                document.getElementById('TimeTips').innerHTML='中午要是困的话，就去睡个觉吧！'
+                            }
+                            if(hour >= 14){
+                                document.getElementById('TimeTips').innerHTML='你现在在做什么呢（好奇）'
+                            }
+                            if(hour >= 17){
+                                document.getElementById('TimeTips').innerHTML='呼~似乎又快到晚上了，还有什么事情没有做完吗？(/ω＼*)'
+                            }
+                            if(hour >= 19){
+                                document.getElementById('TimeTips').innerHTML='太阳似乎要落山了.'
+                            }
+                            if(hour >= 21){
+                                document.getElementById('TimeTips').innerHTML='早点睡觉哦，做个好孩子哦~'
+                            }
+                            if(hour >= 23){
+                                document.getElementById('TimeTips').innerHTML='你在忙什么呢，早点睡哦~'
+                            }
+                        }
+                        
+                        showTime();
+                        setInterval("showTime()",1000);
+                    </script>
+                </div>
+                <div class="rshell">
+                    <style>
+                        .rshell {
+                            display: flex;
+                            flex-direction: column;
+                            margin-right: 20px;
+                            background-color: #ffffff;
+                            width: 250px;
+                            border-radius: 20px;
+                            margin: 0px;
+                            padding: 20px;
+                            margin-bottom: 20px;
+                            float: right;
+                        }
+                    </style>
+                    <div align="center">
+                        <img src="img/Headphoto.png" height="35%" width="35%">
+                    </div>
+                    <div>
+                        <b><p style="text-align: center;" style="font-size: medium;">AoralsFout</p></b>
+                        <p style="text-indent: 2em;margin-top: 20px;margin-bottom: 20px;text-align: center;" style="font-size: medium;">男，15岁，是学生（bushi),爱好是刷b站，追番剧，没事喜欢打游戏（指csgo），这个页面单纯是闲的没事，b站发过几篇鬼畜，想看的可以点一下下面的链接哦ヾ(^▽^*)))一起打游戏也可以哦~(因为防沉迷所以不玩国服和平台)本人CSGO1000小时老彩笔awa</p>
+                    </div>
+                    <div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://user.qzone.qq.com/3250658422/infocenter" target="_blank"><img src="img/QQ.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">QQ空间</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://space.bilibili.com/345054137" target="_blank"><img src="img/bilibili icon.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">B站主页</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://steamcommunity.com/profiles/76561198861729020/" target="_blank"><img src="img/steam.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">Steam 1</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://steamcommunity.com/profiles/76561199198280801/" target="_blank"><img src="img/steam.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">Steam 2</p>
+                        </div>
+                        <div style="display: block;width: 20%;text-align:center;float: left;">
+                            <p><a href="https://github.com/AoralsFout/AoralsFout.github.io" target="_blank"><img src="img/github.png" width="32px" height="32px"></a></p>
+                            <p style="color: #222;font-size: x-small">Github</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <script>
+                        function onFLC() {
+                            document.getElementById('FLC').style.setProperty('display','block');
+                            document.querySelector("body > div.mainbg > div > div:nth-child(1) > div:nth-child(4) > a").remove();
+                        }
+
+                        function offFLC() { 
+                            document.getElementById('FLC').style.setProperty('display','none');
+                            const a = document.createElement('a');
+                            a.innerHTML="开启水果娘"
+                            document.querySelector("body > div.mainbg > div > div:nth-child(1) > div:nth-child(4)").appendChild(a);
+                            a.setAttribute('class','FLCbtn')
+                            a.setAttribute("id", "FLC");
+                            a.setAttribute('onClick','onFLC()')
+                        }
+                    </script>
+                </div>
+                <div class="rshell">
+                <div id="FLC">
+                    <a style="float: left;margin-left: 10px;"><h1 style="margin-bottom:500px">水果娘FL Chan</h1></a>
+                    <h2>控制台</h2>
+                    <div>
+                        <a onclick="offFLC()" class="FLCbtn">关闭水果娘</a>
+                        <a onclick="onfltips()" class="FLCbtn">开启水果娘提示</a>
+                        <a onclick="offfltips()" class="FLCbtn">关闭水果娘提示</a>
+                        <a onclick="reloadFLChan()" class="FLCbtn">如果找不到水果娘了按我尝试复位</a>
+                    </div>
+                    <a style="float: left;margin-left: 10px;"><h3>不能拖拽的请拖拽文字部分</h3></a>
+                    <div id="box" style="top: 800px;" "return false;" onselectstart="return false">
+                        <iframe src="MusicHall/Waiting.html" frameborder="0" scrolling="no" height="256px" width="220px" id="setIframe"></iframe>
+                        <div id="FLCtips">
+                            <h6 style="margin: 5px;">我是FL Chan水果娘哦~</h6>
+                            <h6 style="margin: 5px;">来自FL Studio 20</h6>
+                            <h1 style="margin: 5px;">在这里拖拽我~</h1>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a>更改动作</a>
+                                    <ul>
+                                        <li onclick="setIframeToWaiting()"><a onclick="setIframeToWaiting()">等待</a></li>
+                                        <li onclick="setIframeToStepping()"><a onclick="setIframeToStepping()">踏步</a></li>
+                                        <li onclick="setIframeToJumping()"><a onclick="setIframeToJumping()">跳</a></li>
+                                    </ul>
+                                    <ul style="position: absolute;left: 105px;">
+                                        <li onclick="setIframeToZombie()"><a onclick="setIframeToZombie()">僵尸舞</a></li>
+                                        <li onclick="setIframeToWaving()"><a onclick="setIframeToWaving()">摇摆</a></li>
+                                        <li onclick="setIframeToHula()"><a onclick="setIframeToHula()">呼啦</a></li>
+                                    </ul>
+                                    <ul style="position: absolute;left: 205px;">
+                                        <li onclick="setIframeToWindmill()"><a onclick="setIframeToWindmill()">街舞风车</a></li>
+                                        <li onclick="setIframeToZitabata()"><a onclick="setIframeToZitabata()">Zitabata</a></li>
+                                        <li onclick="setIframeToDervish()"><a onclick="setIframeToDervish()">转~~~</a></li>
+                                    </ul>
+                                </li>
+                           </ul>
+                        </div>
+                        <style>
+                            .FLCbtn {
+                                background-color: #00000080;
+                                float: left;
+                                padding: 5px;
+                                margin: 5px;
+                                font-size: large;
+                                color: #ccc;
+                            }
+
+                            .FLCbtn:hover {
+                                background-color: #00000090;
+                                color: #fff;
+                            }
+                        </style>
+                        <script>
+                            function onfltips(){
+                                document.getElementById('FLCtips').style.setProperty('display','block')
+                            }
+    
+                            function offfltips(){
+                                document.getElementById('FLCtips').style.setProperty('display','none')
+                            }
+                        </script>
+                    </div>
+                </div>
+                </div>
+                <div class="rshell">
+                    <img src="img/123.jpg" style="width: 100%;height: 100%;border-radius: 20px;">
+                </div>
+                <div class="rshell">
+                    <h1>动态</h1>
+                    <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 现在是5月19日凌晨3：21。不知道为何评论失效了，搞半天没明白ヽ（≧□≦）ノ</p>
+                    <p style="font-size: small;margin-top: 10px;color: dimgrey;"> -  -  -  -  -  -  -  -  我  是  分  割  线  哦  -  -  -  -  -  -  -  -  </p>
+                    <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 现在是6月2日下午6点52分。给背景加了个幻灯片效果，似乎没啥用qwq。修复了评论功能。</p>
+                    <p style="font-size: small;margin-top: 10px;color: dimgrey"> -  -  -  -  -  -  -  -  我  是  分  割  线  哦  -  -  -  -  -  -  -  -  </p>
+                    <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 现在是6月4日下午6点15分，画了个logo，还可以哟~</p>
+                    <p style="font-size: small;margin-top: 10px;color: dimgrey"> -  -  -  -  -  -  -  -  我  是  分  割  线  哦  -  -  -  -  -  -  -  -  </p>
+                    <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 现在是6月7日下午6点13分，给可爱的小猫咪拍了几张照喵ο(=•ω＜=)ρ⌒☆，小喵咪保佑高考考生拿高分哦。</p>
+                    <img src="img/IMG_20220607_135448.jpg" style="margin-bottom:5px;height: 100%;width: 100%;">
+                    <img src="img/IMG_20220607_125953.jpg" style="margin-bottom:5px;height: 100%;width: 100%;">
+                    <img src="img/IMG_20220607_132737.jpg" style="margin-bottom:5px;height: 100%;width: 100%;">
+                    <p style="font-size: small;margin-top: 10px;color: dimgrey"> -  -  -  -  -  -  -  -  我  是  分  割  线  哦  -  -  -  -  -  -  -  -  </p>
+                    <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 现在是6月20日晚上9点04分，明天中考了，今天早点睡(ง •̀_•́)ง</p>
+                    <p style="font-size: small;margin-top: 10px;color: dimgrey"> -  -  -  -  -  -  -  -  我  是  分  割  线  哦  -  -  -  -  -  -  -  -  </p>
+                    <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 现在是6月22日晚上9点04分，考完兴致不错，加了扫雷和2048两个小游戏qwq。</p>
+                    <p style="font-size: small;margin-top: 10px;color: dimgrey"> -  -  -  -  -  -  -  -  我  是  分  割  线  哦  -  -  -  -  -  -  -  -  </p>
+                    <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 现在是7月31日下午3点27分,明明有一堆游戏就是不想玩，得电子杨伟力QAQ</p>
+                    <p style="font-size: small;margin-top: 10px;color: dimgrey"> -  -  -  -  -  -  -  -  我  是  分  割  线  哦  -  -  -  -  -  -  -  -  </p>
+                </div>
+                <div class="rshell">
+                    <h1>是好东西哦<br>(✪ ω ✪)!</h1>
+                    <style>
+                        .button1 {
+                            width: auto;
+                            height: 46px;
+                            line-height: 46px;
+                            background: #2e82ff;
+                            color: #ffffff;
+                            font-size: 18px;
+                            border-radius: 20px;
+                            text-align: center;
+                            position: relative;
+                            overflow: hidden;
+                        }
+                    </style>
+                    <div class="button1" onclick="mima()">
+                        <span>点我</span>
+                    </div>
+                    <script>
+                        function mima(){
+                            var a = prompt("请输入密码（提示：是克罗地亚狂想曲的数字谱，具体哪一段你猜qwq，怎么表达你也来猜猜awa。）")
+                            a = parseInt(a)
+                            if(a == 836783689383736373567357837363+3){
+                                window.location.href='https://www.bilibili.com/video/BV1GJ411x7h7'
+                            }
+                            else {
+                                alert("密码错误！")
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="rshell">
+                    <h1>小文章</h1>
+                    <a href="word1.html" target="_blank"><p>如何制作人力Vocaloid鬼畜视频</p></a>
+                    <a href="word2.html" target="_blank"><p>代码的一些命名规则</p></a>
+                    <a href="word3.html" target="_blank"><p>利用审查元素删除4399防沉迷</p></a>
+                </div>
+                <div class="rshell">
+                    <a href="old/index.html" target="_blank"><h3>进入老页面（不再更新）</h3></a>
+                </div>
+            </div>
+            <div class="lshell">
+                <style>
+                    .lshell {
+                        display: flex;
+                        flex-direction: column;
+                        background-color: #ffffff;
+                        width: 650px;
+                        border-radius: 20px;
+                        margin: 0px;
+                        padding: 20px;
+                        margin-bottom: 20px;
+                    }
+                </style>
+                <h1>欢迎！</h1>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 这里是AoralsFout的个人网站，右边可以看到关于我的一些信息哦~</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 说起来我为什么做了这个网站，其实也没什么，没事的时候学了一点，就当练练手（真的不是装B QwQ），有空就加点小东西。 这个网站是在2022年4月4日搭建的，几乎就半天的时间。如果你能看见源文件的话你会发现我写的代码特别臃肿，很乱，一个注释也没有。因为未成年所以放在github上了，右边有链接QAQ。</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 由于耳朵有点小问题，导致我小时候说话的时间很晚，有点不会说话，请见谅哈~谢谢你(✿◠‿◠)</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 你有什么问题，可以找我聊聊天哦~。我能帮的尽量帮帮你（虽然有可能帮了倒忙QWQ）。</p>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> ps 我的QQ号：3250658422 我的微信号：xiaozong0629</p>
+                <img src="img/1.jpeg" width="128px" height="128px" style="margin-top: 20px;">
+            </div>
+
+            <div class="lshell">
+                <h1>工具/小游戏</h1>
+                <style>
+                    .tools-btn {
+                        width: 70px;
+                        text-align: center;
+                        float: left;
+                    }
+                </style>
+                <div style="height: 80px;">
+                    <div class="tools-btn">
+                        <div><a href="tools/Mine/index.html" target="_blank"><img src="tools/Mine/images/mine.png" width="50px" height="50px"></a></div>
+                        <p style="color: #222;font-size: x-small">扫雷</p>
+                    </div>
+                    <div class="tools-btn">
+                        <div><a href="tools/2048/index.html" target="_blank"><img src="tools/2048/2048.png" width="50px" height="50px"></a></div>
+                        <p style="color: #222;font-size: x-small">2048</p>
+                    </div>
+                    <div class="tools-btn">
+                        <div><a href="tools/keyboard/index.html" target="_blank"><img src="tools/keyboard/1.png" width="50px" height="50px"></a></div>
+                        <p style="color: #222;font-size: x-small">键盘测试</p>
+                    </div>
+                    <div class="tools-btn">
+                        <div><a href="tools/Response speed/index.html" target="_blank"><img src="tools/Response speed/index.png" width="50px" height="50px"></a></div>
+                        <p style="color: #222;font-size: x-small">反应速度测试</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lshell">
+                <h1>我喜欢的网站</h1>
+                <b><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 百度</p></b>
+                <a href="https://www.baidu.com/" target="_blank"><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> https://www.baidu.com/</p></a>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 有不会的直接搜度娘</p>
+                <p style="font-size: small;margin-top: 10px;color: dimgray;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+                <b><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 哔哩哔哩弹幕网</p></b>
+                <a href="https://www.bilibili.com/" target="_blank"><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> https://www.bilibili.com/</p></a>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 我的快乐源泉</p>
+                <p style="font-size: small;margin-top: 10px;color: dimgray;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+                <b><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 小鸡词典</p></b>
+                <a href="https://jikipedia.com/" target="_blank"><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> https://jikipedia.com/</p></a>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 不懂的梗上这里查</p>
+                <p style="font-size: small;margin-top: 10px;color: dimgray;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+                <b><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> LittleSkin Minecraft皮肤站</p></b>
+                <a href="https://https://littleskin.cn/" target="_blank"><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> https://littleskin.cn/</p></a>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 我的世界代理服务器</p>
+                <p style="font-size: small;margin-top: 10px;color: dimgray;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+                <b><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> LKCSGO</p></b>
+                <a href="https://www.lkcsgo.com/" target="_blank"><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> https://www.lkcsgo.com/</p></a>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSGO投掷物查询，上分必备</p>
+                <p style="font-size: small;margin-top: 10px;color: dimgray;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+                <b><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSDN</p></b>
+                <a href="https://www.csdn.com/" target="_blank"><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> https://www.csdn.com/</p></a>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 编程直接上这里复制(滑稽)</p>
+                <p style="font-size: small;margin-top: 10px;color: dimgray;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+                <b><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> W3school</p></b>
+                <a href="https://www.w3school.com.cn/" target="_blank"><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> https://www.w3school.com.cn/</p></a>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 学编程。</p>
+                <p style="font-size: small;margin-top: 10px;color: dimgray;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+                <b><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> MidiShow</p></b>
+                <a href="https://www.midishow.com" target="_blank"><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> https://www.midishow.com</p></a>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 分享midi曲谱的地方</p>
+                <p style="font-size: small;margin-top: 10px;color: dimgray;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+                <b><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 学之网</p></b>
+                <a href="https://xuezhi5.com/" target="_blank"><p style="text-indent: 2em;font-size: large;margin-top: 10px;"> https://xuezhi5.com/</p></a>
+                <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 电子课本网</p>
+                <p style="font-size: small;margin-top: 10px;color: dimgray;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+                <img src="img/2.jpeg"style="margin-top: 20px;width: 90%;height: 90%;">
+                <img src="img/3.png" style="margin-top: 20px;width: 90%;height: 90%;">
+            </div>
+            <div class="lshell">
+             <h1>最近在玩的游戏</h1>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSGO </p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 只狼 </p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 艾尔登法环 </p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> BeamNG </p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 文明6 </p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 荒野大表哥2 </p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> GTA5 </p> 
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 城市天际线 </p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 微软模拟飞行2020 </p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 森林 </p>
+             <img src="img/4.png" style="margin-top: 20px;width: 90%;height: 90%;">
+            </div>
+            <div class="lshell">
+             <h1>技能表</h1>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe Premier    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;视频剪辑软件</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe After Effects    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;视频后期特效制作</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe Photoshops    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图片后期处理</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Adobe audition    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;音频后期处理</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Melodyne5    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人声音调修正</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> UTAU    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;歌声合成软件</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> FL Studio 20    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编曲软件</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> OBS Studio    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录屏、直播工作室</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Word Excel PowerPoint    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文档、表格、幻灯片</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Blender    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3D建模（还没完全会）</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Html    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网页前端（也没完全会）</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> CSS    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网页前端样式 （也没完全会）</p>
+             <img src="img/psc.jpg" style="margin-top: 20px;width: 90%;height: 90%;">
+             <p style="font-size: small;margin-top: 10px;color: dimgray;"> --------我是分割线哦o(〃＾▽＾〃)o--------</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 初中知识</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 电脑装机</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 电脑重装系统+Windows激活</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> Office全家桶激活</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 清理磁盘</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 前端编程</p>
+             <p style="text-indent: 2em;font-size: large;margin-top: 10px;"> 文件处理（压制、压缩、转格式）</p>
+             <img src="img/5.png" style="margin-top: 20px;width: 90%;height: 90%;">
+            </div>
+            <div class="lshell">
+                <div class="mt20 tc" style="margin: 0 auto;">
+                    <div class="u-page mt90 mb20 tc">
+                        <a class="u-p-on" target="_blank">1</a>
+                        <a href="page2.html" target="_blank">2</a>
+                        <a class="u-p-next" href="page2.html" target="_blank">下一页</a>
+                        <a class="u-p-next" href="page2.html" target="_blank">尾页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 1000px;margin: 0 auto;">
+        <style>
+            .tcomment {
+                margin: 0px;
+                margin-top: 10px;
+                height: auto;
+                background-color:rgb(255, 255, 255);
+                color:rgb(32, 32, 32);
+                clear:both;
+                padding:20px;
+            }
+        </style>
+        <script>window.TWIKOO_MAGIC_PATH="留言板"</script>
+        <div class="tcomment">
+            <div id="tcomment"></div>
+            <script src="https://cdn.staticfile.org/twikoo/1.5.11/twikoo.all.min.js"></script>
+            <script>
+            twikoo.init({
+              envId: 'https://twikoo-bnx4m429q-3250658422-qqcom.vercel.app', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+              el: '#tcomment', // 容器元素
+              // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+              path: 'window.TWIKOO_MAGIC_PATH||window.location.pathname', // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+              // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/dev/src/js/utils/i18n/index.js
+            })
+            </script>
+        </div>
+    </div>
+    <style>
+        footer {
+            margin: 0px;
+            margin-top: 10px;
+            font-size: xx-small;
+            height: auto;
+            background-color:rgb(255, 255, 255);
+            color:rgb(32, 32, 32);
+            clear:both;
+            padding:20px; 
+}
+    </style>
+    <footer>
+        <p style="color: rgb(51, 51, 51);">HITOKOTO 一言 来源 https://hitokoto.cn</p>
+        <p style="color: rgb(51, 51, 51);">TWIKOO 评论 来源 https://twikoo.js.org/</p>
+        <p style="color: rgb(51, 51, 51);">明月浩空音乐播放器 来源 https://myhkw.cn/</p>
+        <p style="color: rgb(51, 51, 51);">看板娘 来源 https://github.com/stevenjoezhang/live2d-widget</p>
+        <p style="bottom: 2%;text-align: center;">©2022 - 2022 By AoralsFout</p>
+    </footer>
+    <script src="https://myhkw.cn/api/player/164922494957" id="myhk" key="164922494957" m="1"></script>
+    <script src="click.js"></script>
+</body>
+</html>
