@@ -8,98 +8,60 @@
     <link rel="shortcut icon" href="img/fav.ico">
     <link rel="bookmark" href="img/fav.ico">
 </head>
-<style type="text/css">
-    body {
-        -webkit-animation-name: "loops"; 
-        -webkit-animation-duration: 30s; 
-        -webkit-animation-iteration-count: infinite; 
-    }
-    @keyframes loops {
-
-            0% {
-                background-image:url(img/bg.jpeg.png);
-                min-width: 1100px;
-        margin: 0px;
-        background-color: rgba(0,0,0,0.2);
-        background-position: center center;
-        background-size:cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-blend-mode: multiply;
-            }
-
-            25% {
-                background-image:url(img/bg1.jpg.png);
-                min-width: 1100px;
-        margin: 0px;
-        background-color: rgba(0,0,0,0.2);
-        background-position: center center;
-        background-size:cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-blend-mode: multiply;
-            }
-
-            50% {
-                background-image:url(img/bg2.png);
-                min-width: 1100px;
-        margin: 0px;
-        background-color: rgba(0,0,0,0.2);
-        background-position: center center;
-        background-size:cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-blend-mode: multiply;
-            }
-
-            75% {
-                background-image:url(img/bg3.jpg.png);
-                min-width: 1100px;
-        margin: 0px;
-        background-color: rgba(0,0,0,0.2);
-        background-position: center center;
-        background-size:cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-blend-mode: multiply;
-            }
-
-            100% {
-                background-image:url(img/bg.jpeg.png);
-                min-width: 1100px;
-        margin: 0px;
-        background-color: rgba(0,0,0,0.2);
-        background-position: center center;
-        background-size:cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-blend-mode: multiply;
-            }
-
-    }
-</style>
-<style>
-    /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/
-::-webkit-scrollbar
-{
-width:10px;
-height:10px;
-background-color:#F5F5F5;
-}
-/*定义滚动条轨道*/
-::-webkit-scrollbar-track
-{
-background-color:#F5F5F5;
-}
-/*定义滑块*/
-::-webkit-scrollbar-thumb
-{
-border-radius:10px;
-background-color:rgb(0, 225, 255);
-}
-</style>
 <body>
     <style>
+        body { /* 主体背景样式 */
+            min-width: 1200px; 
+            margin: 0px; 
+            background-color: #00000020; 
+            background-position: center center; 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+            background-blend-mode: multiply;
+
+            /* 幻灯片背景动画 */
+            -webkit-animation-name: "Backgroundloops"; 
+            -webkit-animation-duration: 30s; 
+            -webkit-animation-iteration-count: infinite;
+            animation-name: "Backgroundloops";
+            animation-duration: 30s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes Backgroundloops {
+            0% {
+                background-image:url(img/bg.jpeg.png);
+            }
+            25% {
+                background-image:url(img/bg1.jpg.png);
+            }
+            50% {
+                background-image:url(img/bg2.png);
+            }
+            75% {
+                background-image:url(img/bg3.jpg.png);
+            }
+            100% {
+                background-image:url(img/bg.jpeg.png);
+            }
+        }
+
+        /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/ 
+        ::-webkit-scrollbar { 
+            width:10px; 
+            height:10px; 
+            background-color:#F5F5F5; 
+        } 
+        /*定义滚动条轨道*/
+        ::-webkit-scrollbar-track {
+            background-color:#F5F5F5;
+        }
+        /*定义滑块*/
+        ::-webkit-scrollbar-thumb {
+            border-radius:10px;
+            background-color:rgb(0, 225, 255);
+        }
+
         .mainbg {
             display: block;
             margin-top: 20px;
@@ -121,5 +83,6 @@ background-color:rgb(0, 225, 255);
             </div>
         </div>
     </div>
+    <script src="click.js"></script>
 </body>
 </html>
