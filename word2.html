@@ -41,44 +41,65 @@
         });  
     </script>
 </head>
-<body>
-    <style> 
-        body { /* 主体背景样式 */
+<body id="setImg">
+    <span class="MengBan"></span>
+    <style>
+        body {
             min-width: 1200px; 
             margin: 0px; 
-            background-color: #00000020; 
+            background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347);
             background-position: center center; 
-            background-size: cover; 
+            background-size: cover;
             background-repeat: no-repeat; 
             background-attachment: fixed; 
-            background-blend-mode: multiply;
+            background-image: url(https://myhkw.cn/open/img/acg);
+            z-index: -10;
+        }
+        .MengBan {
+            background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347);
+            display: inline-block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -9;
 
-            /* 幻灯片背景动画 */
-            -webkit-animation-name: "Backgroundloops"; 
-            -webkit-animation-duration: 30s; 
-            -webkit-animation-iteration-count: infinite;
-            animation-name: "Backgroundloops";
-            animation-duration: 30s;
+            animation-name: Backgroundloops;
+            animation-duration: 15s;
             animation-iteration-count: infinite;
+            -webkit-animation-name: Backgroundloops;
+            -webkit-animation-duration: 15s;
+            -webkit-animation-iteration-count: infinite;
         }
         @keyframes Backgroundloops {
-            0% {
-                background-image:url(img/bg.jpeg.png);
-            }
-            25% {
-                background-image:url(img/bg1.jpg.png);
-            }
-            50% {
-                background-image:url(img/bg2.png);
-            }
-            75% {
-                background-image:url(img/bg3.jpg.png);
-            }
-            100% {
-                background-image:url(img/bg.jpeg.png);
-            }
+            0%   {opacity: 1;}
+            10%  {opacity: 1;}
+            20%  {opacity: 0;}
+            90%  {opacity: 0;}
+            100% {opacity: 1;}
         }
-
+        @-webkit-keyframes Backgroundloops {
+            0%   {opacity: 1;}
+            10%  {opacity: 1;}
+            20%  {opacity: 0;}
+            90%  {opacity: 0;}
+            100% {opacity: 1;}
+        }
+    </style>
+    <script>
+        for(var i = 1; i <= 1000; i++){
+            (function(i){
+                setTimeout(function(){
+                    var imgUrl = 'url(https://myhkw.cn/open/img/acg/' + i + ')'
+                    document.body.style.setProperty("background-image",imgUrl)
+                    if(i == 1000){
+                        alert('背景已连续刷新1000次，暂停刷新！')
+                    }
+                },15000*i)
+            })(i)
+        }
+    </script>
+    <style> 
         /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/ 
         ::-webkit-scrollbar { 
             width:10px; 
@@ -207,6 +228,9 @@
             }
 
             .ShortculumnR {
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
                 display: flex;
                 flex-direction: column;
                 margin-right: 20px;
@@ -248,12 +272,12 @@
         </style>
         <div style="width: 1200px;display: block;margin: 0 auto;">
             <div style="display: flex;flex-direction: column;float: right;">
-                <div class="ShortculumnR" id="ChangeTimeElement" style="background-color: #ffffff;"> <!-- 时间 -->
-                    <a href="https://www.baidu.com/s?wd=北京时间" target="_blank" style="color: #000;text-decoration:none;">
+                <div class="ShortculumnR" id="ChangeTimeElement" style="background-image: url(https://myhkw.cn/open/img/mojave);"> <!-- 时间 -->
+                    <a href="https://www.baidu.com/s?wd=北京时间" target="_blank" style="color: #0fff;text-decoration:none;">
                         <span id="time"></span>
                         <b id="time2" style="font-size: 50px;"></b>
                     </a>
-                    <p id="TimeTips" style="font-size: 10px;"></p>
+                    <p id="TimeTips" style="font-size: 10px;color: #fff;"></p>
                     <p id="KFC" style="font-size: 10px;"></p>
                     <script>
                         function showTime(){
@@ -278,28 +302,6 @@
                             document.getElementById("time").innerHTML=result;
                             var result2=hour+":"+minute+":"+second;
                             document.getElementById("time2").innerHTML=result2;
-
-                            /* 随时间更改背景颜色 */
-                            if(hour >= 21){ /* 黑夜 */
-                                document.getElementById("ChangeTimeElement").style.setProperty('background-color','#265582')
-                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
-                            }
-                            if(hour >=0){ /* 天数更换 */
-                                document.getElementById("ChangeTimeElement").style.setProperty('background-color','#265582')
-                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
-                            }
-                            if(hour >= 5){ /* 日出 */
-                                document.getElementById('ChangeTimeElement').style.setProperty('background-color','#F6A955')
-                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
-                            }
-                            if(hour >= 7){ /* 白天 */
-                                document.getElementById('ChangeTimeElement').style.setProperty('background-color','#ffffff')
-                                document.getElementById("ChangeTimeElement").style.setProperty('color','#000000')
-                            }
-                            if(hour >= 19){ /* 日落 */
-                                document.getElementById('ChangeTimeElement').style.setProperty('background-color','#F6A955')
-                                document.getElementById("ChangeTimeElement").style.setProperty('color','#ffffff')
-                            }
 
                             /* 时间提示 */
                             if(hour >= 0){
@@ -693,6 +695,8 @@
         <p>HITOKOTO 一言 来源 https://hitokoto.cn</p>
         <p>TWIKOO 评论 来源 https://twikoo.js.org/</p>
         <p>明月浩空音乐播放器 来源 https://myhkw.cn/</p>
+        <p>莫哈维动态图片 来源 https://myhkw.cn/</p>
+        <p>背景API 来源 https://myhkw.cn/</p>
         <p>看板娘 来源 https://github.com/stevenjoezhang/live2d-widget</p>
         <p>©2022 - 2022 By AoralsFout</p>
     </div>

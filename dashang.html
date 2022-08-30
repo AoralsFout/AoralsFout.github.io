@@ -8,44 +8,65 @@
     <link rel="shortcut icon" href="img/fav.ico">
     <link rel="bookmark" href="img/fav.ico">
 </head>
-<body>
+<body id="setImg">
+    <span class="MengBan"></span>
     <style>
-        body { /* 主体背景样式 */
+        body {
             min-width: 1200px; 
             margin: 0px; 
-            background-color: #00000020; 
+            background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347);
             background-position: center center; 
-            background-size: cover; 
+            background-size: cover;
             background-repeat: no-repeat; 
             background-attachment: fixed; 
-            background-blend-mode: multiply;
+            background-image: url(https://myhkw.cn/open/img/acg);
+            z-index: -10;
+        }
+        .MengBan {
+            background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347);
+            display: inline-block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -9;
 
-            /* 幻灯片背景动画 */
-            -webkit-animation-name: "Backgroundloops"; 
-            -webkit-animation-duration: 30s; 
-            -webkit-animation-iteration-count: infinite;
-            animation-name: "Backgroundloops";
-            animation-duration: 30s;
+            animation-name: Backgroundloops;
+            animation-duration: 15s;
             animation-iteration-count: infinite;
+            -webkit-animation-name: Backgroundloops;
+            -webkit-animation-duration: 15s;
+            -webkit-animation-iteration-count: infinite;
         }
         @keyframes Backgroundloops {
-            0% {
-                background-image:url(img/bg.jpeg.png);
-            }
-            25% {
-                background-image:url(img/bg1.jpg.png);
-            }
-            50% {
-                background-image:url(img/bg2.png);
-            }
-            75% {
-                background-image:url(img/bg3.jpg.png);
-            }
-            100% {
-                background-image:url(img/bg.jpeg.png);
-            }
+            0%   {opacity: 1;}
+            10%  {opacity: 1;}
+            20%  {opacity: 0;}
+            90%  {opacity: 0;}
+            100% {opacity: 1;}
         }
-
+        @-webkit-keyframes Backgroundloops {
+            0%   {opacity: 1;}
+            10%  {opacity: 1;}
+            20%  {opacity: 0;}
+            90%  {opacity: 0;}
+            100% {opacity: 1;}
+        }
+    </style>
+    <script>
+        for(var i = 1; i <= 1000; i++){
+            (function(i){
+                setTimeout(function(){
+                    var imgUrl = 'url(https://myhkw.cn/open/img/acg/' + i + ')'
+                    document.body.style.setProperty("background-image",imgUrl)
+                    if(i == 1000){
+                        alert('背景已连续刷新1000次，暂停刷新！')
+                    }
+                },15000*i)
+            })(i)
+        }
+    </script>
+    <style> 
         /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/ 
         ::-webkit-scrollbar { 
             width:10px; 
@@ -64,7 +85,7 @@
 
         .mainbg {
             display: block;
-            margin-top: 20px;
+            top: 20px;
             margin-bottom: 20px;
             margin-left: 30%;
             margin-right: 30%;
