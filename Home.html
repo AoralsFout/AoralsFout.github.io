@@ -276,11 +276,11 @@
         <div style="width: 1200px;display: block;margin: 0 auto;">
             <div style="display: flex;flex-direction: column;float: right;">
                 <div class="ShortculumnR" id="ChangeTimeElement" style="background-image: url(https://myhkw.cn/open/img/mojave);"> <!-- 时间 -->
-                    <a href="https://www.baidu.com/s?wd=北京时间" target="_blank" style="color: #fff;text-decoration:none;">
+                    <a href="https://www.baidu.com/s?wd=北京时间" target="_blank" style="color: #fff;text-decoration:none;text-shadow: #000 2px 2px 2px;">
                         <span id="time"></span>
                         <b id="time2" style="font-size: 50px;"></b>
                     </a>
-                    <p id="TimeTips" style="font-size: 10px;color: #fff;"></p>
+                    <p id="TimeTips" style="font-size: 10px;color: #fff;text-shadow: #000 2px 2px 2px;"></p>
                     <p id="KFC" style="font-size: 10px;"></p>
                     <script>
                         function showTime(){
@@ -830,13 +830,13 @@
                     <div id="tcomment"></div>
                     <script src="https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js"></script>
                     <script>
-                    twikoo.init({
-                      envId: 'https://twikoo-m4ojiozdk-3250658422-qqcom.vercel.app', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-                      el: '#tcomment', // 容器元素
-                      // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
-                      path: 'window.TWIKOO_MAGIC_PATH||window.location.pathname', // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
-                      // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/dev/src/js/utils/i18n/index.js
-                    })
+                        twikoo.init({
+                            envId: 'https://twikoo-fel8igy8v-3250658422-qqcom.vercel.app', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+                            el: '#tcomment', // 容器元素
+                            // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+                            path: window.TWIKOO_MAGIC_PATH||window.location.pathname,// path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                            // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/client/utils/i18n/index.js
+                        })
                     </script>
                 </div>
             </div>
