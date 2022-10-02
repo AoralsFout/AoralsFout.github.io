@@ -28,31 +28,87 @@ background-color:#F5F5F5;
 border-radius:10px;
 background-color:rgb(0, 225, 255);
 }
-</style>
-<style>
+
     .main {
+        background-color: #ffffff00;
+        height: 500px;
+        width: 100%;
+        border-top: 5px solid #ccc;
+        border-bottom: 5px solid #ccc;
+        z-index: 5;
+    }
+    .mainbackground {
+        position: fixed;
+        top: 5px;
+        width: 114514px;
+        height: 500px;
+        background-color: rgb(43, 135, 209);
+        z-index: -5;
+    }
+    .maintips {
+        position: fixed;
         margin: 0 auto;
+        color: white;
+        font-size: 80px;
+        width: 1000px;
+        left: 0;
+        right: 0;
+        top: 200px;
+        margin:0 auto;
+        user-select: none;
+        z-index: -1;
+    }
+    .startTest {
+        position: fixed;
+        margin: 0 auto;
+        color: white;
+        font-size: 60px;
+        width: 1000px;
+        left: 0;
+        right: 0;
+        top: 400px;
+        margin:0 auto;
+        user-select: none;
+        z-index: 0;
+    }
+    .time {
+        position: fixed;
+        margin: 0 auto;
+        color: white;
+        font-size: 80px;
+        width: 1000px;
+        left: 0;
+        right: 0;
+        top: 200px;
+        margin:0 auto;
+        user-select: none;
+        z-index: 0;
+    }
+    body {
+        margin: 0px;
+        text-align: center;
         background-color: white;
-        height: 300px;
-        width: 50%;
-        border: 1px solid #ccc;
     }
 </style>
-<body style="margin: 0px;text-align: center;">
+<body>
     <div>
+        <b id="maintips" class="maintips"></b>
+        <b class="time" id="time"></b>
+        <div class="startTest" id="startTest"><a onclick="start();">开始测试</a></div>
         <div id="color-div" onclick="stopTest();" class="main"></div>
+        <div class="mainbackground" id="mainbackground"></div>
     </div>
     <div>
-        <div>
+        <div style="padding-top: 10px;">
             <button type="button" onclick="start();" id="btn-start">开始测试</button>
             <button type="button" onclick="stopTest();" id="btn-stop">停止测试</button>
         </div>
         <div>
-            <div id="tool-result" class="no"></div>
             <div id="validate-result" class="info info-error no"></div>
         </div>
         <div>
             <p>CSGO职业选手的反应速度大约是0.25s，你能超越他们吗？</p>
+            <p>按开始测试键以开始测试。当方框区域内背景变为绿色立即按下停止测试键或方框区域以停止，即可测得反应时间。</p>
         </div>
     </div>
 </body>
