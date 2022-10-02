@@ -20,6 +20,7 @@
 -->
 <!--是可爱的兔娘呐~-->
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,34 +28,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="css/day.css" id="daycss" />
     <title>AoralsFoutの个人网站</title>
     <link rel="shortcut icon" href="img/fav.ico">
     <link rel="bookmark" href="img/fav.ico">
-    <link type="text/css" rel="styleSheet"  href="Untitled-1.css" />
+    <link type="text/css" rel="styleSheet" href="Untitled-1.css" />
     <script>
-        document.addEventListener('visibilitychange', function () {
+        document.addEventListener('visibilitychange', function() {
             if (document.visibilityState == 'hidden') {
                 normal_title = document.title;
                 document.title = '不要离开我...呜呜呜QAQ';
-            } else 
-            document.title = normal_title;
-        });  
+            } else
+                document.title = normal_title;
+        });
     </script>
 </head>
+
 <body id="setImg">
     <span class="MengBan"></span>
     <style>
         body {
-            min-width: 1200px; 
-            margin: 0px; 
+            min-width: 1200px;
+            margin: 0px;
             background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347);
-            background-position: center center; 
+            background-position: center center;
             background-size: cover;
-            background-repeat: no-repeat; 
-            background-attachment: fixed; 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-image: url(https://myhkw.cn/open/img/acg);
             z-index: -10;
         }
+
         .MengBan {
             background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347);
             display: inline-block;
@@ -71,74 +75,66 @@
             -webkit-animation-duration: 15s;
             -webkit-animation-iteration-count: infinite;
         }
+
         @keyframes Backgroundloops {
-            0%   {opacity: 1;}
-            10%  {opacity: 1;}
-            20%  {opacity: 0;}
-            90%  {opacity: 0;}
-            100% {opacity: 1;}
+            0% {
+                opacity: 1;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            90% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
+
         @-webkit-keyframes Backgroundloops {
-            0%   {opacity: 1;}
-            10%  {opacity: 1;}
-            20%  {opacity: 0;}
-            90%  {opacity: 0;}
-            100% {opacity: 1;}
+            0% {
+                opacity: 1;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            90% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
     </style>
     <script>
-        for(var i = 1; i <= 1000; i++){
-            (function(i){
-                setTimeout(function(){
+        for (var i = 1; i <= 1000; i++) {
+            (function(i) {
+                setTimeout(function() {
                     var imgUrl = 'url(https://myhkw.cn/open/img/acg/' + i + ')'
-                    document.body.style.setProperty("background-image",imgUrl)
-                    if(i == 1000){
+                    document.body.style.setProperty("background-image", imgUrl)
+                    if (i == 1000) {
                         alert('背景已连续刷新1000次，暂停刷新！')
                     }
-                },15000*i)
+                }, 15000 * i)
             })(i)
         }
     </script>
-    <style> 
-        /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/ 
-        ::-webkit-scrollbar { 
-            width:10px; 
-            height:10px; 
-            background-color:#F5F5F5; 
-        } 
-        /*定义滚动条轨道*/
-        ::-webkit-scrollbar-track {
-            background-color:#F5F5F5;
-        }
-        /*定义滑块*/
-        ::-webkit-scrollbar-thumb {
-            border-radius:10px;
-            background-color:rgb(0, 225, 255);
-        }
-
-        .nav { /* 导航栏样式 */
-            padding: 5px;
-            width: 100%;
-            height: 50px;
-            position: fixed;
-            background-color: #fff;
-            margin:0 auto;
-            z-index: 9999;
-        }
-
-        .navinside { /* 行内元素样式 */
-            margin-right: 30px;
-            float: left;
-            color: #fff;
-            text-decoration:none;
-            text-shadow: 1px 1px 2px rgb(92,92,92);
-        }
-
-        .navhover:hover { /* hover效果 */
-            color: #74ebd5;
-        }
-    </style>
-    <div class="nav"> <!-- 导航栏 -->
+    <div class="nav">
+        <!-- 导航栏 -->
         <img src="img/logo.png" alt="logo" class="navinside" loading="lazy">
         <a href="Home.html" target="_blank" class="navinside">
             <p class="navhover">首页</p>
@@ -146,18 +142,39 @@
         <a href="dashang.html" target="_blank" class="navinside">
             <p class="navhover">打赏</p>
         </a>
+        <a class="navinside">
+            <p class="navhover" id="night" onclick="night()">夜间模式</p>
+            <p class="navhover" id="day" onclick="day()" style="display: none;">日间模式</p>
+            <script>
+                function night() {
+                    document.getElementById('daycss').setAttribute("href", "css/night.css");
+                    document.getElementById('daycss').setAttribute("id", "nightcss");
+                    document.getElementById('day').style.setProperty("display", "block");
+                    document.getElementById('night').style.setProperty("display", "none");
+                }
+
+                function day() {
+                    document.getElementById('nightcss').setAttribute("href", "css/day.css");
+                    document.getElementById('nightcss').setAttribute("id", "daycss");
+                    document.getElementById('day').style.setProperty("display", "none");
+                    document.getElementById('night').style.setProperty("display", "block");
+                }
+            </script>
+        </a>
     </div>
-    <div> <!-- 一言 -->
+    <div>
+        <!-- 一言 -->
         <div>
-            <script> /* 获取一言 */
+            <script>
+                /* 获取一言 */
                 fetch('https://v1.hitokoto.cn')
-                .then(response => response.json())
-                .then(data => {
-                  const hitokoto = document.getElementById('hitokoto_text')
-                  hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-                  hitokoto.innerText = data.hitokoto
-                })
-                .catch(console.error)
+                    .then(response => response.json())
+                    .then(data => {
+                        const hitokoto = document.getElementById('hitokoto_text')
+                        hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+                        hitokoto.innerText = data.hitokoto
+                    })
+                    .catch(console.error)
             </script> <!-- 正文 -->
             <div class="bracketLeft">『</div>
             <div class="hitokotoPosition">
@@ -165,114 +182,13 @@
             </div>
             <div class="bracketRight">』</div>
         </div>
-        <style>
-            .bracketLeft { /* 左『 */
-                position: absolute;
-                color: #fff;
-                text-shadow: 3px 3px 3px #222;
-                font-size: 25px;
-                top: 100px;
-                left: 20px;
-            }
-
-            .bracketRight { /* 右』 */
-                float: right;
-                color: #fff;
-                text-shadow: 3px 3px 3px #222;
-                font-size: 25px;
-                margin-right: 10px;
-                margin-top: 40px;
-            }
-
-            .hitokotoPosition { /* 水平居中 */
-                width: 1000px;
-                margin: 0 auto;
-                text-align: center;
-            }
-
-            .hitokoto { /* 一言样式 */
-                margin-top: 170px;
-                font-family: 'Times New Roman', 宋体 ;
-                text-decoration: none;
-                color: #fff;
-                text-shadow: 3px 3px 3px #222;
-                font-size: 50px;
-                display: inline-block;
-                vertical-align: middle;
-
-                /* hover动画 */
-                -webkit-transform: perspective(1px) translateZ(0);
-                transform: perspective(1px) translateZ(0);
-                -webkit-transition-duration: 0.5s;
-                transition-duration: 0.5s;
-                -webkit-transition-property: transform;
-                transition-property: transform;
-            }
-            .hitokoto:hover, hitokoto:focus,.hitokoto:active { 
-                -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-            }
-        </style>
     </div>
     <div class="mainBg">
-        <style>
-            .mainBg { /* 主页面背景样式 */
-                display: flex;
-                align-items: center;
-                margin: 0px;
-                margin-top: 140px;
-                background-color: #ffffff95;
-                backdrop-filter: blur(3px);
-                padding: 20px;
-                box-shadow: #858585 0px 5px 5px;
-            }
 
-            .ShortculumnR {
-                background-position: center center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                display: flex;
-                flex-direction: column;
-                margin-right: 20px;
-                background-color: #ffffff;
-                width: 250px;
-                margin: 0px;
-                border-top-right-radius: 20px;
-                border-bottom-right-radius: 20px;
-                padding: 20px;
-                margin-bottom: 20px;
-                float: right;
-            }
-
-            .LongculumnL {
-                display: flex;
-                flex-direction: column;
-                background-color: #ffffff;
-                width: 850px;
-                margin: 0px;
-                border-top-left-radius: 20px;
-                border-bottom-left-radius: 20px;
-                padding: 20px;
-                margin-bottom: 20px;
-            }
-
-            .paraText {
-                text-indent: 2em;
-                line-height: 24px;
-                margin-top: 20px;
-                margin-bottom: 20px;
-                font-size: large;
-            }
-
-            .cutText {
-                font-size: small;
-                margin-top: 10px;
-                color: dimgrey;
-            }
-        </style>
         <div style="width: 1200px;display: block;margin: 0 auto;">
             <div style="display: flex;flex-direction: column;float: right;">
-                <div class="ShortculumnR" id="ChangeTimeElement" style="background-image: url(https://myhkw.cn/open/img/mojave);"> <!-- 时间 -->
+                <div class="ShortculumnR" id="ChangeTimeElement" style="background-image: url(https://myhkw.cn/open/img/mojave);">
+                    <!-- 时间 -->
                     <a href="https://www.baidu.com/s?wd=北京时间" target="_blank" style="color: #fff;text-decoration:none;text-shadow: #000 2px 2px 2px;">
                         <span id="time"></span>
                         <b id="time2" style="font-size: 50px;"></b>
@@ -280,94 +196,89 @@
                     <p id="TimeTips" style="font-size: 10px;color: #fff;text-shadow: #000 2px 2px 2px;"></p>
                     <p id="KFC" style="font-size: 10px;"></p>
                     <script>
-                        function showTime(){
-                            var date=new Date();
-                            var year=date.getFullYear();
-                            var month=date.getMonth()+1;
-                            month=month<10?"0"+month:month;
-                            var day=date.getDate();
-                            day=day<10?"0"+day:day;
-                            var week=date.getDay();
-                            week="日一二三四五六".charAt(week);
-                            week="星期"+week;
-                        
-                            var hour=date.getHours();
-                            hour=hour<10?"0"+hour:hour;
-                            var minute=date.getMinutes();
-                            minute=minute<10?"0"+minute:minute;
-                            var second=date.getSeconds();
-                            second=second<10?"0"+second:second;
-                        
-                            var result=year+"年"+month+"月"+day+"日 "+week;
-                            document.getElementById("time").innerHTML=result;
-                            var result2=hour+":"+minute+":"+second;
-                            document.getElementById("time2").innerHTML=result2;
+                        function showTime() {
+                            var date = new Date();
+                            var year = date.getFullYear();
+                            var month = date.getMonth() + 1;
+                            month = month < 10 ? "0" + month : month;
+                            var day = date.getDate();
+                            day = day < 10 ? "0" + day : day;
+                            var week = date.getDay();
+                            week = "日一二三四五六".charAt(week);
+                            week = "星期" + week;
+
+                            var hour = date.getHours();
+                            hour = hour < 10 ? "0" + hour : hour;
+                            var minute = date.getMinutes();
+                            minute = minute < 10 ? "0" + minute : minute;
+                            var second = date.getSeconds();
+                            second = second < 10 ? "0" + second : second;
+
+                            var result = year + "年" + month + "月" + day + "日 " + week;
+                            document.getElementById("time").innerHTML = result;
+                            var result2 = hour + ":" + minute + ":" + second;
+                            document.getElementById("time2").innerHTML = result2;
 
                             /* 时间提示 */
-                            if(hour >= 0){
-                                document.getElementById('TimeTips').innerHTML='已经是第二天了，你还没睡觉吗，早点睡吧，要做个好孩子哦~'
+                            if (hour >= 0) {
+                                document.getElementById('TimeTips').innerHTML = '已经是第二天了，你还没睡觉吗，早点睡吧，要做个好孩子哦~'
                             }
-                            if(hour >= 2){
-                                document.getElementById('TimeTips').innerHTML='欧尼酱，已经2点了，快点睡觉吧。'
+                            if (hour >= 2) {
+                                document.getElementById('TimeTips').innerHTML = '欧尼酱，已经2点了，快点睡觉吧。'
                             }
-                            if(hour >= 5){
-                                document.getElementById('TimeTips').innerHTML='快要日出啦，你起的真早，还是说一晚上都没有睡呢？'
+                            if (hour >= 5) {
+                                document.getElementById('TimeTips').innerHTML = '快要日出啦，你起的真早，还是说一晚上都没有睡呢？'
                             }
-                            if(hour >= 6){
-                                document.getElementById('TimeTips').innerHTML='早上好，今天又是元气满满的一天o(*￣▽￣*)ブ，记得吃早饭哦~'
+                            if (hour >= 6) {
+                                document.getElementById('TimeTips').innerHTML = '早上好，今天又是元气满满的一天o(*￣▽￣*)ブ，记得吃早饭哦~'
                             }
-                            if(hour >= 7){
-                                document.getElementById('TimeTips').innerHTML='早上好，今天又是元气满满的一天o(*￣▽￣*)ブ，记得吃早饭哦~'
+                            if (hour >= 7) {
+                                document.getElementById('TimeTips').innerHTML = '早上好，今天又是元气满满的一天o(*￣▽￣*)ブ，记得吃早饭哦~'
                             }
-                            if(hour >= 8){
-                                document.getElementById('TimeTips').innerHTML='你今天是要去上学？上班？还是说要打一天游戏呢？没事的话出去玩也是个好选项哦~'
+                            if (hour >= 8) {
+                                document.getElementById('TimeTips').innerHTML = '你今天是要去上学？上班？还是说要打一天游戏呢？没事的话出去玩也是个好选项哦~'
                             }
-                            if(hour >= 10){
-                                document.getElementById('TimeTips').innerHTML='快中午了，今天午饭吃什么！uwu'
+                            if (hour >= 10) {
+                                document.getElementById('TimeTips').innerHTML = '快中午了，今天午饭吃什么！uwu'
                             }
-                            if(hour >= 12){
-                                document.getElementById('TimeTips').innerHTML='中午要是困的话，就去睡个觉吧！'
+                            if (hour >= 12) {
+                                document.getElementById('TimeTips').innerHTML = '中午要是困的话，就去睡个觉吧！'
                             }
-                            if(hour >= 14){
-                                document.getElementById('TimeTips').innerHTML='你现在在做什么呢（好奇）'
+                            if (hour >= 14) {
+                                document.getElementById('TimeTips').innerHTML = '你现在在做什么呢（好奇）'
                             }
-                            if(hour >= 17){
-                                document.getElementById('TimeTips').innerHTML='呼~似乎又快到晚上了，还有什么事情没有做完吗？(/ω＼*)'
+                            if (hour >= 17) {
+                                document.getElementById('TimeTips').innerHTML = '呼~似乎又快到晚上了，还有什么事情没有做完吗？(/ω＼*)'
                             }
-                            if(hour >= 19){
-                                document.getElementById('TimeTips').innerHTML='太阳似乎要落山了.'
+                            if (hour >= 19) {
+                                document.getElementById('TimeTips').innerHTML = '太阳似乎要落山了.'
                             }
-                            if(hour >= 21){
-                                document.getElementById('TimeTips').innerHTML='早点睡觉哦，做个好孩子哦~'
+                            if (hour >= 21) {
+                                document.getElementById('TimeTips').innerHTML = '早点睡觉哦，做个好孩子哦~'
                             }
-                            if(hour >= 23){
-                                document.getElementById('TimeTips').innerHTML='你在忙什么呢，早点睡哦~'
+                            if (hour >= 23) {
+                                document.getElementById('TimeTips').innerHTML = '你在忙什么呢，早点睡哦~'
                             }
 
                             /* 疯狂星期四 */
-                            if(week == 4){
-                                document.getElementById('KFC').innerHTML='兄弟，今天是肯德基疯狂星期四，赶紧V50'
+                            if (week == 4) {
+                                document.getElementById('KFC').innerHTML = '兄弟，今天是肯德基疯狂星期四，赶紧V50'
                             }
                         }
-                        
+
                         showTime();
-                        setInterval("showTime()",1000);
+                        setInterval("showTime()", 1000);
                     </script>
                 </div>
-                <div class="ShortculumnR"> <!-- 关于我 -->
-                    <style>
-                        .AboutIcon {
-                            display: block;
-                            width: 20%;
-                            text-align:center;
-                            float: left;
-                        }
-                    </style>
+                <div class="ShortculumnR">
+                    <!-- 关于我 -->
                     <div align="center">
                         <img src="img/Headphoto.png" height="35%" width="35%" loading="lazy">
                     </div>
                     <div>
-                        <b><p style="text-align: center;" style="font-size: medium;">AoralsFout</p></b>
+                        <b>
+                            <p style="text-align: center;" style="font-size: medium;">AoralsFout</p>
+                        </b>
                         <p class="paraText">男，15岁，是学生（bushi),爱好是刷b站，追番剧，没事喜欢打游戏（指csgo），这个页面单纯是闲的没事，b站发过几篇鬼畜，想看的可以点一下下面的链接哦ヾ(^▽^*)))一起打游戏也可以哦~(因为防沉迷所以不玩国服和平台)本人CSGO1000小时老彩笔awa</p>
                     </div>
                     <div>
@@ -423,26 +334,15 @@
                 <p class="paraText">我只知道美食大战老鼠可以删除，其他的游戏你们可以按照上面的思路自行尝试，话说4399防沉迷真就是个表面文章，平常爱用审查元素瞎搞的人都会删uwu。</p>
             </div>
             <div style="width: 1200px;margin: 0 auto;">
-                <style>
-                    .tcomment {
-                        margin: 0px;
-                        margin-top: 10px;
-                        height: auto;
-                        background-color:rgb(255, 255, 255);
-                        color:rgb(32, 32, 32);
-                        clear:both;
-                        padding:20px;
-                    }
-                </style>
                 <div class="tcomment">
-                <div id="tcomment"></div>
-                <script src="https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js"></script>
+                    <div id="tcomment"></div>
+                    <script src="https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js"></script>
                     <script>
                         twikoo.init({
-                          envId: 'https://twikoo-fel8igy8v-3250658422-qqcom.vercel.app', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-                          el: '#tcomment', // 容器元素
-                          // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
-                          // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数                              // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/dev/src/js/utils/i18n/index.js
+                            envId: 'https://twikoo-fel8igy8v-3250658422-qqcom.vercel.app', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+                            el: '#tcomment', // 容器元素
+                            // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+                            // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数                              // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/dev/src/js/utils/i18n/index.js
                         })
                     </script>
                 </div>
@@ -450,32 +350,12 @@
         </div>
     </div>
     <div>
-        <style>
-            #toup{
-                display: none;
-                position: fixed;
-                background: #2e82ff30;
-                color: #ffffff;
-                box-shadow: -1px 1px 1px 1px rgb(0 0 0 / 30%);
-                backdrop-filter: blur(10px);
-                right: 0px;
-                bottom: 230px;
-                width: 25px;
-                height: 68px;
-                border-bottom-left-radius: 5px;
-                border-top-left-radius: 5px;
-                margin:0;
-                padding: 0;
-                border: 0;
-                font-size: 30px;
-                z-index: 10001;
-            }
-        </style>
-        <button id="toup" ><b>⬆</b></button>
+        <button id="toup"><b>⬆</b></button>
         <script>
             window.onscroll = function() {
                 scrollFunction()
             };
+
             function scrollFunction() {
                 console.log(121);
                 if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
@@ -484,22 +364,15 @@
                     document.getElementById("toup").style.display = "none";
                 }
             }
-            toup.onclick = function(){
-                window.scrollTo({top:0,behavior:"smooth"})}
+            toup.onclick = function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                })
+            }
         </script>
     </div>
     <div class="footer">
-        <style>
-            .footer {
-                background-color: #ccc;
-                color: #858585;
-                font-size: xx-small;
-                text-align: center;
-                width: 100%;
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-        </style>
         <p>HITOKOTO 一言 来源 https://hitokoto.cn</p>
         <p>TWIKOO 评论 来源 https://twikoo.js.org/</p>
         <p>明月浩空音乐播放器 来源 https://myhkw.cn/</p>
@@ -511,4 +384,5 @@
     <script src="https://myhkw.cn/api/player/164922494957" id="myhk" key="164922494957" m="1"></script>
     <script src="click.js"></script>
 </body>
+
 </html>
