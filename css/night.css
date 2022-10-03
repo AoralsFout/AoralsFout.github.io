@@ -20,6 +20,8 @@
         color: white;
     }
 
+    html { overflow: scroll; }
+
     a:hover {
         color: silver;
     }
