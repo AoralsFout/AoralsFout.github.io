@@ -701,9 +701,12 @@
                 <div class="commentBox">
                     <div class="div1" id="div1">
                         <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202003%2F25%2F20200325142318_jWPnn.thumb.400_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672041905&t=cb60dfe4a38f176160793cac9aea03b7"
-                            class="userAvatar"></img>
+                            class="userAvatar" id="headimg"></img>
                         <input type="text" value="昵称" class="userPlaceholder" disabled>
-                        <input type="text" id="user" placeholder="好记的昵称让人印象深刻哟~" class="userInput"><br>
+                        <input type="text" id="user" placeholder="好记的昵称让人印象深刻哟~" class="userInput">
+                        <input type="text" value="QQ号" class="userQQPlaceholder" disabled>
+                        <input type="text" id="userQQ" placeholder="输入QQ号自动获取头像和昵称哦" class="userQQInput">
+                        <input type="button" value="点击获取" class="getQQBtn" onclick="getQQ()"><br>
                         <textarea type="text" id="lang" placeholder="此评论系统处于测试阶段，不能保存您的评论!" class="langInput"></textarea><br>
                         <span id="langLength" style="font-size: xx-small;margin-left: 100px;">您已输入0个字符,还可以输入300个字符</span>
                         <input type="button" value="发布" id="btn" class="publishBtn" onclick="publish()">
@@ -712,6 +715,8 @@
                     </div>
                     <div id="ol" class="ol"></div>
                     <script>
+                        var headimgUrl = 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202003%2F25%2F20200325142318_jWPnn.thumb.400_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672041905&t=cb60dfe4a38f176160793cac9aea03b7';
+                        var headimg = document.getElementById('headimg');
                         var user = document.getElementById('user');
                         var lang = document.getElementById('lang');
                         var btn = document.getElementById('btn');
@@ -719,18 +724,32 @@
                         var maxLangLength = 300;
                         var timeout = 4;
 
-                        function nowLangLength() {
+                        function getQQ() { //获取QQ头像和昵称
+                            var QQNumber = document.getElementById('userQQ').value
+                            var url = 'https://api.usuuu.com/qq/' + QQNumber;
+                            var QQrequest = new XMLHttpRequest();
+                            QQrequest.open("get", url);
+                            QQrequest.send(null);
+                            QQrequest.onload = function() {
+                                var QQjson = JSON.parse(QQrequest.responseText);
+                                headimgUrl = QQjson.data['avatar']; //把默认头像变量改成json里的元素
+                                user.value = QQjson.data['name'];
+                                headimg.setAttribute('src', headimgUrl);
+                            }
+                        }
+
+                        function nowLangLength() { //获取输入字符长度
                             setInterval("nowLangLength = lang.value.length", 1000);
                         }
                         nowLangLength();
 
-                        function langLength() {
+                        function langLength() { //字符长度提示
                             var maxLength = 300 - nowLangLength;
                             document.getElementById('langLength').innerHTML = '您已输入' + nowLangLength + '个字符,还可以输入' + maxLength + '个字符'
                         }
                         setInterval("langLength()", 1000);
 
-                        function publish() {
+                        function publish() { //发送函数
                             if (user.value == 0) {
                                 alert('请输入你可爱的昵称~');
                             } else if (lang.value == 0) {
@@ -755,7 +774,7 @@
                                 var sec = now.getSeconds();
                                 var timeResult = year + "-" + check(month) + "-" + check(day) + " \t " + check(hours) + ":" + check(min) + ":" + check(sec)
 
-                                cont.innerHTML = '<img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202003%2F25%2F20200325142318_jWPnn.thumb.400_0.jpeg&amp;refer=http%3A%2F%2Fc-ssl.duitang.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1672041905&amp;t=cb60dfe4a38f176160793cac9aea03b7" class="avatar"><div class="nameBackground"></div><p class="name">' + user.value + '</p><p>' + lang.value + '</p><p class="time">' + timeResult + '</p><hr style="color:"#aaa"">';
+                                cont.innerHTML = '<img src=' + headimgUrl + ' class="avatar"><div class="nameBackground"></div><p class="name">' + user.value + '</p><p>' + lang.value + '</p><p class="time">' + timeResult + '</p><hr style="color:"#aaa"">';
                                 document.getElementById('ol').appendChild(cont);
                                 user.value = '';
                                 lang.value = '';
@@ -768,7 +787,7 @@
 
                                 var myInterval = setInterval(show, 1000);
 
-                                function show() {
+                                function show() { //下一次评论计时
                                     document.getElementById('btn').setAttribute('value', timeout + '秒')
                                     timeout = timeout - 1;
                                     if (timeout == -1) {
@@ -788,7 +807,6 @@
                             request.onload = function() {
                                 if (request.status == 200) {
                                     var json = JSON.parse(request.responseText);
-                                    console.log(json);
                                     var jsoncont = document.getElementById('div1');
                                     json.person.map(person => {
                                         var div = document.createElement("div");
