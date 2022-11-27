@@ -720,12 +720,13 @@
                         var user = document.getElementById('user');
                         var lang = document.getElementById('lang');
                         var btn = document.getElementById('btn');
+                        var QQNumber;
                         var nowLangLength;
                         var maxLangLength = 300;
                         var timeout = 4;
 
                         function getQQ() { //获取QQ头像和昵称
-                            var QQNumber = document.getElementById('userQQ').value
+                            QQNumber = document.getElementById('userQQ').value;
                             var url = 'https://api.usuuu.com/qq/' + QQNumber;
                             var QQrequest = new XMLHttpRequest();
                             QQrequest.open("get", url);
