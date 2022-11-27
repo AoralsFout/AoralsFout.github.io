@@ -774,7 +774,7 @@
                                 var sec = now.getSeconds();
                                 var timeResult = year + "-" + check(month) + "-" + check(day) + " \t " + check(hours) + ":" + check(min) + ":" + check(sec)
 
-                                cont.innerHTML = '<img src=' + headimgUrl + ' class="avatar"><div class="nameBackground"></div><p class="name">' + user.value + '</p><p>' + lang.value + '</p><p class="time">' + timeResult + '</p><hr style="color:"#aaa"">';
+                                cont.innerHTML = '<img src=' + headimgUrl + ' class="avatar"><div class="nameBackground"></div><p class="name">' + user.value + '(' + QQNumber + ')</p><p>' + lang.value + '</p><p class="time">' + timeResult + '</p><hr style="color:"#aaa"">';
                                 document.getElementById('ol').appendChild(cont);
                                 lang.value = '';
                                 btn.setAttribute('disabled', 'disabled');
