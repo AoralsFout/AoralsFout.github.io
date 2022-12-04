@@ -1,0 +1,113 @@
+.Emotion-body {
+    display: none;
+    position: relative;
+    margin-left: 700px;
+    margin-top: -30px;
+    left: 0;
+    right: 0;
+    max-width: 500px;
+    color: #4a4a4a;
+    background-color: #ffffff;
+    border: 1px solid rgba(144, 147, 153, 0.31);
+    top: 2em;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.Emotion-bar {
+    height: 40px;
+    width: 100%;
+    border-top: 1px solid rgba(144, 147, 153, 0.31);
+    border-radius: 0 0 4px 4px;
+}
+
+.Emotion-items {
+    height: calc(200vh - 100px);
+    overflow-y: scroll;
+}
+
+.Emotion-item {
+    height: 45px;
+}
+
+.Emotion-item-emoji {
+    font-size: 30px!important;
+}
+
+.owo .Emotion-packages {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+.Emotion-package-active {
+    background-color: var(--leonus-purple)!important;
+    color: #000;
+}
+
+.li1 {
+    border-radius: 10px;
+    list-style-type: none;
+    display: inline-block;
+    line-height: 45px;
+    font-size: 14px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.li1:hover {
+    box-shadow: 0px 0px 10px #4a4a4a;
+}
+
+.ul1 {
+    padding: 0px;
+    padding-left: 0px!important;
+    margin: 0px!important;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.btnFocus {
+    margin: 0;
+    font-size: medium;
+    width: 100px;
+    height: 40px;
+    color: #ffffff;
+    border: 1px solid white;
+    border-radius: 0px 10px 10px 0;
+    background-color: rgb(153, 153, 255);
+}
+
+.btnUnfocus {
+    margin: 0;
+    font-size: medium;
+    width: 100px;
+    height: 40px;
+    color: #000;
+    border: 0px;
+    border-right: 1px solid rgba(144, 147, 153, 0.31);
+    border-radius: 0px 10px 10px 0;
+}
+
+.btnUnfocus :hover {
+    color: #ffffff;
+    background-color: rgb(153, 153, 255);
+}
+
+.emojiBtn {
+    position: relative;
+    height: 40px;
+    width: 80px;
+    border: 2px solid rgb(153, 153, 255)!important;
+    border-radius: 16px!important;
+}
+
+.emojiBtn:hover {
+    color: #ffffff;
+    background-color: rgb(153, 153, 255);
+}

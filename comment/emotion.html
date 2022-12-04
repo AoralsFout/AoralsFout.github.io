@@ -1,0 +1,275 @@
+<link rel="stylesheet" href="emotion.css">
+<input type="button" value="打开" onclick="openEmotion()" id="openEmotion">
+<script>
+    var bili = document.getElementsByName('bilibili');
+    var owo = document.getElementsByName('owo');
+    var emoji = document.getElementsByName('emoji');
+
+    function openEmotion() {
+        var a = document.getElementById('Emotion-body');
+        a.style.setProperty('display', 'block')
+        owo[0].style.setProperty('display', 'none');
+        emoji[0].style.setProperty('display', 'none');
+        document.getElementById('openEmotion').value = '关闭';
+        document.getElementById('openEmotion').setAttribute('onclick', 'closeEmotion()')
+    }
+
+    function closeEmotion() {
+        var a = document.getElementById('Emotion-body');
+        a.style.setProperty('display', 'none')
+        document.getElementById('openEmotion').value = '打开';
+        document.getElementById('openEmotion').setAttribute('onclick', 'openEmotion()')
+    }
+
+    function focusBilibili() {
+        bili[1].setAttribute('class', 'btnFocus');
+        bili[0].style.setProperty('display', 'block');
+        owo[1].setAttribute('class', 'btnUnfocus');
+        owo[0].style.setProperty('display', 'none');
+        emoji[1].setAttribute('class', 'btnUnfocus');
+        emoji[0].style.setProperty('display', 'none');
+    }
+
+    function focusOwo() {
+        bili[1].setAttribute('class', 'btnUnfocus');
+        bili[0].style.setProperty('display', 'none');
+        owo[1].setAttribute('class', 'btnFocus');
+        owo[0].style.setProperty('display', 'block');
+        emoji[1].setAttribute('class', 'btnUnfocus');
+        emoji[0].style.setProperty('display', 'none');
+    }
+
+    function focusEmoji() {
+        bili[1].setAttribute('class', 'btnUnfocus');
+        bili[0].style.setProperty('display', 'none');
+        owo[1].setAttribute('class', 'btnUnfocus');
+        owo[0].style.setProperty('display', 'none');
+        emoji[1].setAttribute('class', 'btnFocus');
+        emoji[0].style.setProperty('display', 'block');
+    }
+</script>
+<div class="Emotion-body" id="Emotion-body">
+    <ul class="Emotion-items" id="Emotion-items" style="max-height: 197px;" name="bilibili">
+        <li title="tv_doge"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png"></li>
+        <li title="tv_亲亲"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/a8111ad55953ef5e3be3327ef94eb4a39d535d06.png"></li>
+        <li title="tv_偷笑"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/bb690d4107620f1c15cff29509db529a73aee261.png"></li>
+        <li title="tv_再见"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png"></li>
+        <li title="tv_冷漠"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png"></li>
+        <li title="tv_发怒"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png"></li>
+        <li title="tv_发财"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/34db290afd2963723c6eb3c4560667db7253a21a.png"></li>
+        <li title="tv_可爱"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png"></li>
+        <li title="tv_吐血"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/09dd16a7aa59b77baa1155d47484409624470c77.png"></li>
+        <li title="tv_呆"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png"></li>
+        <li title="tv_呕吐"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/9f996894a39e282ccf5e66856af49483f81870f3.png"></li>
+        <li title="tv_困"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/241ee304e44c0af029adceb294399391e4737ef2.png"></li>
+        <li title="tv_坏笑"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/1f0b87f731a671079842116e0991c91c2c88645a.png"></li>
+        <li title="tv_大佬"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/093c1e2c490161aca397afc45573c877cdead616.png"></li>
+        <li title="tv_大哭"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/23269aeb35f99daee28dda129676f6e9ea87934f.png"></li>
+        <li title="tv_委屈"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png"></li>
+        <li title="tv_害羞"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png"></li>
+        <li title="tv_尴尬"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png"></li>
+        <li title="tv_微笑"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png"></li>
+        <li title="tv_思考"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/90cf159733e558137ed20aa04d09964436f618a1.png"></li>
+        <li title="tv_惊吓"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/0d15c7e2ee58e935adc6a7193ee042388adc22af.png"></li>
+    </ul>
+    <ul class="Emotion-items" id="Emotion-items" style="max-height: 197px;" name="emoji">
+        <li class="Emotion-item-emoji" title="大笑">😄</li>
+        <li class="Emotion-item-emoji" title="嘻嘻">😁</li>
+        <li class="Emotion-item-emoji" title="苦笑">😅</li>
+        <li class="Emotion-item-emoji" title="笑得满地打滚">🤣</li>
+        <li class="Emotion-item-emoji" title="笑哭了">😂</li>
+        <li class="Emotion-item-emoji" title="呵呵">🙂</li>
+        <li class="Emotion-item-emoji" title="倒脸">🙃</li>
+        <li class="Emotion-item-emoji" title="眨眼">😉</li>
+        <li class="Emotion-item-emoji" title="羞涩微笑">😊</li>
+        <li class="Emotion-item-emoji" title="喜笑颜开">🥰</li>
+        <li class="Emotion-item-emoji" title="花痴">😍</li>
+        <li class="Emotion-item-emoji" title="好崇拜哦">🤩</li>
+        <li class="Emotion-item-emoji" title="飞吻">😘</li>
+        <li class="Emotion-item-emoji" title="亲亲">😗</li>
+        <li class="Emotion-item-emoji" title="羞涩亲亲">😚</li>
+        <li class="Emotion-item-emoji" title="微笑亲亲">😙</li>
+        <li class="Emotion-item-emoji" title="好吃">😋</li>
+        <li class="Emotion-item-emoji" title="吐舌">😛</li>
+        <li class="Emotion-item-emoji" title="单眼吐舌">😜</li>
+        <li class="Emotion-item-emoji" title="滑稽">🤪</li>
+        <li class="Emotion-item-emoji" title="眯眼吐舌">😝</li>
+        <li class="Emotion-item-emoji" title="抱抱">🤗</li>
+        <li class="Emotion-item-emoji" title="不说">🤭</li>
+        <li class="Emotion-item-emoji" title="安静的脸">🤫</li>
+        <li class="Emotion-item-emoji" title="想一想">🤔</li>
+        <li class="Emotion-item-emoji" title="闭嘴">🤐</li>
+        <li class="Emotion-item-emoji" title="挑眉">🤨</li>
+        <li class="Emotion-item-emoji" title="冷漠">😐</li>
+        <li class="Emotion-item-emoji" title="无语">😑</li>
+        <li class="Emotion-item-emoji" title="沉默">😶</li>
+        <li class="Emotion-item-emoji" title="得意">😏</li>
+        <li class="Emotion-item-emoji" title="不高兴">😒</li>
+        <li class="Emotion-item-emoji" title="翻白眼">🙄</li>
+        <li class="Emotion-item-emoji" title="龇牙咧嘴">😬</li>
+        <li class="Emotion-item-emoji" title="说谎">🤥</li>
+        <li class="Emotion-item-emoji" title="迷茫">😶&zwj;🌫️</li>
+        <li class="Emotion-item-emoji" title="呼气">😮&zwj;💨</li>
+        <li class="Emotion-item-emoji" title="松了口气">😌</li>
+        <li class="Emotion-item-emoji" title="沉思">😔</li>
+        <li class="Emotion-item-emoji" title="困">😪</li>
+        <li class="Emotion-item-emoji" title="流口水">🤤</li>
+        <li class="Emotion-item-emoji" title="睡着了">😴</li>
+        <li class="Emotion-item-emoji" title="感冒">😷</li>
+        <li class="Emotion-item-emoji" title="发烧">🤒</li>
+        <li class="Emotion-item-emoji" title="受伤">🤕</li>
+        <li class="Emotion-item-emoji" title="恶心">🤢</li>
+        <li class="Emotion-item-emoji" title="呕吐">🤮</li>
+        <li class="Emotion-item-emoji" title="打喷嚏">🤧</li>
+        <li class="Emotion-item-emoji" title="脸发烧">🥵</li>
+        <li class="Emotion-item-emoji" title="冷脸">🥶</li>
+        <li class="Emotion-item-emoji" title="头昏眼花">🥴</li>
+        <li class="Emotion-item-emoji" title="晕头转向">😵</li>
+        <li class="Emotion-item-emoji" title="爆炸头">🤯</li>
+        <li class="Emotion-item-emoji" title="晕">😵&zwj;💫</li>
+        <li class="Emotion-item-emoji" title="牛仔帽脸">🤠</li>
+        <li class="Emotion-item-emoji" title="聚会笑脸">🥳</li>
+        <li class="Emotion-item-emoji" title="墨镜笑脸">😎</li>
+        <li class="Emotion-item-emoji" title="书呆子脸">🤓</li>
+        <li class="Emotion-item-emoji" title="带单片眼镜的脸">🧐</li>
+        <li class="Emotion-item-emoji" title="困扰">😕</li>
+        <li class="Emotion-item-emoji" title="担心">😟</li>
+        <li class="Emotion-item-emoji" title="微微不满">🙁</li>
+        <li class="Emotion-item-emoji" title="不满">☹️</li>
+        <li class="Emotion-item-emoji" title="吃惊">😮</li>
+        <li class="Emotion-item-emoji" title="缄默">😯</li>
+        <li class="Emotion-item-emoji" title="震惊">😲</li>
+        <li class="Emotion-item-emoji" title="脸红">😳</li>
+        <li class="Emotion-item-emoji" title="恳求的脸">🥺</li>
+        <li class="Emotion-item-emoji" title="啊">😦</li>
+        <li class="Emotion-item-emoji" title="极度痛苦">😧</li>
+        <li class="Emotion-item-emoji" title="害怕">😨</li>
+        <li class="Emotion-item-emoji" title="冷汗">😰</li>
+        <li class="Emotion-item-emoji" title="失望但如释重负">😥</li>
+        <li class="Emotion-item-emoji" title="哭">😢</li>
+        <li class="Emotion-item-emoji" title="放声大哭">😭</li>
+        <li class="Emotion-item-emoji" title="吓死了">😱</li>
+        <li class="Emotion-item-emoji" title="困惑">😖</li>
+        <li class="Emotion-item-emoji" title="痛苦">😣</li>
+        <li class="Emotion-item-emoji" title="失望">😞</li>
+        <li class="Emotion-item-emoji" title="汗">😓</li>
+        <li class="Emotion-item-emoji" title="累死了">😩</li>
+        <li class="Emotion-item-emoji" title="累">😫</li>
+        <li class="Emotion-item-emoji" title="打呵欠">🥱</li>
+        <li class="Emotion-item-emoji" title="傲慢">😤</li>
+        <li class="Emotion-item-emoji" title="怒火中烧">😡</li>
+        <li class="Emotion-item-emoji" title="生气">😠</li>
+        <li class="Emotion-item-emoji" title="嘴上有符号的脸">🤬</li>
+        <li class="Emotion-item-emoji" title="大便">💩</li>
+        <li class="Emotion-item-emoji" title="小丑脸">🤡</li>
+        <li class="Emotion-item-emoji" title="鬼">👻</li>
+        <li class="Emotion-item-emoji" title="外星人">👽</li>
+        <li class="Emotion-item-emoji" title="机器人">🤖</li>
+        <li class="Emotion-item-emoji" title="大笑的猫">😺</li>
+        <li class="Emotion-item-emoji" title="微笑的猫">😸</li>
+        <li class="Emotion-item-emoji" title="笑出眼泪的猫">😹</li>
+        <li class="Emotion-item-emoji" title="花痴的猫">😻</li>
+        <li class="Emotion-item-emoji" title="奸笑的猫">😼</li>
+        <li class="Emotion-item-emoji" title="亲亲猫">😽</li>
+        <li class="Emotion-item-emoji" title="疲倦的猫">🙀</li>
+        <li class="Emotion-item-emoji" title="哭泣的猫">😿</li>
+        <li class="Emotion-item-emoji" title="生气的猫">😾</li>
+        <li class="Emotion-item-emoji" title="非礼勿视">🙈</li>
+        <li class="Emotion-item-emoji" title="非礼勿听">🙉</li>
+        <li class="Emotion-item-emoji" title="非礼勿言">🙊</li>
+        <li class="Emotion-item-emoji" title="唇印">💋</li>
+        <li class="Emotion-item-emoji" title="闪亮的心">💖</li>
+        <li class="Emotion-item-emoji" title="心碎">💔</li>
+        <li class="Emotion-item-emoji" title="红心">❤️</li>
+        <li class="Emotion-item-emoji" title="一百分">💯</li>
+        <li class="Emotion-item-emoji" title="怒">💢</li>
+        <li class="Emotion-item-emoji" title="爆炸">💥</li>
+        <li class="Emotion-item-emoji" title="头晕">💫</li>
+        <li class="Emotion-item-emoji" title="汗滴">💦</li>
+        <li class="Emotion-item-emoji" title="睡着">💤</li>
+        <li class="Emotion-item-emoji" title="挥手">👋</li>
+        <li class="Emotion-item-emoji" title="手掌">🖐️</li>
+        <li class="Emotion-item-emoji" title="OK">👌</li>
+        <li class="Emotion-item-emoji" title="捏合的手势">🤏</li>
+        <li class="Emotion-item-emoji" title="胜利手势">✌️</li>
+        <li class="Emotion-item-emoji" title="摇滚">🤘</li>
+        <li class="Emotion-item-emoji" title="竖中指">🖕</li>
+        <li class="Emotion-item-emoji" title="拇指向上">👍</li>
+        <li class="Emotion-item-emoji" title="出拳">👊</li>
+        <li class="Emotion-item-emoji" title="鼓掌">👏</li>
+        <li class="Emotion-item-emoji" title="握手">🤝</li>
+        <li class="Emotion-item-emoji" title="肌肉">💪</li>
+        <li class="Emotion-item-emoji" title="双眼">👀</li>
+        <li class="Emotion-item-emoji" title="蝴蝶">🦋</li>
+        <li class="Emotion-item-emoji" title="花束">💐</li>
+        <li class="Emotion-item-emoji" title="樱花">🌸</li>
+        <li class="Emotion-item-emoji" title="玫瑰">🌹</li>
+        <li class="Emotion-item-emoji" title="西瓜">🍉</li>
+        <li class="Emotion-item-emoji" title="芒果">🥭</li>
+        <li class="Emotion-item-emoji" title="家禽的腿">🍗</li>
+        <li class="Emotion-item-emoji" title="肉块">🥩</li>
+        <li class="Emotion-item-emoji" title="汉堡">🍔</li>
+        <li class="Emotion-item-emoji" title="薯条">🍟</li>
+        <li class="Emotion-item-emoji" title="披萨">🍕</li>
+        <li class="Emotion-item-emoji" title="热狗">🌭</li>
+        <li class="Emotion-item-emoji" title="蛋">🥚</li>
+        <li class="Emotion-item-emoji" title="一锅食物">🍲</li>
+        <li class="Emotion-item-emoji" title="团子">🍡</li>
+        <li class="Emotion-item-emoji" title="饺子">🥟</li>
+        <li class="Emotion-item-emoji" title="圆筒冰激凌">🍦</li>
+        <li class="Emotion-item-emoji" title="刨冰">🍧</li>
+        <li class="Emotion-item-emoji" title="冰淇淋">🍨</li>
+        <li class="Emotion-item-emoji" title="生日蛋糕">🎂</li>
+        <li class="Emotion-item-emoji" title="纸杯蛋糕">🧁</li>
+        <li class="Emotion-item-emoji" title="棒棒糖">🍭</li>
+        <li class="Emotion-item-emoji" title="热饮">☕</li>
+        <li class="Emotion-item-emoji" title="啤酒">🍺</li>
+        <li class="Emotion-item-emoji" title="干杯">🍻</li>
+    </ul>
+    <ul class="Emotion-items" id="Emotion-items" style="max-height: 197px;" name="owo">
+        <li class="Emotion-item" title="Author: DIYgod">OωO</li>
+        <li class="Emotion-item" title="Hi">|´・ω・)ノ</li>
+        <li class="Emotion-item" title="开心">ヾ(≧∇≦*)ゝ</li>
+        <li class="Emotion-item" title="星星眼">(☆ω☆)</li>
+        <li class="Emotion-item" title="掀桌">（╯‵□′）╯︵┴─┴</li>
+        <li class="Emotion-item" title="流口水">￣﹃￣</li>
+        <li class="Emotion-item" title="捂脸">(/ω＼)</li>
+        <li class="Emotion-item" title="给跪">∠( ᐛ 」∠)＿</li>
+        <li class="Emotion-item" title="Hi">(๑•̀ㅁ•́ฅ)</li>
+        <li class="Emotion-item" title="斜眼">→_→</li>
+        <li class="Emotion-item" title="加油">୧(๑•̀⌄•́๑)૭</li>
+        <li class="Emotion-item" title="有木有WiFi">٩(ˊᗜˋ*)و</li>
+        <li class="Emotion-item" title="前方高能预警">(ノ°ο°)ノ</li>
+        <li class="Emotion-item" title="我从未见过如此厚颜无耻之人">(´இ皿இ｀)</li>
+        <li class="Emotion-item" title="吓死宝宝惹">⌇●﹏●⌇</li>
+        <li class="Emotion-item" title="已阅留爪">(ฅ´ω`ฅ)</li>
+        <li class="Emotion-item" title="去吧大师球">(╯°A°)╯︵○○○</li>
+        <li class="Emotion-item" title="太萌惹">φ(￣∇￣o)</li>
+        <li class="Emotion-item" title="咦咦咦">ヾ(´･ ･｀｡)ノ"</li>
+        <li class="Emotion-item" title="气呼呼">( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃</li>
+        <li class="Emotion-item" title="我受到了惊吓">(ó﹏ò｡)</li>
+        <li class="Emotion-item" title="什么鬼">Σ(っ °Д °;)っ</li>
+        <li class="Emotion-item" title="摸摸头">( ,,´･ω･)ﾉ"(´っω･｀｡)</li>
+        <li class="Emotion-item" title="无奈">╮(╯▽╰)╭ </li>
+        <li class="Emotion-item" title="脸红">o(*////▽////*)q </li>
+        <li class="Emotion-item" title="">＞﹏＜</li>
+        <li class="Emotion-item" title="">( ๑´•ω•) "(ㆆᴗㆆ)</li>
+        <li class="Emotion-item" onclick="addPublishEmotion('q(≧▽≦q)')">q(≧▽≦q)</li>
+        <li class="Emotion-item" onclick="addPublishEmotion('ヾ(≧▽≦*)o')">ヾ(≧▽≦*)o</li>
+        <li class="Emotion-item" onclick="addPublishEmotion('o(*￣▽￣*)ブ')">o(*￣▽￣*)ブ</li>
+        <li class="Emotion-item" onclick="addPublishEmotion('( •̀ ω •́ )✧')">( •̀ ω •́ )✧</li>
+        <li class="Emotion-item" onclick="addPublishEmotion('(*^▽^*)')">(*^▽^*)</li>
+        <li class="Emotion-item" onclick="addPublishEmotion('♪(´▽｀)')">♪(´▽｀)</li>
+        <li class="Emotion-item" onclick="addPublishEmotion('ο(=•ω＜=)ρ⌒☆')">ο(=•ω＜=)ρ⌒☆</li>
+        <li class="Emotion-item" onclick="addPublishEmotion('(～o￣3￣)～')">(～o￣3￣)～</li>
+        <li class="Emotion-item" onclick="addPublishEmotion('(*/ω＼*)')">(*/ω＼*)</li>
+        <li class="Emotion-item" onclick="addPublishEmotion('(。・ω・。)')">(。・ω・。)</li>
+    </ul>
+    <div class="Emotion-bar">
+        <ul class="Emotion-packages">
+            <input type="button" value="哔哩哔哩" onclick="focusBilibili()" class="btnFocus" name="bilibili">
+            <input type="button" value="颜文字" onclick="focusOwo()" class="btnUnfocus" name="owo">
+            <input type="button" value="emoji黄脸" onclick="focusEmoji()" class="btnUnfocus" name="emoji">
+        </ul>
+    </div>
+</div>
