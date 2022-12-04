@@ -250,9 +250,9 @@ function publish() { //发送函数
         var cont = document.createElement('div');
         var outputLang = toOutputLang(lang.value);
         if (QQNumber === undefined || QQNumber === '' || Number(QQNumber) == NaN) { //判断用户是否输入QQ号,输出不同的结果
-            cont.innerHTML = '<img src=' + headimgUrl + ' class="avatar"><div class="nameBackground"></div><p class="name">' + user.value + '</p><p>' + outputLang + '</p><p class="time">' + timeResult + '</p><button id="replyBtn" class="replyBtn" onclick="showInput()" name="' + commentName + '">回复</button><div id="oli' + commentName + '"></div><hr></hr>';
+            cont.innerHTML = '<img src=' + headimgUrl + ' class="avatar"><div class="nameBackground"></div><p class="name">' + user.value + '</p><p>' + outputLang + '</p><p class="time">' + timeResult + '</p><button id="replyBtn" class="replyBtn" onclick="showInput()" name="' + commentName + '">回复</button><div id="oli' + commentName + '"></div><div class="hr"></div>';
         } else {
-            cont.innerHTML = '<img src=' + headimgUrl + ' class="avatar"><div class="nameBackground"></div><p class="name">' + user.value + '(' + QQNumber + ')</p><p>' + outputLang + '</p><p class="time">' + timeResult + '</p><button id="replyBtn" class="replyBtn" onclick="showInput()" name="' + commentName + '">回复</button><div id="oli' + commentName + '"></div><hr></hr>';
+            cont.innerHTML = '<img src=' + headimgUrl + ' class="avatar"><div class="nameBackground"></div><p class="name">' + user.value + '(' + QQNumber + ')</p><p>' + outputLang + '</p><p class="time">' + timeResult + '</p><button id="replyBtn" class="replyBtn" onclick="showInput()" name="' + commentName + '">回复</button><div id="oli' + commentName + '"></div><div class="hr"></div>';
         }
         document.getElementById('ol').appendChild(cont);
         lang.value = ''; //重置输入框
