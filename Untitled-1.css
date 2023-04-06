@@ -1,6 +1,0 @@
-.mt20 { margin-top: 20px; }
-.u-page {color: #999;font-size: 12px;}
-.u-page a {display: inline-block;width: 40px; height: 38px;line-height: 38px; margin-left: -1px; border: 1px solid #eee; background-color: #fff;text-align: center;color: #999;}
-.u-page .u-p-prev, .u-page .u-p-next {width: auto;padding: 0 20px; white-space: nowrap;}
-.u-page span {display: inline-block; width: 40px; height: 40px;line-height: 40px; text-align: center; }
-.u-page a:hover, .u-page a.u-p-on {background-color: #0057ff;border-color: #0057ff;color: #fff;}
