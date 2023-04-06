@@ -1,0 +1,145 @@
+<style>
+    #box {
+        width: 220px;
+        height: auto;
+        position: absolute;
+        color: #00000000;
+        padding: 5px;
+        z-index: 100000;
+    }
+    
+    #box:hover {
+        width: 220px;
+        height: auto;
+        position: absolute;
+        color: #cccccc;
+        background-color: #00000080;
+        padding: 5px;
+        z-index: 100000;
+    }
+    
+    ul {
+        padding-inline-start: 0px;
+    }
+    
+    ul li {
+        list-style: none;
+    }
+    
+    ul a {
+        color: #ccc;
+        text-decoration: none;
+    }
+    
+    ul li {
+        float: left;
+        width: 100px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 20px;
+        background-color: #00000090;
+    }
+    
+    ul li ul li {
+        display: none;
+    }
+    
+    ul li:hover ul li {
+        display: block;
+    }
+    
+    ul li:hover {
+        background-color: #000000;
+    }
+</style>
+<div id="FLC">
+    <div id="box" "return false;" onselectstart="return false">
+        <iframe src="Waiting.html" frameborder="0" scrolling="no" height="256px" width="220px" id="setIframe"></iframe>
+        <div>
+            <ul>
+                <!-- 菜单 -->
+                <li><a>更改动作</a>
+                    <ul>
+                        <li onclick="setIframeToWaiting()"><a onclick="setIframeToWaiting()">等待</a></li>
+                        <li onclick="setIframeToStepping()"><a onclick="setIframeToStepping()">踏步</a></li>
+                        <li onclick="setIframeToJumping()"><a onclick="setIframeToJumping()">跳</a></li>
+                    </ul>
+                    <ul style="position: absolute;left: 105px;">
+                        <li onclick="setIframeToZombie()"><a onclick="setIframeToZombie()">僵尸舞</a></li>
+                        <li onclick="setIframeToWaving()"><a onclick="setIframeToWaving()">摇摆</a></li>
+                        <li onclick="setIframeToHula()"><a onclick="setIframeToHula()">呼啦</a></li>
+                    </ul>
+                    <ul style="position: absolute;left: 205px;">
+                        <li onclick="setIframeToWindmill()"><a onclick="setIframeToWindmill()">街舞风车</a></li>
+                        <li onclick="setIframeToZitabata()"><a onclick="setIframeToZitabata()">Zitabata</a></li>
+                        <li onclick="setIframeToDervish()"><a onclick="setIframeToDervish()">转~~~</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    /* 可移动盒子js代码 */
+    function drag(obj) {
+        obj.onmousedown = function(event) {
+            var al = event.clientX - obj.offsetLeft; //求出鼠标到盒子距离
+            var at = event.clientY - obj.offsetTop; //求出鼠标到盒子距离
+            document.onmousemove = function(event) {
+                event = event || window.event;
+                var left = event.clientX;
+                var top = event.clientY;
+                obj.style.left = left - al + "px";
+                obj.style.top = top - at + "px";
+            }
+            document.onmouseup = function() {
+                //取消事件
+                this.onmousemove = null;
+                this.onmouseup = null;
+
+            }
+        }
+    }
+
+    var box = document.getElementById("box");
+    drag(box);
+</script>
+<script>
+    /* 跳转到不同动画 */
+    function setIframeToWaiting() {
+        document.getElementById('setIframe').src = "Waiting.html"
+    }
+
+    function setIframeToStepping() {
+        document.getElementById('setIframe').src = "Stepping.html"
+    }
+
+    function setIframeToJumping() {
+        document.getElementById('setIframe').src = "Jumping.html"
+    }
+
+    function setIframeToZombie() {
+        document.getElementById('setIframe').src = "Zombie.html"
+    }
+
+    function setIframeToWaving() {
+        document.getElementById('setIframe').src = "Waving.html"
+    }
+
+    function setIframeToHula() {
+        document.getElementById('setIframe').src = "Hula.html"
+    }
+
+    function setIframeToWindmill() {
+        document.getElementById('setIframe').src = "Windmill.html"
+    }
+
+    function setIframeToZitabata() {
+        document.getElementById('setIframe').src = "Zitabata.html"
+    }
+
+    function setIframeToDervish() {
+        document.getElementById('setIframe').src = "Dervish.html"
+    }
+</script>
