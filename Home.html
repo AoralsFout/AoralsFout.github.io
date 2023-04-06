@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<!--
+      く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+-->
+<!--是可爱的兔娘呐~-->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="css/styleDay.css">
+    <title>AoralsFoutの个人网站</title>
+    <link rel="shortcut icon" href="img/fav.ico">
+    <link rel="bookmark" href="img/fav.ico">
+    <script>
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState == 'hidden') {
+                normal_title = document.title;
+                document.title = '不要离开我...呜呜呜QAQ';
+            } else
+                document.title = normal_title;
+        });
+    </script>
+</head>
+
+<body>
+    <span class="MengBan"></span>
+    <style>
+        body {
+            min-width: 800px;
+            margin: 0px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-image: url(https://myhkw.cn/open/img/acg);
+            z-index: -10;
+        }
+        
+        .MengBan {
+            background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347);
+            display: inline-block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -9;
+            pointer-events: none;
+            animation-name: Backgroundloops;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+            -webkit-animation-name: Backgroundloops;
+            -webkit-animation-duration: 15s;
+            -webkit-animation-iteration-count: infinite;
+        }
+        
+        @keyframes Backgroundloops {
+            0% {
+                opacity: 1;
+            }
+            10% {
+                opacity: 1;
+            }
+            20% {
+                opacity: 0;
+            }
+            90% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes Backgroundloops {
+            0% {
+                opacity: 1;
+            }
+            10% {
+                opacity: 1;
+            }
+            20% {
+                opacity: 0;
+            }
+            90% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        for (var i = 0; i < 1000; i++) {
+            (function(i) {
+                setTimeout(function() {
+                    var imgUrl = 'url(https://myhkw.cn/open/img/acg/' + i + ')'
+                    document.body.style.setProperty("background-image", imgUrl)
+                    if (i == 1000) {
+                        alert('背景已连续刷新1000次，暂停刷新！')
+                    }
+                }, 15000 * i)
+            })(i)
+        }
+    </script>
+    <div id="nav">
+        <a class="navInside">
+            <img src="img/logo.png" alt="logo" loading="lazy">
+        </a>
+        <a href="Home.html" class="navInside">
+            <p class="navhover">首页</p>
+        </a>
+        <a href="dashang.html" target="_blank" class="navInside">
+            <p class="navhover">打赏</p>
+        </a>
+        <a class="navInside">
+            <p class="navhover" id="btnstart" onclick="bgdisplay()">查看壁纸</p>
+            <p class="navhover" id="btnend" onclick="contentdisplay()" style="display: none;">显示页面</p>
+            <script>
+                function bgdisplay() {
+                    document.getElementById('main').style.setProperty("display", "none");
+                    document.getElementById('commentBox').style.setProperty("display", "none");
+                    document.getElementById('footer').style.setProperty("display", "none");
+                    document.getElementById('hitokotoBox').style.setProperty("display", "none");
+                    document.getElementById('btnstart').style.setProperty("display", "none");
+                    document.getElementById('btnend').style.setProperty("display", "block");
+                }
+
+                function contentdisplay() {
+                    document.getElementById('main').style.setProperty("display", "block");
+                    document.getElementById('commentBox').style.setProperty("display", "block");
+                    document.getElementById('footer').style.setProperty("display", "block");
+                    document.getElementById('hitokotoBox').style.setProperty("display", "none");
+                    document.getElementById('btnstart').style.setProperty("display", "block");
+                    document.getElementById('btnend').style.setProperty("display", "none");
+                }
+            </script>
+        </a>
+        <a class="navInside">
+            <p class="navhover" id="night" onclick="night()">夜间模式</p>
+            <p class="navhover" id="day" onclick="day()" style="display: none;">日间模式</p>
+            <script>
+                function night() {
+                    document.getElementById('daycss').setAttribute("href", "css/night.css");
+                    document.getElementById('daycss').setAttribute("id", "nightcss");
+                    document.getElementById('day').style.setProperty("display", "block");
+                    document.getElementById('night').style.setProperty("display", "none");
+                }
+
+                function day() {
+                    document.getElementById('nightcss').setAttribute("href", "css/day.css");
+                    document.getElementById('nightcss').setAttribute("id", "daycss");
+                    document.getElementById('day').style.setProperty("display", "none");
+                    document.getElementById('night').style.setProperty("display", "block");
+                }
+            </script>
+        </a>
+        <a class="navInside">
+            <p>🔊&nbsp;&nbsp;&nbsp;本站加载速度较慢，请谅解喵QAQ</p>
+        </a>
+    </div>
+    <div id="hitokotoBox">
+        <script>
+            /* 获取一言 */
+            fetch('https://v1.hitokoto.cn')
+                .then(response => response.json())
+                .then(data => {
+                    const hitokoto = document.getElementById('hitokoto');
+                    const hitokotoFrom = document.getElementById('hitokotoFrom');
+                    hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid;
+                    hitokoto.innerText = data.hitokoto;
+                    if (data.from_who === null) {
+                        hitokotoFrom.innerText = '——\t『' + data.from + '』';
+                    } else {
+                        hitokotoFrom.innerText = '——\t' + data.from_who + '\t『' + data.from + '』';
+                    }
+                })
+                .catch(console.error)
+        </script>
+        <!-- 正文 -->
+        <div id="hitokotoPosition">
+            <a href="" target="_blank" id="hitokoto">获取中:D</a>
+        </div>
+        <div id="hitokotoPositionFrom">
+            <a target="_blank" id="hitokotoFrom"></a>
+        </div>
+    </div>
+    <div id="main">
+        <div id="allCulumn">
+            <div id="culumn">
+                <div id="culumnContent">
+                    <h1>欢迎！</h1>
+                    <p class="paraText"> 这里是AoralsFout的个人网站，右边可以看到关于我的一些信息哦~</p>
+                    <p class="paraText"> 说起来我为什么做了这个网站，其实也没什么，没事的时候学了一点，就当练练手（真的不是装B QwQ），有空就加点小东西。 这个网站是在2022年4月4日搭建的，几乎就半天的时间。如果你能看见源文件的话你会发现我写的代码特别臃肿，很乱，一个注释也没有。因为未成年所以放在github上了，右边有链接QAQ。</p>
+                    <p class="paraText"> 由于耳朵有点小问题，导致我小时候说话的时间很晚，有点不会说话，请见谅哈~谢谢你(✿◠‿◠)</p>
+                    <p class="paraText"> 你有什么问题，可以找我聊聊天哦~。我能帮的尽量帮帮你（虽然有可能帮了倒忙QWQ）。</p>
+                    <p class="paraText"> ps 我的QQ号：3250658422 我的微信号：xiaozong0629</p>
+                    <img src="img/1.jpeg" width="128px" height="128px" style="margin-top: 20px;">
+                </div>
+                <div id="culumnContent">
+                    <!-- 工具&小游戏 -->
+                    <h1>工具/小游戏</h1>
+                    <style>
+                        .tools-btn {
+                            width: 70px;
+                            text-align: center;
+                            float: left;
+                        }
+                    </style>
+                    <div style="height: 80px;">
+                        <div class="tools-btn">
+                            <div>
+                                <a href="tools/Mine/index.html" target="_blank">
+                                    <img src="tools/Mine/images/mine.png" width="50px" height="50px">
+                                </a>
+                            </div>
+                            <p style="color: #222;font-size: x-small">扫雷</p>
+                        </div>
+                        <div class="tools-btn">
+                            <div>
+                                <a href="tools/2048/index.html" target="_blank">
+                                    <img src="tools/2048/2048.png" width="50px" height="50px">
+                                </a>
+                            </div>
+                            <p style="color: #222;font-size: x-small">2048</p>
+                        </div>
+                        <div class="tools-btn">
+                            <div>
+                                <a href="tools/keyboard/index.html" target="_blank">
+                                    <img src="tools/keyboard/1.png" width="50px" height="50px">
+                                </a>
+                            </div>
+                            <p style="color: #222;font-size: x-small">键盘测试</p>
+                        </div>
+                        <div class="tools-btn">
+                            <div>
+                                <a href="tools/Response speed/index.html" target="_blank">
+                                    <img src="tools/Response speed/index.png" width="50px" height="50px">
+                                </a>
+                            </div>
+                            <p style="color: #222;font-size: x-small">反应速度测试</p>
+                        </div>
+                        <div class="tools-btn">
+                            <div>
+                                <a href="tools/av2bv/index.html" target="_blank">
+                                    <img src="https://img-operation.csdnimg.cn/csdn/silkroad/img/1607424501572.png" width="50px" height="50px" style="border-radius: 10px;">
+                                </a>
+                            </div>
+                            <p style="color: #222;font-size: x-small">AV号/BV号 转换工具</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="culumnContent">
+                    <h1>我喜欢的网站</h1>
+                    <p class="paraText">百度&nbsp;&nbsp;&nbsp;<a href="https://www.baidu.com/">https://www.baidu.com/</a>&nbsp;&nbsp;&nbsp;有不会的直接搜度娘</p>
+                    <p class="paraText">哔哩哔哩弹幕网&nbsp;&nbsp;&nbsp;<a href="https://www.bilibili.com/">https://www.bilibili.com/</a>&nbsp;&nbsp;&nbsp;我的快乐源泉</p>
+                    <p class="paraText">小鸡词典&nbsp;&nbsp;&nbsp;<a href="https://jikipedia.com/">https://jikipedia.com/</a>&nbsp;&nbsp;&nbsp;不懂的梗上这里查</p>
+                    <p class="paraText">LittleSkin Minecraft皮肤站&nbsp;&nbsp;&nbsp;<a href="https://littleskin.cn/">https://littleskin.cn/</a>&nbsp;&nbsp;&nbsp;我的世界代理服务器</p>
+                    <p class="paraText">LKCSGO&nbsp;&nbsp;&nbsp;<a href="https://www.lkcsgo.com/">https://www.lkcsgo.com/</a>&nbsp;&nbsp;&nbsp;CSGO投掷物查询，上分必备</p>
+                    <p class="paraText">CSDN&nbsp;&nbsp;&nbsp;<a href="https://www.csdn.com/">https://www.csdn.com/</a>&nbsp;&nbsp;&nbsp;代码直接上这里复制(滑稽)</p>
+                    <p class="paraText">W3school&nbsp;&nbsp;&nbsp;<a href="https://www.w3school.com.cn/">https://www.w3school.com.cn/</a>&nbsp;&nbsp;&nbsp;学编程</p>
+                    <p class="paraText">MidiShow&nbsp;&nbsp;&nbsp;<a href="https://www.midishow.com/">https://www.midishow.com/</a>&nbsp;&nbsp;&nbsp;分享midi曲谱的地方</p>
+                </div>
+                <div id="culumnContent">
+                    <h1>最近在玩的游戏</h1>
+                    <p class="paraText">CSGO</p>
+                    <p class="paraText">只狼</p>
+                    <p class="paraText">艾尔登法环</p>
+                    <p class="paraText">BeamNG</p>
+                    <p class="paraText">文明6</p>
+                    <p class="paraText">荒野大表哥2</p>
+                    <p class="paraText">GTA5</p>
+                    <p class="paraText">城市天际线</p>
+                    <p class="paraText">微软模拟飞行2020</p>
+                    <p class="paraText">森林</p>
+                    <p class="paraText">求生之路</p>
+                    <p class="paraText">英雄联盟</p>
+                    <img src="img/4.png" style="margin-top: 20px;width: 70%;height: 70%;" loading="lazy">
+                </div>
+                <div id="culumnContent">
+                    <div class="commentBox" id="commentBox">
+                        <h1>评论区</h1>
+                        <div class="mainInput" id="div1">
+                            <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202003%2F25%2F20200325142318_jWPnn.thumb.400_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672041905&t=cb60dfe4a38f176160793cac9aea03b7"
+                                class="userAvatar" id="headimg"></img>
+                            <input type="text" value="昵称" class="userPlaceholder" disabled>
+                            <input type="text" id="user" placeholder="好记的昵称让人印象深刻哟~" class="userInput">
+                            <input type="text" value="QQ号" class="userQQPlaceholder" disabled>
+                            <input type="text" id="userQQ" placeholder="输入QQ号自动获取头像和昵称哦" class="userQQInput">
+                            <input type="button" value="点击获取" class="getQQBtn" onclick="getQQ()">
+                            <input type="button" value="表情" class="emojiBtn" onclick="openEmotion()" id="openEmotion">
+                            <div class="Emotion-body" id="Emotion-body" style="display: none;">
+                                <div class="ul1 Emotion-items" id="Emotion-items" style="max-height: 197px;" name="bilibili">
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_doge}')" title="tv_doge"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_亲亲}')" title="tv_亲亲"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/a8111ad55953ef5e3be3327ef94eb4a39d535d06.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_偷笑}')" title="tv_偷笑"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/bb690d4107620f1c15cff29509db529a73aee261.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_再见}')" title="tv_再见"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_冷漠}')" title="tv_冷漠"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_发怒}')" title="tv_发怒"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_发财}')" title="tv_发财"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/34db290afd2963723c6eb3c4560667db7253a21a.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_可爱}')" title="tv_可爱"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_吐血}')" title="tv_吐血"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/09dd16a7aa59b77baa1155d47484409624470c77.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_呆}')" title="tv_呆"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_呕吐}')" title="tv_呕吐"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/9f996894a39e282ccf5e66856af49483f81870f3.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_困}')" title="tv_困"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/241ee304e44c0af029adceb294399391e4737ef2.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_坏笑}')" title="tv_坏笑"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/1f0b87f731a671079842116e0991c91c2c88645a.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_大佬}')" title="tv_大佬"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/093c1e2c490161aca397afc45573c877cdead616.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_大哭}')" title="tv_大哭"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/23269aeb35f99daee28dda129676f6e9ea87934f.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_委屈}')" title="tv_委屈"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_害羞}')" title="tv_害羞"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_尴尬}')" title="tv_尴尬"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_微笑}')" title="tv_微笑"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_思考}')" title="tv_思考"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/90cf159733e558137ed20aa04d09964436f618a1.png"></div>
+                                    <div class="li1" onclick="addPublishBilibiliEmotion('${tv_惊吓}')" title="tv_惊吓"><img class="Emotion-item" loading="lazy" src="https://owo.imaegoo.com/bilibili/0d15c7e2ee58e935adc6a7193ee042388adc22af.png"></div>
+                                </div>
+                                <div class="ul1 Emotion-items" id="Emotion-items" style="max-height: 197px;" name="emoji">
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😄')" title="大笑">😄</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😁')" title="嘻嘻">😁</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😅')" title="苦笑">😅</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤣')" title="笑得满地打滚">🤣</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😂')" title="笑哭了">😂</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🙂')" title="呵呵">🙂</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🙃')" title="倒脸">🙃</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😉')" title="眨眼">😉</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😊')" title="羞涩微笑">😊</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥰')" title="喜笑颜开">🥰</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😍')" title="花痴">😍</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤩')" title="好崇拜哦">🤩</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😘')" title="飞吻">😘</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😗')" title="亲亲">😗</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😚')" title="羞涩亲亲">😚</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😙')" title="微笑亲亲">😙</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😋')" title="好吃">😋</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😛')" title="吐舌">😛</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😜')" title="单眼吐舌">😜</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤪')" title="滑稽">🤪</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😝')" title="眯眼吐舌">😝</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤗')" title="抱抱">🤗</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤭')" title="不说">🤭</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤫')" title="安静的脸">🤫</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤔')" title="想一想">🤔</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤐')" title="闭嘴">🤐</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤨')" title="挑眉">🤨</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😐')" title="冷漠">😐</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😑')" title="无语">😑</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😶')" title="沉默">😶</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😏')" title="得意">😏</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😒')" title="不高兴">😒</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🙄')" title="翻白眼">🙄</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😬')" title="龇牙咧嘴">😬</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤥')" title="说谎">🤥</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😶🌫️')" title="迷茫">😶&zwj;🌫️</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😮💨')" title="呼气">😮&zwj;💨</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😌')" title="松了口气">😌</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😔')" title="沉思">😔</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😪')" title="困">😪</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤤')" title="流口水">🤤</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😴')" title="睡着了">😴</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😷')" title="感冒">😷</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤒')" title="发烧">🤒</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤕')" title="受伤">🤕</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤢')" title="恶心">🤢</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤮')" title="呕吐">🤮</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤧')" title="打喷嚏">🤧</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥵')" title="脸发烧">🥵</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥶')" title="冷脸">🥶</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥴')" title="头昏眼花">🥴</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😵')" title="晕头转向">😵</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤯')" title="爆炸头">🤯</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😵💫')" title="晕">😵&zwj;💫</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤠')" title="牛仔帽脸">🤠</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥳')" title="聚会笑脸">🥳</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😎')" title="墨镜笑脸">😎</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤓')" title="书呆子脸">🤓</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🧐')" title="带单片眼镜的脸">🧐</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😕')" title="困扰">😕</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😟')" title="担心">😟</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🙁')" title="微微不满">🙁</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('☹️')" title="不满">☹️</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😮')" title="吃惊">😮</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😯')" title="缄默">😯</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😲')" title="震惊">😲</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😳')" title="脸红">😳</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥺')" title="恳求的脸">🥺</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😦')" title="啊">😦</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😧')" title="极度痛苦">😧</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😨')" title="害怕">😨</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😰')" title="冷汗">😰</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😥')" title="失望但如释重负">😥</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😢')" title="哭">😢</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😭')" title="放声大哭">😭</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😱')" title="吓死了">😱</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😖')" title="困惑">😖</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😣')" title="痛苦">😣</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😞')" title="失望">😞</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😓')" title="汗">😓</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😩')" title="累死了">😩</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😫')" title="累">😫</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥱')" title="打呵欠">🥱</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😤')" title="傲慢">😤</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😡')" title="怒火中烧">😡</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😠')" title="生气">😠</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤬')" title="嘴上有符号的脸">🤬</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💩')" title="大便">💩</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤡')" title="小丑脸">🤡</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('👻')" title="鬼">👻</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('👽')" title="外星人">👽</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤖')" title="机器人">🤖</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😺')" title="大笑的猫">😺</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😸')" title="微笑的猫">😸</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😹')" title="笑出眼泪的猫">😹</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😻')" title="花痴的猫">😻</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😼')" title="奸笑的猫">😼</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😽')" title="亲亲猫">😽</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🙀')" title="疲倦的猫">🙀</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😿')" title="哭泣的猫">😿</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('😾')" title="生气的猫">😾</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🙈')" title="非礼勿视">🙈</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🙉')" title="非礼勿听">🙉</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🙊')" title="非礼勿言">🙊</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💋')" title="唇印">💋</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💖')" title="闪亮的心">💖</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💔')" title="心碎">💔</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('❤️')" title="红心">❤️</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💯')" title="一百分">💯</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💢')" title="怒">💢</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💥')" title="爆炸">💥</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💫')" title="头晕">💫</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💦')" title="汗滴">💦</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💤')" title="睡着">💤</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('👋')" title="挥手">👋</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🖐️')" title="手掌">🖐️</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('👌')" title="OK">👌</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤏')" title="捏合的手势">🤏</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('✌️')" title="胜利手势">✌️</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤘')" title="摇滚">🤘</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🖕')" title="竖中指">🖕</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('👍')" title="拇指向上">👍</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('👊')" title="出拳">👊</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('👏')" title="鼓掌">👏</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🤝')" title="握手">🤝</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💪')" title="肌肉">💪</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('👀')" title="双眼">👀</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🦋')" title="蝴蝶">🦋</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('💐')" title="花束">💐</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🌸')" title="樱花">🌸</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🌹')" title="玫瑰">🌹</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍉')" title="西瓜">🍉</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥭')" title="芒果">🥭</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍗')" title="家禽的腿">🍗</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥩')" title="肉块">🥩</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍔')" title="汉堡">🍔</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍟')" title="薯条">🍟</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍕')" title="披萨">🍕</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🌭')" title="热狗">🌭</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥚')" title="蛋">🥚</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍲')" title="一锅食物">🍲</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍡')" title="团子">🍡</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🥟')" title="饺子">🥟</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍦')" title="圆筒冰激凌">🍦</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍧')" title="刨冰">🍧</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍨')" title="冰淇淋">🍨</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🎂')" title="生日蛋糕">🎂</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🧁')" title="纸杯蛋糕">🧁</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍭')" title="棒棒糖">🍭</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('☕')" title="热饮">☕</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍺')" title="啤酒">🍺</div>
+                                    <div class="li1 Emotion-item-emoji" onclick="addPublishEmotion('🍻')" title="干杯">🍻</div>
+                                </div>
+                                <div class="ul1 Emotion-items" id="Emotion-items" style="max-height: 197px;" name="owo">
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('OωO')" title="Author: DIYgod">OωO</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('|´・ω・)ノ')" title="Hi">|´・ω・)ノ</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('ヾ(≧∇≦*)ゝ')" title="开心">ヾ(≧∇≦*)ゝ</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(☆ω☆)')" title="星星眼">(☆ω☆)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('（╯‵□′）╯︵┴─┴')" title="掀桌">（╯‵□′）╯︵┴─┴</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('￣﹃￣')" title="流口水">￣﹃￣</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(/ω＼)')" title="捂脸">(/ω＼)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('∠( ᐛ 」∠)＿')" title="给跪">∠( ᐛ 」∠)＿</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(๑•̀ㅁ•́ฅ)')" title="Hi">(๑•̀ㅁ•́ฅ)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('→_→')" title="斜眼">→_→</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('୧(๑•̀⌄•́๑)૭')" title="加油">୧(๑•̀⌄•́๑)૭</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('٩(ˊᗜˋ*)و')" title="有木有WiFi">٩(ˊᗜˋ*)و</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(ノ°ο°)ノ')" title="前方高能预警">(ノ°ο°)ノ</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(´இ皿இ｀)')" title="我从未见过如此厚颜无耻之人">(´இ皿இ｀)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('⌇●﹏●⌇')" title="吓死宝宝惹">⌇●﹏●⌇</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(ฅ´ω`ฅ)')" title="已阅留爪">(ฅ´ω`ฅ)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(╯°A°)╯︵○○○')" title="去吧大师球">(╯°A°)╯︵○○○</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('φ(￣∇￣o)')" title="太萌惹">φ(￣∇￣o)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('ヾ(´･ ･｀｡)ノ')" title="咦咦咦">ヾ(´･ ･｀｡)ノ"</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃')" title="气呼呼">( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(ó﹏ò｡)')" title="我受到了惊吓">(ó﹏ò｡)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('Σ(っ °Д °;)っ')" title="什么鬼">Σ(っ °Д °;)っ</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('( ,,´･ω･)ﾉ(´っω･｀｡)')" title="摸摸头">( ,,´･ω･)ﾉ"(´っω･｀｡)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('╮(╯▽╰)╭')" title="无奈">╮(╯▽╰)╭ </div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('o(*////▽////*)q')" title="脸红">o(*////▽////*)q</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('＞﹏＜')" title="伤心">＞﹏＜</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('( ๑´•ω•) (ㆆᴗㆆ)')" title="拍拍">( ๑´•ω•) "(ㆆᴗㆆ)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('q(≧▽≦q)') " title="大爷来玩呀">q(≧▽≦q)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('ヾ(≧▽≦*)o') " title="开心">ヾ(≧▽≦*)o</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('o(*￣▽￣*)ブ') " title="空你几哇">o(*￣▽￣*)ブ</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('( •̀ ω •́ )✧') " title="帅">( •̀ ω •́ )✧</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(*^▽^*)') " title="开心">(*^▽^*)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('♪(´▽｀)') " title="♪开心">♪(´▽｀)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('ο(=•ω＜=)ρ⌒☆') " title="可爱">ο(=•ω＜=)ρ⌒☆</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(～o￣3￣)～') " title="亲亲">(～o￣3￣)～</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(*/ω＼*)') " title="害羞">(*/ω＼*)</div>
+                                    <div class="li1 Emotion-item" onclick="addPublishEmotion('(。・ω・。)') " title="笑">(。・ω・。)</div>
+                                </div class="ul1">
+                                <div class="Emotion-bar">
+                                    <div class="ul1 Emotion-packages">
+                                        <input type="button" value="哔哩哔哩" onclick="focusBilibili()" class="btnFocus" name="bilibili">
+                                        <input type="button" value="颜文字" onclick="focusOwo()" class="btnUnfocus" name="owo">
+                                        <input type="button" value="emoji黄脸" onclick="focusEmoji()" class="btnUnfocus" name="emoji">
+                                    </div class="ul1">
+                                </div>
+                            </div>
+                            <br>
+                            <textarea type="text" id="lang" placeholder="此评论系统处于测试阶段，不能保存您的评论!" class="langInput"></textarea><br>
+                            <span id="langLength" style="position: relative;font-size: xx-small;margin-left: 100px;">您已输入0个字符,还可以输入300个字符</span>
+                            <input type="button" value="发布" id="btn" class="publishBtn" onclick="publish()">
+                            <!-- 下面是添加的内容 -->
+                            <!-- <img src=' + headimgUrl + ' class="avatar">
+                            <div class="nameBackground"></div>
+                            <p class="name">' + user.value + '(' + QQNumber + ')</p>
+                            <p>' + lang.value + '</p>
+                            <p class="time">' + timeResult + '</p>
+                            <input type="button" value="回复" id="replyBtn" class="replyBtn" onclick="reply()"> -->
+                            <!-- 上面是添加的内容 -->
+                            <br>
+                        </div>
+                        <div id="ol" class="ol"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="app">
+                <div id="appContent" style="background-image: url(https://myhkw.cn/open/img/mojave);background-size: cover;">
+                    <!-- 时间 -->
+                    <a href="https://www.baidu.com/s?wd=北京时间" target="_blank" style="color: #fff;text-decoration:none;text-shadow: #000 2px 2px 2px;">
+                        <span id="time"></span>
+                        <b id="time2" style="font-size: 50px;"></b>
+                    </a>
+                    <p id="TimeTips" style="font-size: 10px;color: #fff;text-shadow: #000 2px 2px 2px;"></p>
+                    <p id="KFC" style="font-size: 10px;color: #fff;text-shadow: #000 2px 2px 2px;"></p>
+                    <script>
+                        function showTime() {
+                            var date = new Date();
+                            var year = date.getFullYear();
+                            var month = date.getMonth() + 1;
+                            month = month < 10 ? "0" + month : month;
+                            var day = date.getDate();
+                            day = day < 10 ? "0" + day : day;
+                            var week = date.getDay();
+                            week = "日一二三四五六".charAt(week);
+                            week = "星期" + week;
+
+                            var hour = date.getHours();
+                            hour = hour < 10 ? "0" + hour : hour;
+                            var minute = date.getMinutes();
+                            minute = minute < 10 ? "0" + minute : minute;
+                            var second = date.getSeconds();
+                            second = second < 10 ? "0" + second : second;
+
+                            var result = year + "年" + month + "月" + day + "日 " + week;
+                            document.getElementById("time").innerHTML = result;
+                            var result2 = hour + ":" + minute + ":" + second;
+                            document.getElementById("time2").innerHTML = result2;
+
+                            /* 时间提示 */
+                            if (hour >= 0) {
+                                document.getElementById('TimeTips').innerHTML = '已经是第二天了，你还没睡觉吗，早点睡吧，要做个好孩子哦~'
+                            }
+                            if (hour >= 2) {
+                                document.getElementById('TimeTips').innerHTML = '欧尼酱，已经2点了，快点睡觉吧。'
+                            }
+                            if (hour >= 5) {
+                                document.getElementById('TimeTips').innerHTML = '快要日出啦，你起的真早，还是说一晚上都没有睡呢？'
+                            }
+                            if (hour >= 6) {
+                                document.getElementById('TimeTips').innerHTML = '早上好，今天又是元气满满的一天o(*￣▽￣*)ブ，记得吃早饭哦~'
+                            }
+                            if (hour >= 7) {
+                                document.getElementById('TimeTips').innerHTML = '早上好，今天又是元气满满的一天o(*￣▽￣*)ブ，记得吃早饭哦~'
+                            }
+                            if (hour >= 8) {
+                                document.getElementById('TimeTips').innerHTML = '你今天是要去上学？上班？还是说要打一天游戏呢？没事的话出去玩也是个好选项哦~'
+                            }
+                            if (hour >= 10) {
+                                document.getElementById('TimeTips').innerHTML = '快中午了，今天午饭吃什么！uwu'
+                            }
+                            if (hour >= 12) {
+                                document.getElementById('TimeTips').innerHTML = '中午要是困的话，就去睡个觉吧！'
+                            }
+                            if (hour >= 14) {
+                                document.getElementById('TimeTips').innerHTML = '你现在在做什么呢（好奇）'
+                            }
+                            if (hour >= 17) {
+                                document.getElementById('TimeTips').innerHTML = '呼~似乎又快到晚上了，还有什么事情没有做完吗？(/ω＼*)'
+                            }
+                            if (hour >= 19) {
+                                document.getElementById('TimeTips').innerHTML = '太阳似乎要落山了.'
+                            }
+                            if (hour >= 21) {
+                                document.getElementById('TimeTips').innerHTML = '早点睡觉哦，做个好孩子哦~'
+                            }
+                            if (hour >= 23) {
+                                document.getElementById('TimeTips').innerHTML = '你在忙什么呢，早点睡哦~'
+                            }
+
+                            /* 疯狂星期四 */
+                            if (week == '星期四') {
+                                document.getElementById('KFC').innerHTML = '兄弟，今天是肯德基疯狂星期四，赶紧V我50'
+                            }
+                        }
+
+                        showTime();
+                        setInterval("showTime()", 1000);
+                    </script>
+                </div>
+                <div id="appContent">
+                    <!-- 关于我 -->
+                    <div align="center">
+                        <img src="img/Headphoto.png" height="35%" width="35%" loading="lazy">
+                    </div>
+                    <div>
+                        <b>
+                        <p style="text-align: center;" style="font-size: medium;">AoralsFout</p>
+                    </b>
+                        <p class="paraText">男，15岁，是学生（bushi),爱好是刷b站，追番剧，没事喜欢打游戏（指csgo），这个页面单纯是闲的没事，b站发过几篇鬼畜，想看的可以点一下下面的链接哦ヾ(^▽^*)))一起打游戏也可以哦~(因为防沉迷所以不玩国服和平台)本人CSGO1000小时老彩笔awa</p>
+                    </div>
+                    <h3>跳转链接</h3>
+                    <div id="AboutIcon">
+                        <div id="AboutIconItems">
+                            <a href="https://user.qzone.qq.com/3250658422/infocenter" target="_blank" align="center">
+                                <img src="img/QQ.png" width="32px" height="32px" loading="lazy">
+                            </a>
+                            <span style="color: #222;font-size: x-small;text-align: center;">QQ空间</span>
+                        </div>
+                        <div id="AboutIconItems">
+                            <a href="https://space.bilibili.com/345054137" target="_blank" align="center">
+                                <img src="img/bilibili icon.png" width="32px" height="32px" loading="lazy">
+                            </a>
+                            <span style="color: #222;font-size: x-small;text-align: center;">B站主页</span>
+                        </div>
+                        <div id="AboutIconItems">
+                            <a href="https://steamcommunity.com/profiles/76561198861729020/" target="_blank" align="center">
+                                <img src="img/steam.png" width="32px" height="32px" loading="lazy">
+                            </a>
+                            <span style="color: #222;font-size: x-small;text-align: center;">Steam 1</span>
+                        </div>
+                        <div id="AboutIconItems">
+                            <a href="https://steamcommunity.com/profiles/76561199198280801/" target="_blank" align="center">
+                                <img src="img/steam.png" width="32px" height="32px" loading="lazy">
+                            </a>
+                            <span style="color: #222;font-size: x-small;text-align: center;">Steam 2</span>
+                        </div>
+                        <div id="AboutIconItems">
+                            <a href="https://github.com/AoralsFout/AoralsFout.github.io" target="_blank" align="center">
+                                <img src="img/github.png" width="32px" height="32px" loading="lazy">
+                            </a>
+                            <span style="color: #222;font-size: x-small;text-align: center;">Github</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <script>
+                        // 开关FLC 
+                        function onFLC() {
+                            document.getElementById('FLC').style.setProperty('display', 'block');
+                            document.querySelector("#app > div:nth-child(4) > a").remove();
+                        }
+
+                        function offFLC() {
+                            document.getElementById('FLC').style.setProperty('display', 'none');
+                            const a = document.createElement('a');
+                            a.innerHTML = "开启水果娘";
+                            document.querySelector("#app > div:nth-child(4)").appendChild(a);
+                            a.setAttribute('onClick', 'onFLC()');
+                            a.setAttribute('id', 'FLCbtn');
+                        }
+
+                        // 重置FLC位置
+                        function reloadFLChan() {
+                            document.getElementById('box').removeAttribute('style');
+                        }
+
+                        // 跳转到不同动画
+                        function setIframeToWaiting() {
+                            document.getElementById('setIframe').src = "FruitChan/Waiting.html"
+                        }
+
+                        function setIframeToStepping() {
+                            document.getElementById('setIframe').src = "FruitChan/Stepping.html"
+                        }
+
+                        function setIframeToJumping() {
+                            document.getElementById('setIframe').src = "FruitChan/Jumping.html"
+                        }
+
+                        function setIframeToZombie() {
+                            document.getElementById('setIframe').src = "FruitChan/Zombie.html"
+                        }
+
+                        function setIframeToWaving() {
+                            document.getElementById('setIframe').src = "FruitChan/Waving.html"
+                        }
+
+                        function setIframeToHula() {
+                            document.getElementById('setIframe').src = "FruitChan/Hula.html"
+                        }
+
+                        function setIframeToWindmill() {
+                            document.getElementById('setIframe').src = "FruitChan/Windmill.html"
+                        }
+
+                        function setIframeToZitabata() {
+                            document.getElementById('setIframe').src = "FruitChan/Zitabata.html"
+                        }
+
+                        function setIframeToDervish() {
+                            document.getElementById('setIframe').src = "FruitChan/Dervish.html"
+                        }
+
+                        // 开关FLC提示
+                        function onfltips() {
+                            document.getElementById('FLCtips').style.setProperty('display', 'block')
+                        }
+
+                        function offfltips() {
+                            document.getElementById('FLCtips').style.setProperty('display', 'none')
+                        }
+                    </script>
+                </div>
+                <div id="appContent">
+                    <!-- 水果娘 -->
+                    <div id="FLC">
+                        <h1>水果娘FL Chan</h1>
+                        <h2>控制台</h2>
+                        <a style="float: left;margin-top: 460px;">
+                            <h3>不能拖拽的请拖拽文字部分</h3>
+                        </a>
+                        <div id="box" "return false;" onselectstart="return false">
+                            <iframe src="FruitChan/Waiting.html" frameborder="0" scrolling="no" height="256px" width="220px" id="setIframe"></iframe>
+                            <div id="FLCtips">
+                                <h6 style="margin: 5px;">我是FL Chan水果娘哦~</h6>
+                                <h6 style="margin: 5px;">来自FL Studio 20</h6>
+                                <h1 style="margin: 5px;">在这里拖拽我~</h1>
+                            </div>
+                            <div class="FLClist">
+                                <ul>
+                                    <!-- 菜单 -->
+                                    <li><a>更改动作</a>
+                                        <ul>
+                                            <li onclick="setIframeToWaiting()"><a onclick="setIframeToWaiting()">等待</a></li>
+                                            <li onclick="setIframeToStepping()"><a onclick="setIframeToStepping()">踏步</a></li>
+                                            <li onclick="setIframeToJumping()"><a onclick="setIframeToJumping()">跳</a></li>
+                                        </ul>
+                                        <ul style="position: absolute;left: 105px;">
+                                            <li onclick="setIframeToZombie()"><a onclick="setIframeToZombie()">僵尸舞</a></li>
+                                            <li onclick="setIframeToWaving()"><a onclick="setIframeToWaving()">摇摆</a></li>
+                                            <li onclick="setIframeToHula()"><a onclick="setIframeToHula()">呼啦</a></li>
+                                        </ul>
+                                        <ul style="position: absolute;left: 205px;">
+                                            <li onclick="setIframeToWindmill()"><a onclick="setIframeToWindmill()">街舞风车</a></li>
+                                            <li onclick="setIframeToZitabata()"><a onclick="setIframeToZitabata()">Zitabata</a></li>
+                                            <li onclick="setIframeToDervish()"><a onclick="setIframeToDervish()">转~~~</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <script>
+                            // 可移动盒子
+                            function drag(obj) {
+                                obj.onmousedown = function(event) {
+                                    var al = event.clientX - obj.offsetLeft; //求出鼠标到盒子距离
+                                    var at = event.clientY - obj.offsetTop; //求出鼠标到盒子距离
+                                    document.onmousemove = function(event) {
+                                        event = event || window.event;
+                                        var left = event.clientX;
+                                        var top = event.clientY;
+                                        obj.style.left = left - al + "px";
+                                        obj.style.top = top - at + "px";
+                                    }
+                                    document.onmouseup = function() {
+                                        //取消事件
+                                        this.onmousemove = null;
+                                        this.onmouseup = null;
+
+                                    }
+                                }
+                            }
+
+                            var box = document.getElementById("box");
+                            drag(box);
+                        </script>
+                        <div style="height: 680px;">
+                            <a onclick="offFLC()" id="FLCbtn">关闭水果娘</a>
+                            <a onclick="onfltips()" id="FLCbtn">开启水果娘提示</a>
+                            <a onclick="offfltips()" id="FLCbtn">关闭水果娘提示</a>
+                            <a onclick="reloadFLChan()" id="FLCbtn">如果找不到水果娘了按我尝试复位</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="appContent">
+                    <img src="img/123.jpg" style="width: 100%;height: 100%;border-radius: 20px;">
+                </div>
+                <div id="appContent">
+                    <h1>动态</h1>
+                    <div class="innerCulumn">
+                        <!-- 动态 -->
+                        <p class="paraText"> 现在是5月19日凌晨3：21。不知道为何评论失效了，搞半天没明白ヽ（≧□≦）ノ</p>
+                        <p class="cutText"> - - - - - - - 我 是 分 割 线 哦 - - - - - - - </p>
+                        <p class="paraText"> 现在是6月2日下午6点52分。给背景加了个幻灯片效果，似乎没啥用qwq。修复了评论功能。</p>
+                        <p class="cutText"> - - - - - - - 我 是 分 割 线 哦 - - - - - - - </p>
+                        <p class="paraText"> 现在是6月4日下午6点15分，画了个logo，还可以哟~</p>
+                        <p class="cutText"> - - - - - - - 我 是 分 割 线 哦 - - - - - - - </p>
+                        <p class="paraText"> 现在是6月7日下午6点13分，给可爱的小猫咪拍了几张照喵ο(=•ω＜=)ρ⌒☆，小喵咪保佑高考考生拿高分哦。</p>
+                        <a href="img/IMG_20220607_135448.jpg" target="_blank"><img src="img/IMG_20220607_135448.jpg" style="margin-bottom:5px;width: 100%;" loading="lazy"></a>
+                        <a href="img/IMG_20220607_125953.jpg" target="_blank"><img src="img/IMG_20220607_125953.jpg" style="margin-bottom:5px;width: 100%;" loading="lazy"></a>
+                        <a href="img/IMG_20220607_132737.jpg" target="_blank"><img src="img/IMG_20220607_132737.jpg" style="margin-bottom:5px;width: 100%;" loading="lazy"></a>
+                        <p class="cutText"> - - - - - - - 我 是 分 割 线 哦 - - - - - - - </p>
+                        <p class="paraText"> 现在是6月20日晚上9点04分，明天中考了，今天早点睡(ง •̀_•́)ง</p>
+                        <p class="cutText"> - - - - - - - 我 是 分 割 线 哦 - - - - - - - </p>
+                        <p class="paraText"> 现在是6月22日晚上9点04分，考完兴致不错，加了扫雷和2048两个小游戏qwq。</p>
+                        <p class="cutText"> - - - - - - - 我 是 分 割 线 哦 - - - - - - - </p>
+                        <p class="paraText"> 现在是7月31日下午3点27分,明明有一堆游戏就是不想玩，得电子杨伟力QAQ</p>
+                        <p class="cutText"> - - - - - - - 我 是 分 割 线 哦 - - - - - - - </p>
+                        <p class="paraText"> 现在是9月10日傍晚7点18分,放中秋假回来了。。。只有一天淦。</p>
+                        <p class="cutText"> - - - - - - - 我 是 分 割 线 哦 - - - - - - - </p>
+                        <p class="paraText"> 现在是10月2日下午1点36分,上次评论挂掉一直在找原因，发现是Vercel在中国大陆被墙，所有*.vercel.app被DNS污染，解决方案是改域名（我又没有域名），评论肯定是没有了。</p>
+                        <a href="img/dnstest.png" target="_blank"><img src="img/dnstest.png" style="margin-bottom:5px;width: 100%;" loading="lazy"></a>
+                        <p class="cutText"> - - - - - - - 我 是 分 割 线 哦 - - - - - - - </p>
+                        <p class="paraText"> 现在是11月27日下午2点10分,十一月初回来了，一直在高强度上网课，今天把之前失效的评论重新做了一下，把一些之前的数据放在这上面了，这玩意还不能发表评论，一刷新就没了，我再研究研究，尽量弄上。</p>
+                        <p class="cutText"> - - - - - - - 我 是 分 割 线 哦 - - - - - - - </p>
+                    </div>
+                </div>
+                <div id="appContent">
+                    <h1>历史上的今天</h1>
+                    <div id="his"></div>
+                    <script>
+                        function historyRequest() {
+                            var url = "https://api.oick.cn/lishi/api.php"
+                            var request = new XMLHttpRequest();
+                            request.open("get", url);
+                            request.send(null);
+                            request.onload = function() {
+                                if (request.status == 200) {
+                                    var json = JSON.parse(request.responseText);
+                                    json.result.map(result => { //插入评论内容
+                                        var div = document.createElement("div");
+                                        div.innerHTML = `
+                                        <h6>${result.date}</h6>
+                                        <p>${result.title}<p>
+                                        <hr>
+                                        `
+                                        his.append(div);
+                                    })
+                                    console.log(json);
+                                } else {
+                                    console.error('error on get todayHistory');
+                                }
+                            }
+                        }
+                        historyRequest()
+                    </script>
+                </div>
+                <div id="appContent" style="background-image: url(https://api.oick.cn/netcard/api.php);background-size: cover;height: 80px;">
+                    <!-- IP签名档 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type="button" id="toup" value="⬆"></input>
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                    document.getElementById("toup").style.display = "block";
+                } else {
+                    document.getElementById("toup").style.display = "none";
+                }
+            }
+            toup.onclick = function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                })
+            }
+        </script>
+    </div>
+    <div class="footer" id="footer">
+        <p>获取QQ昵称头像 来源 https://www.usuuu.com/post/1591986508842143745</p>
+        <p>API签名档 来源 https://api.oick.cn/netcard/</p>
+        <p>HITOKOTO 一言 来源 https://hitokoto.cn</p>
+        <p>明月浩空音乐播放器 来源 https://myhkw.cn/</p>
+        <p>莫哈维动态图片 来源 https://myhkw.cn/</p>
+        <p>背景API 来源 https://myhkw.cn/</p>
+        <p>看板娘 来源 https://github.com/stevenjoezhang/live2d-widget</p>
+        <p>©2022 - 2022 By AoralsFout</p>
+    </div>
+    <script src="https://myhkw.cn/api/player/164922494957" id="myhk" key="164922494957" m="1"></script>
+    <script src="js/click.js"></script>
+    <script src="comment/index.js"></script>
+    <audio autoplay="autoplay" preload="auto" src="hana2.ogg" target="_blank"></audio>
+</body>
+
+</html>

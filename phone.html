@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+      く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+-->
+<!--是可爱的兔娘呐~-->
+<html lang="zh-CN">
+
+<head>
+    <script>
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState == 'hidden') {
+                normal_title = document.title;
+                document.title = '不要离开我...呜呜呜/(ㄒoㄒ)/~~';
+            } else document.title = normal_title;
+        });
+    </script>
+    <link rel="shortcut icon" href="img/fav.ico">
+    <link rel="bookmark" href="img/fav.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AoralsFout的个人网站</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.simplesidebar.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="toolbar">
+            <div id="open-sb" class="menu-button menu-left"></div>
+        </div>
+        <section class="sidebar">
+            <nav>
+                <img src="img/logo2.png" ">
+                <hr>
+                <h6>导航栏</h6>
+                <ul>
+                    <li><a href="phonedashang.html " target="_blank ">打赏</a></li>
+                    <li><a href="phone.html " target="_blank ">首页</a></li>
+                </ul>
+                <hr>
+                <h6>更多链接</h6>
+                <ul>
+                    <li><a href="https://user.qzone.qq.com/3250658422/infocenter " target="_blank "><img src="img/QQ.png " width="32px " height="32px ">QQ空间</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://space.bilibili.com/345054137 " target="_blank "><img src="img/bilibili icon.png " width="32px " height="32px ">B站主页</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://steamcommunity.com/profiles/76561198861729020/ " target="_blank "><img src="img/steam.png " width="32px " height="32px ">Steam 1</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://steamcommunity.com/profiles/76561199198280801/ " target="_blank "><img src="img/steam.png " width="32px " height="32px ">steam 2</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://github.com/AoralsFout/AoralsFout.github.io " target="_blank "><img src="img/github.png " width="32px " height="32px ">Github</a></li>
+                </ul>
+            </nav>
+        </section>
+    </div>
+    <script>
+    $( document ).ready(function() {
+        $.ajaxSetup({
+            cache: false
+        });
+        $( '.sidebar' ).simpleSidebar({
+            settings: {
+                opener: '#open-sb',
+                wrapper: '.wrapper',
+                animation: {
+                    duration: 500,
+                    easing: 'easeOutQuint'
+                }
+            },
+            sidebar: {
+                align: 'left',
+                width: 200,
+                closingLinks: 'a',
+            }
+        });
+    });
+    </script>
+    <div>
+    <h1 style="text-align: center;color: #fff; ">AoralsFout的小窝ヾ(^▽^*)))</h1>
+    <style>
+        body {
+            position: absolute;
+            background-attachment: fixed;
+            background-image: url(img/phone.jpg);
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .block {
+            display: block;
+        margin: 5%;
+        border-radius: 20px;
+        background-color: rgba(233, 233, 233, 0.8);
+        background-size: 90% 90%;
+        padding: 5%;
+        }
+    </style>
+    <style>
+        hitokoto {
+            font-family: 'Times New Roman', 宋体 ;
+            display: block;
+            margin-top: 14%;
+            margin-right: 10%;
+            margin-left: 10%;
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <hitokoto>
+    <div>
+        <p style="margin: 0px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;margin-left: -30px; ">『</p>
+    </div>
+    <div style="margin-left: 5%;margin-right: 5%; ">
+    <p id="hitokoto " style="line-height:45px;text-align: center;margin-top: 0px;margin-bottom: 0px; ""><a href="" id="hitokoto_text" target="_blank" style="text-align: center;text-decoration: none;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;">:D 获取中...</a></p>
+    </div>
+    <script>
+        fetch('https://v1.hitokoto.cn')
+            .then(response => response.json())
+            .then(data => {
+                const hitokoto = document.getElementById('hitokoto_text')
+                hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+                hitokoto.innerText = data.hitokoto
+            })
+            .catch(console.error)
+    </script>
+    <div>
+        <p style="margin: 0px;margin-bottom: 20px;color: #fff;text-shadow: 3px 3px 3px #222;font-size: 30px;float: right;margin-right: -30px;">』</p>
+    </div>
+    </hitokoto>
+    <p style="bottom: 2%;text-align: center;">©2022 - 2022 By AoralsFout</p>
+    </div>
+    <script src="https://myhkw.cn/api/player/164922494957" id="myhk" key="164922494957" m="1"></script>
+</body>
+
+</html>
