@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感染新冠,然后转生到异世界</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="zhezhao" id='zhezhao' style="display: none;">
+        <!--设置的窗口 -->
+        <div class="tankuang">
+            <div id="header">
+                <span class="tankuang-header-title">设置</span>
+                <div id="header-right" onclick="hidSetting()">x</div>
+            </div>
+            <hr style="margin: 0px;">
+            <div>
+                <input type="button" value="播放速度" onclick="changeSpeed()" class="myBtn">
+                <input type="button" value="更改名称" onclick="changeName()" class="myBtn">
+                <input type="button" value="重新开始" onclick="showReStart()" class="myBtn">
+            </div>
+        </div>
+    </div>
+    <div class="zhezhao" id='zhezhao1' style="display: none;">
+        <!--开始游戏的窗口,只在用户第一次进入程序显示 -->
+        <div class="tankuang">
+            <div id="header">
+                <span class="tankuang-header-title">要开始游戏吗?</span>
+                <div id="header-right" onclick="hidStart()">x</div>
+            </div>
+            <hr style="margin: 0px;">
+            <div id="content">
+                <input type="button" value="开始游戏" onclick="hidStart(),start()" class="myBtn">
+            </div>
+        </div>
+    </div>
+    <div class="zhezhao" id='zhezhao2' style="display: none;">
+        <!--更改昵称的窗口 -->
+        <div class="tankuang">
+            <div id="header">
+                <span class="tankuang-header-title">请输入您的昵称</span>
+                <div id="header-right" style="background-color: silver;" name="114514">x</div>
+            </div>
+            <hr style="margin: 0px;">
+            <div id="content">
+                <input type="text" value="" class="myInput" id="getName">
+                <input type="button" value="确定" onclick="hidName(),getName()" class="myBtn" id="getNameBtn">
+            </div>
+        </div>
+    </div>
+    <div class="zhezhao" id='zhezhao3' style="display: none;">
+        <!--决定窗口 -->
+        <div class="tankuang">
+            <div id="header">
+                <span class="tankuang-header-title">你决定?</span>
+                <div id="header-right" onclick="hidDecision()">x</div>
+            </div>
+            <hr style="margin: 0px;">
+            <div id="content">
+                <input type="button" value="大街" onclick="ing_2(),hidDecision()" class="myBtn" id="">
+                <input type="button" value="商店" onclick="ing_3(),hidDecision()" class="myBtn" id="">
+                <input type="button" value="野外" onclick="ing_4(),hidDecision()" class="myBtn" id="">
+            </div>
+        </div>
+    </div>
+    <div class="zhezhao" id='zhezhao4' style="display: none;">
+        <!--商店窗口 -->
+        <div class="tankuang">
+            <div id="header">
+                <span class="tankuang-header-title" id="store">商店</span>
+                <div id="header-right" onclick="hidStore()">x</div>
+            </div>
+            <hr style="margin: 0px;">
+            <div id="content">
+                <input type="button" value="新手长剑(800)" onclick="buy('新手长剑'),hidDecision(),hidStore()" class="myBtn" id="新手长剑" name="800">
+                <input type="button" value="新手护甲(1200)" onclick="buy('新手护甲'),hidDecision(),hidStore()" class="myBtn" id="新手护甲" name="1200">
+                <input type="button" value="火魔法书(1000)" onclick="buy('火魔法书'),hidDecision(),hidStore()" class="myBtn" id="火魔法书" name="1000">
+                <input type="button" value="水魔法书(1000)" onclick="buy('水魔法书'),hidDecision(),hidStore()" class="myBtn" id="水魔法书" name="1000">
+            </div>
+        </div>
+    </div>
+    <div class="zhezhao" id='zhezhao5' style="display: none;">
+        <!--物品栏窗口 -->
+        <div class="tankuang">
+            <div id="header">
+                <span class="tankuang-header-title" id="itemsWindow">物品栏</span>
+                <div id="header-right" onclick="hidItems()">x</div>
+            </div>
+            <hr style="margin: 0px;">
+            <div id="contentItems"></div>
+        </div>
+    </div>
+    <div class="zhezhao" id='zhezhao7' style="display: none;">
+        <!--状态窗口 -->
+        <div class="tankuang">
+            <div id="header">
+                <span class="tankuang-header-title">状态</span>
+                <div id="header-right" onclick="hidMy()">x</div>
+            </div>
+            <hr style="margin: 0px;">
+            <div id="content">
+                <p id="pName">个体名称:获取中...</p>
+                <p id="pHP">个体名称:获取中...</p>
+                <p id="pMoney">余额:获取中...</p>
+                <p id="pAttack">攻击力:获取中...</p>
+                <p id="pDefense">防御力:获取中...</p>
+                <p id="pFire">火属性天赋:获取中...</p>
+                <p id="pWater">水属性天赋:获取中...</p>
+            </div>
+        </div>
+    </div>
+    <div class="zhezhao" id='zhezhao6' style="display: none;">
+        <!--重新开始窗口 -->
+        <div class="tankuang" style="background-color: red;">
+            <div id="header">
+                <span class="tankuang-header-title">您真的要重新开始吗?您的所有数据都会永远消失!</span>
+                <div id="header-right" onclick="hidReStart()">x</div>
+            </div>
+            <hr style="margin: 0px;">
+            <div id="content">
+                <input type="button" value="取消" onclick="hidReStart()" class="myBtn" id="">
+                <input type="button" value="确定" onclick="reStart()" class="myBtn" id="">
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <!--主页面 -->
+        <div class="msgBox" id="msgBox"></div>
+        <!-- 信息盒子 -->
+        <div class="list-main">
+            <!-- 侧边栏 -->
+            <div class="list-box">
+                <div class="list-box-items" onclick="setting()" id="settingBtn">
+                    <img src="icon/setting.png" class="list-box-item" alt="设置">
+                </div>
+            </div>
+            <div class="list-box">
+                <div class="list-box-items" onclick="showDecision()" id="decision">
+                    <img src="icon/decision.png" class="list-box-item" alt="决定">
+                </div>
+            </div>
+            <div class="list-box">
+                <div class="list-box-items" onclick="showItems()" id="decision">
+                    <img src="icon/items.png" class="list-box-item" alt="物品">
+                </div>
+            </div>
+            <div class="list-box">
+                <div class="list-box-items" onclick="save()" id="decision">
+                    <img src="icon/save.png" class="list-box-item" alt="保存">
+                </div>
+            </div>
+            <div class="list-box">
+                <div class="list-box-items" onclick="showMy()" id="decision">
+                    <img src="icon/profile.png" class="list-box-item" alt="状态">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigBox {
+            width: 800px;
+            height: 600px;
+            border: 2px solid brown;
+            margin: 0 auto;
+            margin-top: 100px;
+            position: relative;
+        }
+        
+        .smallBox {
+            width: 50px;
+            height: 50px;
+            background-color: khaki;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigBox">
+        <div class="smallBox"></div>
+    </div>
+    <script>
+        // 键盘按下事件  ←37  ↑38  →39 ↓40
+        // 获取元素节点
+        var smallBox = document.getElementsByClassName("smallBox")[0];
+        var bigBox = document.getElementsByClassName("bigBox")[0];
+        class Key {
+            constructor(smallBox, bigBox) {
+                this.smallBox = smallBox;
+                this.bigBox = bigBox;
+                document.onkeydown = this.keyDown.bind(this);
+            }
+            keyDown(ev) {
+                this.ev = ev;
+                // 获取小盒子的left值与top值。  注意 元素.style.属性名 只能获取行内样式。
+                var l = parseInt(getComputedStyle(smallBox).left);
+                var t = parseInt(getComputedStyle(smallBox).top);
+                // console.log("l="+l);
+                // console.log("t="+t);
+                // 小盒子每次移动的距离
+                var speed = 50;
+                if (ev.shiftKey) {
+                    speed *= 2;
+                }
+                switch (ev.keyCode) {
+                    // 左
+                    case 37:
+                        // 小盒子应该向左移动
+                        l -= speed
+                        if (l >= 0) {
+                            smallBox.style.left = l + "px";
+                        } else {
+                            smallBox.style.left = 0;
+                        }
+                        break;
+                        // 上
+                    case 38:
+                        t -= speed;
+                        if (t >= 0) {
+                            smallBox.style.top = t + "px";
+                        } else {
+                            smallBox.style.top = 0;
+                        }
+                        break;
+                        // 右
+                    case 39:
+                        l += speed;
+                        if (l <= (bigBox.clientWidth - smallBox.offsetWidth)) {
+                            // 小盒子应该向右移动
+                            smallBox.style.left = l + "px";
+                        } else {
+                            smallBox.style.left = (bigBox.clientWidth - smallBox.offsetWidth) + "px";
+                        }
+                        break;
+                        // 下
+                    case 40:
+                        t += speed;
+                        if (t <= (bigBox.clientHeight - smallBox.offsetHeight)) {
+                            smallBox.style.top = t + "px";
+                        } else {
+                            smallBox.style.top = (bigBox.clientHeight - smallBox.offsetHeight) + "px";
+                        }
+                        break;
+                }
+            }
+        }
+        var key = new Key(smallBox, bigBox);
+    </script>
+</body>
+
+</html>

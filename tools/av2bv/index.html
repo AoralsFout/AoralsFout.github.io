@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>AV号/BV号 转换工具</title>
+    <link rel="icon" href="https://www.bilibili.com/favicon.ico?v=1">
+</head>
+
+<body>
+    <style>
+        body {
+            min-width: 700px;
+            margin: 0 auto;
+        }
+
+        .title {
+            color: cornflowerblue;
+            font-size: 60px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 1px;
+        }
+
+        .inputbox {
+            display: flex;
+            justify-content: center;
+            margin: 5px;
+        }
+
+        .outputbox {
+            display: flex;
+            justify-content: center;
+            margin: 5px;
+        }
+
+        .input {
+            width: 500px;
+            height: 36px;
+            border: 2px solid cornflowerblue;
+            border-radius: 3px;
+            outline: none;
+            font-size: 20px;
+        }
+
+        .output {
+            font-size: 20px;
+            margin-left: -3px;
+            width: 394px;
+            height: 36px;
+            border: 2px solid cornflowerblue;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .output::selection {
+            background-color: #ccc;
+        }
+
+        .jieguo {
+            font-size: 25px;
+            color: white;
+            background-color: cornflowerblue;
+            text-align: center;
+            width: 100px;
+            height: 38px;
+            line-height: 38px;
+            border: 2px solid cornflowerblue;
+            border-radius: 3px;
+            padding-left: 2px;
+            padding-right: 2px;
+            user-select: none;
+        }
+
+        .btn {
+            margin-left: -3px;
+            text-align: center;
+            width: 100px;
+            height: 38px;
+            line-height: 38px;
+            border: 2px solid cornflowerblue;
+            border-radius: 3px;
+            padding-left: 2px;
+            padding-right: 2px;
+            user-select: none;
+        }
+
+        .btn:hover {
+            animation-name: hover;
+            animation-duration: 200ms;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes hover {
+            0% {
+                color: black;
+                background-color: white;
+            }
+
+            100% {
+                color: white;
+                background-color: cornflowerblue;
+            }
+        }
+
+        .btn:active {
+            animation-name: active;
+            animation-duration: 200ms;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes active {
+            0% {
+                color: white;
+                background-color: cornflowerblue;
+            }
+
+            100% {
+                color: white;
+                background-color: rgb(54, 123, 250);
+            }
+        }
+    </style>
+    <div>
+        <div class="title">AV号/BV号 互转工具</div>
+        <div class="inputbox">
+            <input type="text" id="av" class="input">
+            <div onclick="return av() && false" class="btn">AV转BV</div>
+        </div>
+        <div class="inputbox">
+            <input type="text" id="bv" class="input">
+            <div onclick="return bv() && false" class="btn">BV转AV</div>
+        </div>
+        <div class="outputbox">
+            <div class="jieguo">结果：</div>
+            <input type="text" readonly class="output" id="result">
+            <div onclick="copy()" class="btn">复制结果</div>
+        </div>
+        <div class="inputbox">
+            <div onclick="clean()" class="btn">清除</div>
+        </div>
+        <div class="footer">
+            <div>源码来自<a href="https://mrhso.github.io/IshisashiWebsite/BVwhodoneit/">mrhso</a></div>
+        </div>
+    </div>
+    <script>
+        'use strict';
+
+        const table = [...'fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF'];
+        const s = [11, 10, 3, 8, 4, 6];
+        const xor = 177451812;
+        const add = 8728348608;
+
+        const av2bv = (av) => {
+            let num = NaN;
+            if (Object.prototype.toString.call(av) === '[object Number]') {
+                num = av;
+            } else if (Object.prototype.toString.call(av) === '[object String]') {
+                num = parseInt(av.replace(/[^0-9]/gu, ''));
+            };
+            if (isNaN(num) || num <= 0) {
+                // 网页版直接输出这个结果了
+                return '转换失败';
+            };
+
+            num = (num ^ xor) + add;
+            let result = [...'BV1  4 1 7  '];
+            let i = 0;
+            while (i < 6) {
+                // 这里改写差点犯了运算符优先级的坑
+                // 果然 Python 也不是特别熟练
+                // 说起来 ** 按照传统语法应该写成 Math.pow()，但是我个人更喜欢 ** 一些
+                result[s[i]] = table[Math.floor(num / 58 ** i) % 58];
+                i += 1;
+            };
+            return result.join('');
+        };
+
+        const bv2av = (bv) => {
+            let str = '';
+            if (bv.length === 12) {
+                str = bv;
+            } else if (bv.length === 10) {
+                str = `BV${bv}`;
+                // 根据官方 API，BV 号开头的 BV1 其实可以省略
+                // 不过单独省略个 B 又不行（
+            } else if (bv.length === 9) {
+                str = `BV1${bv}`;
+            } else {
+                return '转换失败';
+            };
+            if (!str.match(/[Bb][Vv][fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF]{10}/gu)) {
+                return '转换失败';
+            };
+
+            let result = 0;
+            let i = 0;
+            while (i < 6) {
+                result += table.indexOf(str[s[i]]) * 58 ** i;
+                i += 1;
+            };
+            return `av${result - add ^ xor}`;
+        };
+
+        const av = () => {
+            let result = av2bv(document.getElementById('av').value);
+            if (result !== '转换失败') {
+                document.getElementById('result').value = `${result}`;
+            } else {
+                document.getElementById('result').value = `${result}`;
+            };
+        };
+
+        const bv = () => {
+            let result = bv2av(document.getElementById('bv').value);
+            if (result !== '转换失败') {
+                document.getElementById('result').value = `${result}`;
+            } else {
+                document.getElementById('result').value = `${result}`;
+            };
+        };
+
+        document.getElementById('av').addEventListener('keydown', (event) => {
+            if (event.keyCode === 13) {
+                av();
+            };
+        });
+
+        document.getElementById('bv').addEventListener('keydown', (event) => {
+            if (event.keyCode === 13) {
+                bv();
+            };
+        });
+
+        function copy(){
+            const inputElement = document.querySelector('#result');
+            inputElement.select();
+            document.execCommand('copy');
+            alert('文本已成功复制!');
+        }
+
+        function clean(){
+            document.getElementById('av').value = null ;
+            document.getElementById('bv').value = null ;
+            document.getElementById('result').value = null ;
+        }
+        
+    </script>
+</body>
+
+</html>

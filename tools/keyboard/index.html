@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="amb56-zuu28-001.ico">
+    <title>键盘检测</title>
+</head>
+<body>
+    <div>
+        <style type="text/css">
+            body {
+                -webkit-animation-name: "loops"; 
+                -webkit-animation-duration: 30s; 
+                -webkit-animation-iteration-count: infinite; 
+            }
+            @keyframes loops {
+        
+                    0% {
+                        background-image:url(../../img/bg.jpeg.png);
+                        min-width: 1100px;
+                margin: 0px;
+                background-color: rgba(0,0,0,0.2);
+                background-position: center center;
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-blend-mode: multiply;
+                    }
+        
+                    25% {
+                        background-image:url(../../img/bg1.jpg.png);
+                        min-width: 1100px;
+                margin: 0px;
+                background-color: rgba(0,0,0,0.2);
+                background-position: center center;
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-blend-mode: multiply;
+                    }
+        
+                    50% {
+                        background-image:url(../../img/bg2.png);
+                        min-width: 1100px;
+                margin: 0px;
+                background-color: rgba(0,0,0,0.2);
+                background-position: center center;
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-blend-mode: multiply;
+                    }
+        
+                    75% {
+                        background-image:url(../../img/bg3.jpg.png);
+                        min-width: 1100px;
+                margin: 0px;
+                background-color: rgba(0,0,0,0.2);
+                background-position: center center;
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-blend-mode: multiply;
+                    }
+        
+                    100% {
+                        background-image:url(../../img/bg.jpeg.png);
+                        min-width: 1100px;
+                margin: 0px;
+                background-color: rgba(0,0,0,0.2);
+                background-position: center center;
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-blend-mode: multiply;
+                    }
+        
+            }
+        </style>
+        <style>
+            /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/
+        ::-webkit-scrollbar
+        {
+        width:10px;
+        height:10px;
+        background-color:#F5F5F5;
+        }
+        /*定义滚动条轨道*/
+        ::-webkit-scrollbar-track
+        {
+        background-color:#F5F5F5;
+        }
+        /*定义滑块*/
+        ::-webkit-scrollbar-thumb
+        {
+        border-radius:10px;
+        background-color:rgb(0, 225, 255);
+        }
+        </style>
+        <style>
+            .mainbg {
+                margin-left: 5%;
+                width: 1250px;
+                height: 600px;
+                align-items: center;
+                background-color: #ffffff95;
+                padding: 20px;
+            }
+            .btn-space {
+                display: flex;
+                margin-left: 2px;
+                margin-right: 2px;
+                margin-top: 2px;
+                background-color: gray;
+                height: 50px;
+                width: 428px;
+                float: left;
+            }
+            .btn-rep {
+                display: flex;
+                margin-left: 2px;
+                margin-right: 2px;
+                margin-top: 2px;
+                background-color: rgb(32, 177, 235);
+                height: 50px;
+                width: 104px;
+                float: left;
+            }
+            .next-rol {
+                display: flex;
+                margin: 2px;
+                background-color: #00000000;
+                height: 15px;
+                width: 50px;
+                float: left;
+            }
+            .btn-no {
+                display: flex;
+                margin: 2px;
+                background-color: #00000000;
+                height: 50px;
+                width: 50px;
+                float: left;
+            }
+            .btn-no-half {
+                display: flex;
+                margin: 2px;
+                background-color: #00000000;
+                height: 50px;
+                width: 23px;
+                float: left;
+            }
+            .btn-normal {
+                display: flex;
+                margin-left: 2px;
+                margin-right: 2px;
+                margin-top: 2px;
+                background-color: gray;
+                height: 50px;
+                width: 50px;
+                float: left;
+            }
+            .btn-2x {
+                display: flex;
+                margin: 2px;
+                background-color: gray;
+                height: 50px;
+                width: 104px;
+                float: left;
+            }
+            .btn-1p5x {
+                display: flex;
+                margin: 2px;
+                background-color: gray;
+                height: 50px;
+                width: 77px;
+                float: left;
+            }
+            .btn-2p5x {
+                display: flex;
+                margin: 2px;
+                background-color: gray;
+                height: 50px;
+                width: 131px;
+                float: left;
+            }
+            .btn-display-no {
+                display: flex;
+                margin-top: -2px;
+                margin-left: 2px;
+                background-color: gray;
+                height: 54px;
+                width: 50px;
+                float: left;
+            }
+        </style>
+    </div>
+    <div class="mainbg">
+        <div style="display: flex;flex-direction:row;">
+            <div class="btn-normal" id="esc">
+                <span>Esc</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var esc = document.getElementById("esc"); 
+                    function keydown(event){
+                        if (event.keyCode == 27){
+                            esc.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no"></div>
+            <div class="btn-normal" id="f1">
+                <span>F1</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f1 = document.getElementById("f1"); 
+                    function keydown(event){
+                        if (event.keyCode == 112){
+                            f1.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="f2">
+                <span>F2</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f2 = document.getElementById("f2"); 
+                    function keydown(event){
+                        if (event.keyCode == 113){
+                            f2.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="f3">
+                <span>F3</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f3 = document.getElementById("f3"); 
+                    function keydown(event){
+                        if (event.keyCode == 114){
+                            f3.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="f4">
+                <span>F4</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f4 = document.getElementById("f4"); 
+                    function keydown(event){
+                        if (event.keyCode == 115){
+                            f4.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-normal" id="f5">
+                <span>F5</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f5 = document.getElementById("f5"); 
+                    function keydown(event){
+                        if (event.keyCode == 116){
+                            f5.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="f6">
+                <span>F6</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f6 = document.getElementById("f6"); 
+                    function keydown(event){
+                        if (event.keyCode == 117){
+                            f6.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="f7">
+                <span>F7</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f7 = document.getElementById("f7"); 
+                    function keydown(event){
+                        if (event.keyCode == 118){
+                            f7.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="f8">
+                <span>F8</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f8 = document.getElementById("f8"); 
+                    function keydown(event){
+                        if (event.keyCode == 119){
+                            f8.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-normal" id="f9">
+                <span>F9</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f9 = document.getElementById("f9"); 
+                    function keydown(event){
+                        if (event.keyCode == 120){
+                            f9.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="f10">
+                <span>F10</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f10 = document.getElementById("f10"); 
+                    function keydown(event){
+                        if (event.keyCode == 121){
+                            f10.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="f11">
+                <span>F11</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f11 = document.getElementById("f11"); 
+                    function keydown(event){
+                        if (event.keyCode == 122){
+                            f11.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="f12">
+                <span>F12</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var f12 = document.getElementById("f12"); 
+                    function keydown(event){
+                        if (event.keyCode == 123){
+                            f12.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-normal" id="prtsc">
+                <span>PrtSc</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var prtsc = document.getElementById("prtsc"); 
+                    function keydown(event){
+                        if (event.keyCode == 44){
+                            prtsc.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="ScrLk">
+                <span>ScrLk</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var ScrLk = document.getElementById("ScrLk"); 
+                    function keydown(event){
+                        if (event.keyCode == 145){
+                            ScrLk.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="Pause">
+                <span>Pause</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var Pause = document.getElementById("Pause"); 
+                    function keydown(event){
+                        if (event.keyCode == 19){
+                            Pause.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-rep">
+                <span onclick="rep()">点我重置键盘</span>
+                <script>
+                    function rep(){
+                        location.reload();
+                    }
+                </script>
+            </div>
+        </div>
+        <div style="display: flex;flex-direction:row;">
+            <div class="next-rol"></div>
+        </div>
+        <div style="display: flex;flex-direction:row;">
+            <div class="btn-normal" id="tx1">
+                <span>`</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var tx1 = document.getElementById("tx1"); 
+                    function keydown(event){
+                        if (event.keyCode == 192){
+                            tx1.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="num1">
+                <span>1</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var num1 = document.getElementById("num1"); 
+                    function keydown(event){
+                        if (event.keyCode == 49){
+                            num1.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="num2">
+                <span>2</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var num2 = document.getElementById("num2"); 
+                    function keydown(event){
+                        if (event.keyCode == 50){
+                            num2.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="num3">
+                <span>3</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var num3 = document.getElementById("num3"); 
+                    function keydown(event){
+                        if (event.keyCode == 51){
+                            num3.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="num4">
+                <span>4</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var num4 = document.getElementById("num4"); 
+                    function keydown(event){
+                        if (event.keyCode == 52){
+                            num4.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="num5">
+                <span>5</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var num5 = document.getElementById("num5"); 
+                    function keydown(event){
+                        if (event.keyCode == 53){
+                            num5.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="num6">
+                <span>6</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var num6 = document.getElementById("num6"); 
+                    function keydown(event){
+                        if (event.keyCode == 54){
+                            num6.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="num7">
+                <span>7</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var num7 = document.getElementById("num7"); 
+                    function keydown(event){
+                        if (event.keyCode == 55){
+                            num7.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="num8">
+                <span>8</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var num8 = document.getElementById("num8"); 
+                    function keydown(event){
+                        if (event.keyCode == 56){
+                            num8.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="num9">
+                <span>9</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var num9 = document.getElementById("num9"); 
+                    function keydown(event){
+                        if (event.keyCode == 57){
+                            num9.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="num0">
+                <span>0</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var num0 = document.getElementById("num0"); 
+                    function keydown(event){
+                        if (event.keyCode == 48){
+                            num0.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="tx2">
+                <span>-</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var tx2 = document.getElementById("tx2"); 
+                    function keydown(event){
+                        if (event.keyCode == 189){
+                            tx2.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="tx3">
+                <span>=</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var tx3 = document.getElementById("tx3"); 
+                    function keydown(event){
+                        if (event.keyCode == 187){
+                            tx3.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-2x" id="Backspace">
+                <span>BackSpace</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var Backspace = document.getElementById("Backspace"); 
+                    function keydown(event){
+                        if (event.keyCode == 8){
+                            Backspace.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-normal" id="Ins">
+                <span>Ins</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var Ins = document.getElementById("Ins"); 
+                    function keydown(event){
+                        if (event.keyCode == 45){
+                            Ins.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="Home">
+                <span>Home</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var Home = document.getElementById("Home"); 
+                    function keydown(event){
+                        if (event.keyCode == 36){
+                            Home.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="PgUp">
+                <span>PgUp</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var PgUp = document.getElementById("PgUp"); 
+                    function keydown(event){
+                        if (event.keyCode == 33){
+                            PgUp.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-normal" id="Num">
+                <span>Num</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var Num = document.getElementById("Num"); 
+                    function keydown(event){
+                        if (event.keyCode == 144){
+                            Num.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="tx4">
+                <span>/</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var tx4 = document.getElementById("tx4"); 
+                    function keydown(event){
+                        if (event.keyCode == 111){
+                            tx4.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="tx5">
+                <span>*</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var tx5 = document.getElementById("tx5"); 
+                    function keydown(event){
+                        if (event.keyCode == 106){
+                            tx5.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="tx6">
+                <span>-</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var tx6 = document.getElementById("tx6"); 
+                    function keydown(event){
+                        if (event.keyCode == 109){
+                            tx6.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <div style="display: flex;flex-direction:row;">
+            <div class="btn-1p5x" id="Tab">
+                <span>Tab</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var Tab = document.getElementById("Tab"); 
+                    function keydown(event){
+                        if (event.keyCode == 9){
+                            Tab.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="Q">
+                <span>Q</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var Q = document.getElementById("Q"); 
+                    function keydown(event){
+                        if (event.keyCode == 81){
+                            Q.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="W">
+                <span>W</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var W = document.getElementById("W"); 
+                    function keydown(event){
+                        if (event.keyCode == 87){
+                            W.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="E">
+                <span>E</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var E = document.getElementById("E"); 
+                    function keydown(event){
+                        if (event.keyCode == 69){
+                            E.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="R">
+                <span>R</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var R = document.getElementById("R"); 
+                    function keydown(event){
+                        if (event.keyCode == 82){
+                            R.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="T">
+                <span>T</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var T = document.getElementById("T"); 
+                    function keydown(event){
+                        if (event.keyCode == 84){
+                            T.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="Y">
+                <span>Y</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var Y = document.getElementById("Y"); 
+                    function keydown(event){
+                        if (event.keyCode == 89){
+                            Y.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key85">
+                <span>U</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key85 = document.getElementById("key85"); 
+                    function keydown(event){
+                        if (event.keyCode == 85){
+                            key85.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key73">
+                <span>I</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key73 = document.getElementById("key73"); 
+                    function keydown(event){
+                        if (event.keyCode == 73){
+                            key73.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key79">
+                <span>O</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key79 = document.getElementById("key79"); 
+                    function keydown(event){
+                        if (event.keyCode == 79){
+                            key79.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key80">
+                <span>P</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key80 = document.getElementById("key80"); 
+                    function keydown(event){
+                        if (event.keyCode == 80){
+                            key80.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key219">
+                <span>[&nbsp;{</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key219 = document.getElementById("key219"); 
+                    function keydown(event){
+                        if (event.keyCode == 219){
+                            key219.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key221">
+                <span>]&nbsp;}</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key221 = document.getElementById("key221"); 
+                    function keydown(event){
+                        if (event.keyCode == 221){
+                            key221.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-1p5x" id="key220">
+                <span>\&nbsp;|</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key220 = document.getElementById("key220"); 
+                    function keydown(event){
+                        if (event.keyCode == 220){
+                            key220.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-normal" id="key46">
+                <span>Del</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key46 = document.getElementById("key46"); 
+                    function keydown(event){
+                        if (event.keyCode == 46){
+                            key46.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key35">
+                <span>End</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key35 = document.getElementById("key35"); 
+                    function keydown(event){
+                        if (event.keyCode == 35){
+                            key35.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key34">
+                <span>PgDn</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key34 = document.getElementById("key34"); 
+                    function keydown(event){
+                        if (event.keyCode == 34){
+                            key34.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-normal" id="key103">
+                <span>7</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key103 = document.getElementById("key103"); 
+                    function keydown(event){
+                        if (event.keyCode == 103){
+                            key103.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key104">
+                <span>8</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key104 = document.getElementById("key104"); 
+                    function keydown(event){
+                        if (event.keyCode == 104){
+                            key104.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key105">
+                <span>9</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key105 = document.getElementById("key105"); 
+                    function keydown(event){
+                        if (event.keyCode == 105){
+                            key105.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key107">
+                <span>+</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key107 = document.getElementById("key107"); 
+                    function keydown(event){
+                        if (event.keyCode == 107){
+                            key107.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <div style="display: flex;flex-direction:row;">
+            <div class="btn-2x" id="key20">
+                <span>Caps</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key20 = document.getElementById("key20"); 
+                    function keydown(event){
+                        if (event.keyCode == 20){
+                            key20.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key65">
+                <span>A</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key65 = document.getElementById("key65"); 
+                    function keydown(event){
+                        if (event.keyCode == 65){
+                            key65.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key83">
+                <span>S</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key83 = document.getElementById("key83"); 
+                    function keydown(event){
+                        if (event.keyCode == 83){
+                            key83.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key68">
+                <span>D</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key68 = document.getElementById("key68"); 
+                    function keydown(event){
+                        if (event.keyCode == 68){
+                            key68.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key70">
+                <span>F</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key70 = document.getElementById("key70"); 
+                    function keydown(event){
+                        if (event.keyCode == 70){
+                            key70.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key71">
+                <span>G</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key71 = document.getElementById("key71"); 
+                    function keydown(event){
+                        if (event.keyCode == 71){
+                            key71.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key72">
+                <span>H</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key72 = document.getElementById("key72"); 
+                    function keydown(event){
+                        if (event.keyCode == 72){
+                            key72.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key74">
+                <span>J</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key74 = document.getElementById("key74"); 
+                    function keydown(event){
+                        if (event.keyCode == 74){
+                            key74.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key75">
+                <span>K</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key75 = document.getElementById("key75"); 
+                    function keydown(event){
+                        if (event.keyCode == 75){
+                            key75.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key76">
+                <span>L</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key76 = document.getElementById("key76"); 
+                    function keydown(event){
+                        if (event.keyCode == 76){
+                            key76.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key186">
+                <span>;&nbsp;:</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key186 = document.getElementById("key186"); 
+                    function keydown(event){
+                        if (event.keyCode == 186){
+                            key186.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key222">
+                <span>'&nbsp;"</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key222 = document.getElementById("key222"); 
+                    function keydown(event){
+                        if (event.keyCode == 222){
+                            key222.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-2x" id="key13">
+                <span>Enter</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key13 = document.getElementById("key13"); 
+                    function keydown(event){
+                        if (event.keyCode == 13){
+                            key13.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-no"></div>
+            <div class="btn-no"></div>
+            <div class="btn-no"></div>
+            <div class="btn-no-half"></div>
+            <div class="btn-normal" id="key100">
+                <span>4</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key100 = document.getElementById("key100"); 
+                    function keydown(event){
+                        if (event.keyCode == 100){
+                            key100.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key101">
+                <span>5</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key101 = document.getElementById("key101"); 
+                    function keydown(event){
+                        if (event.keyCode == 101){
+                            key101.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key102">
+                <span>6</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key102 = document.getElementById("key102"); 
+                    function keydown(event){
+                        if (event.keyCode == 102){
+                            key102.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-display-no" id="tx7">
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var tx7 = document.getElementById("tx7"); 
+                    function keydown(event){
+                        if (event.keyCode == 107){
+                            tx7.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <div style="display: flex;flex-direction:row;">
+            <div class="btn-2p5x" id="key16">
+                <span>Shift</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key16 = document.getElementById("key16"); 
+                    function keydown(event){
+                        if (event.keyCode == 16){
+                            key16.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key90">
+                <span>Z</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key90 = document.getElementById("key90"); 
+                    function keydown(event){
+                        if (event.keyCode == 90){
+                            key90.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key88">
+                <span>X</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key88 = document.getElementById("key88"); 
+                    function keydown(event){
+                        if (event.keyCode == 88){
+                            key88.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key67">
+                <span>C</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key67 = document.getElementById("key67"); 
+                    function keydown(event){
+                        if (event.keyCode == 67){
+                            key67.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key86">
+                <span>V</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key86 = document.getElementById("key86"); 
+                    function keydown(event){
+                        if (event.keyCode == 86){
+                            key86.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key66">
+                <span>B</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key66 = document.getElementById("key66"); 
+                    function keydown(event){
+                        if (event.keyCode == 66){
+                            key66.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key78">
+                <span>N</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key78 = document.getElementById("key78"); 
+                    function keydown(event){
+                        if (event.keyCode == 78){
+                            key78.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key77">
+                <span>M</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key77 = document.getElementById("key77"); 
+                    function keydown(event){
+                        if (event.keyCode == 77){
+                            key77.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key188">
+                <span>,&nbsp;<</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key188 = document.getElementById("key188"); 
+                    function keydown(event){
+                        if (event.keyCode == 188){
+                            key188.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key190">
+                <span>.&nbsp;></span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key190 = document.getElementById("key190"); 
+                    function keydown(event){
+                        if (event.keyCode == 190){
+                            key190.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key191">
+                <span>/&nbsp;?</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key191 = document.getElementById("key191"); 
+                    function keydown(event){
+                        if (event.keyCode == 191){
+                            key191.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-2p5x" id="key16b">
+                <span>Shift</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key16b = document.getElementById("key16b"); 
+                    function keydown(event){
+                        if (event.keyCode == 16){
+                            key16b.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-no"></div>
+            <div class="btn-normal" id="key38">
+                <span>↑</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key38 = document.getElementById("key38"); 
+                    function keydown(event){
+                        if (event.keyCode == 38){
+                            key38.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-no"></div>
+            <div class="btn-normal" id="key97">
+                <span>1</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key97 = document.getElementById("key97"); 
+                    function keydown(event){
+                        if (event.keyCode == 97){
+                            key97.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key98">
+                <span>2</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key98 = document.getElementById("key98"); 
+                    function keydown(event){
+                        if (event.keyCode == 98){
+                            key98.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key99">
+                <span>3</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key99 = document.getElementById("key99"); 
+                    function keydown(event){
+                        if (event.keyCode == 99){
+                            key99.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key13b">
+                <span>Enter</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key13b = document.getElementById("key13b"); 
+                    function keydown(event){
+                        if (event.keyCode == 13){
+                            key13b.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <div style="display: flex;flex-direction:row;">
+            <div class="btn-normal" id="key17">
+                <span>Ctrl</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key17 = document.getElementById("key17"); 
+                    function keydown(event){
+                        if (event.keyCode == 17){
+                            key17.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key91">
+                <span>Win</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key91 = document.getElementById("key91"); 
+                    function keydown(event){
+                        if (event.keyCode == 91){
+                            key91.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key18">
+                <span>Alt</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key18 = document.getElementById("key18"); 
+                    function keydown(event){
+                        if (event.keyCode == 18){
+                            key18.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-space" id="key32">
+                <span>Space</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key32 = document.getElementById("key32"); 
+                    function keydown(event){
+                        if (event.keyCode == 32){
+                            key32.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key18b">
+                <span>Alt</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key18b = document.getElementById("key18b"); 
+                    function keydown(event){
+                        if (event.keyCode == 18){
+                            key18b.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key91b">
+                <span>Win</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key91b = document.getElementById("key91b"); 
+                    function keydown(event){
+                        if (event.keyCode == 91){
+                            key91b.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key93">
+                <span>Fn</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key93 = document.getElementById("key93"); 
+                    function keydown(event){
+                        if (event.keyCode == 93){
+                            key93.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key17b">
+                <span>Ctrl</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key17b = document.getElementById("key17b"); 
+                    function keydown(event){
+                        if (event.keyCode == 17){
+                            key17b.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-normal" id="key37">
+                <span>←</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key37 = document.getElementById("key37"); 
+                    function keydown(event){
+                        if (event.keyCode == 37){
+                            key37.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key40">
+                <span>↓</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key40 = document.getElementById("key40"); 
+                    function keydown(event){
+                        if (event.keyCode == 40){
+                            key40.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key39">
+                <span>→</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key39 = document.getElementById("key39"); 
+                    function keydown(event){
+                        if (event.keyCode == 39){
+                            key39.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-no-half"></div>
+            <div class="btn-2x" id="key96">
+                <span>0</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key96 = document.getElementById("key96"); 
+                    function keydown(event){
+                        if (event.keyCode == 96){
+                            key96.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-normal" id="key110">
+                <span>.</span>
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var key110 = document.getElementById("key110"); 
+                    function keydown(event){
+                        if (event.keyCode == 110){
+                            key110.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+            <div class="btn-display-no" id="tx8">
+                <script>
+                    document.addEventListener("keydown",keydown);
+                    var tx8 = document.getElementById("tx8"); 
+                    function keydown(event){
+                        if (event.keyCode == 13){
+                            tx8.setAttribute("style","background-color:#00FF7F;")
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <h1>注意</h1>
+        <p>测试小键盘一定要打开小键盘上的Num键。</p>
+        <p>一些按键可能会触发快捷键，到时候还原就行了。</p>
+    </div>
+</body>
+</html>

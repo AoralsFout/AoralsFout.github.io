@@ -1,0 +1,73 @@
+<style lang="css">
+    #box1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div id="smallBox"></div>
+</body>
+<script>
+    var smallBox = document.getElementById("smallBox");
+    // 初始化移动速度
+    var speed = 5;
+    // 控制方向(上、左、下、右)
+    var dir = [false, false, false, false];
+    // 设置定时器控制元素全方位移动
+    setInterval(function() {
+            // 向左
+            if (dir[3]) smallBox.style.left = smallBox.offsetLeft - speed + 'px';
+            // 向右
+            if (dir[1]) smallBox.style.left = smallBox.offsetLeft + speed + 'px';
+            // 向上
+            if (dir[0]) smallBox.style.top = smallBox.offsetTop - speed + 'px';
+            // 向下
+            if (dir[2]) smallBox.style.top = smallBox.offsetTop + speed + 'px';
+        }, 10)
+        // 鼠标按下设置速度和方向
+    document.onkeydown = function(event) {
+            var e = event || window.event;
+            switch (e.keyCode) {
+                case 37:
+                    dir[3] = true;
+                    break;
+                case 38:
+                    dir[0] = true;
+                    break;
+                case 39:
+                    dir[1] = true;
+                    break;
+                case 40:
+                    dir[2] = true;
+                    break;
+            }
+            // 按住ctrl键加速移动，松开恢复
+            if (event.ctrlKey) {
+                speed = 10;
+            } else {
+                speed = 5;
+            }
+
+        }
+        // 松开鼠标停止移动
+    document.onkeyup = function(event) {
+        var e = event || window.event;
+        switch (e.keyCode) {
+            case 37:
+                dir[3] = false;
+                break;
+            case 38:
+                dir[0] = false;
+                break;
+            case 39:
+                dir[1] = false;
+                break;
+            case 40:
+                dir[2] = false;
+                break;
+        }
+    }
+</script>

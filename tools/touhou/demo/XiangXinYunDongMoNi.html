@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SVG.js</title>
+    <script src="plugins/svg.min.js"></script>
+    <script src="plugins/svg.easing.min.js"></script>
+    <script src="plugins/svg.filter.js"></script>
+    <script src="utils/utils.js"></script>
+</head>
+
+<body>
+</body>
+<script>
+    var draw = SVG().addTo('body').size(800, 600)
+
+    var circle, path;
+
+    function make() {
+        path = draw.path("M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z").attr({
+            fill: 'none',
+            stroke: "lightgrey"
+        }).move(200, 200);
+        circle = draw.circle(18, 18).attr({
+            fill: SVG.Color.random()
+        }).center(220, 250);
+    }
+
+    make();
+
+    const duration = 20;
+
+    function animates() {
+        const len = path.length();
+        for (let i = 0; i < len; i++) {
+            const point = path.pointAt(i);
+            const {
+                x,
+                y
+            } = point;
+            circle.animate({
+                duration: duration,
+                delay: i * duration,
+                when: 'now',
+                swing: false,
+                times: true,
+                wait: len * duration
+            }).center(x, y);
+        }
+    }
+
+    animates();
+</script>
+
+</html>

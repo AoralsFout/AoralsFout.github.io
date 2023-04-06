@@ -1,0 +1,27 @@
+{
+    "main": "index.html",
+    "name": "game",
+    "description": "text demo vision",
+    "version": "1.0.0",
+    "window": {
+        "title": "感染新冠,然后转生到异世界",
+        "toolbar": false,
+        "width": 1280,
+        "height": 720,
+        "position": "center",
+        "min_width": 1280,
+        "min_height": 720,
+        "max_width": 1280,
+        "max_height": 720,
+        "as_desktop": false,
+        "resizable": false,
+        "always-on-top": false,
+        "fullscreen": false,
+        "show_in_taskbar": true
+    },
+    "webkit": {
+        "plugin": true,
+        "java": false,
+        "page-cache": true
+    }
+}
