@@ -15,24 +15,26 @@ if (localStorage.length == 0) { //判断是否第一次运行程序
     creatLocalStorage();
     console.log('[INFO]:第一次加载,创建本地缓存');
 }
-//初始化变量
-var userName = localStorage['userName'];
-var speed = parseInt(localStorage['speed']);
-var money = parseInt(localStorage['money']);
-var items = JSON.parse(localStorage['items']);
-var isPlayed = localStorage['isPlayed'];
-var attack = parseInt(localStorage['attack']);
-var defense = parseInt(localStorage['defense']);
-var fire = parseInt(localStorage['fire']);
-var water = parseInt(localStorage['water']);
-var HP = parseInt(localStorage['HP']);
-var realAttack = 0;
-msg('已加载用户名:' + userName);
-msg('已加载余额:' + money);
-msg('已加载播放速度:' + speed);
-msg('已加载物品:' + items);
-msg('已加载属性:攻击力(' + attack + '),防御力(' + defense + '),火属性天赋(' + fire + '),水属性天赋(' + water + '),生命值(' + HP + ')');
-msg('接下来你可以通过侧边栏来进行决定了');
+window.onload = function() {
+    //初始化变量
+    var userName = localStorage['userName'];
+    var speed = parseInt(localStorage['speed']);
+    var money = parseInt(localStorage['money']);
+    var items = JSON.parse(localStorage['items']);
+    var isPlayed = localStorage['isPlayed'];
+    var attack = parseInt(localStorage['attack']);
+    var defense = parseInt(localStorage['defense']);
+    var fire = parseInt(localStorage['fire']);
+    var water = parseInt(localStorage['water']);
+    var HP = parseInt(localStorage['HP']);
+    var realAttack = 0;
+    msg('已加载用户名:' + userName);
+    msg('已加载余额:' + money);
+    msg('已加载播放速度:' + speed);
+    msg('已加载物品:' + items);
+    msg('已加载属性:攻击力(' + attack + '),防御力(' + defense + '),火属性天赋(' + fire + '),水属性天赋(' + water + '),生命值(' + HP + ')');
+    msg('接下来你可以通过侧边栏来进行决定了');
+}
 
 function save() { //保存函数
     userAttribute()
