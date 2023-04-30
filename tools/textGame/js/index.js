@@ -551,14 +551,12 @@ function ing_4() { //野外
             var ing_4 = JSON.parse(ing_4_1)
             ing_4.msg[2] = { msg: userName + "   :  贸然出击肯定没我好果汁吃,先走吧" };
             ing_4.msg[3] = { msg: "接下来你可以通过侧边栏来进行决定了" }
-            console.log('[SYSTEM]:加载json↓');
             creatMessage(ing_4);
         } else if (HP <= 10) { //生命值不够
             hidDecision()
             var ing_4 = JSON.parse(ing_4_1)
             ing_4.msg[2] = { msg: userName + "   :  现在生命值太少了,赶紧跑吧" };
             ing_4.msg[3] = { msg: "接下来你可以通过侧边栏来进行决定了" }
-            console.log('[SYSTEM]:加载json↓');
             creatMessage(ing_4);
         } else if (realAttack <= 15) { //攻击力不够
             hidDecision();
