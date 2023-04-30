@@ -54,7 +54,7 @@ function save() { //保存函数
 }
 
 function userAttribute() { //计算用户属性值
-    console.log('[开始检索]');
+    console.log('[SYSTEM]:开始检索');
     attack = 0
     defense = 0
     fire = 0
@@ -117,7 +117,7 @@ function cheat() { //作弊码
     console.log('重新观看开场白: review()');
 }
 
-function review(type) { //作弊码 重新观看开场白
+function review() { //作弊码 重新观看开场白
     start();
     setTimeout('load_1()', speed * 8);
 }
@@ -237,6 +237,25 @@ function getItems() { //刷新用户物品栏信息
     }
 }
 
+function creatMessage(jsonName) {
+    console.log('[SYSTEM]:加载json↓');
+    console.log(jsonName);
+    for (var i = 0; i < jsonName.msg.length; i++) {
+        (function(i) {
+            setTimeout(function() {
+                var a = document.createElement('span');
+                var msg = jsonName.msg[i].msg;
+                a.innerText = msg;
+                a.setAttribute('class', 'msg');
+                msgBox.appendChild(a);
+                console.log('[INFO]:' + msg);
+                document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
+            }, speed * i)
+        })(i)
+    }
+    console.log('[SYSTEM]开始');
+}
+
 function start() { //开场函数
     var welcomeJson = `
     {
@@ -271,22 +290,7 @@ function start() { //开场函数
     }
     `
     var welcome = JSON.parse(welcomeJson)
-    console.log('[SYSTEM]:加载json↓');
-    console.log(welcome);
-    for (var i = 0; i < welcome.msg.length; i++) {
-        (function(i) {
-            setTimeout(function() {
-                var a = document.createElement('span');
-                var msg = welcome.msg[i].msg;
-                a.innerText = msg;
-                a.setAttribute('class', 'msg');
-                msgBox.appendChild(a);
-                console.log('[INFO]:' + msg);
-                document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-            }, speed * i)
-        })(i)
-    }
-    console.log('[SYSTEM]开始');
+    creatMessage(welcome);
     setTimeout('showName()', speed * welcome.msg.length - 1); //计时弹出,询问昵称
 }
 
@@ -358,22 +362,7 @@ function load_1() { //第二段开场白
 }
 `
     var ing_1 = JSON.parse(afterNamedJson);
-    console.log('[SYSTEM]:加载json↓');
-    console.log(ing_1);
-    for (var i = 0; i < ing_1.msg.length; i++) {
-        (function(i) {
-            setTimeout(function() {
-                var a = document.createElement('span');
-                var msg = ing_1.msg[i].msg;
-                a.innerText = msg;
-                a.setAttribute('class', 'msg');
-                msgBox.appendChild(a);
-                console.log('[INFO]:' + msg);
-                document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-            }, speed * i)
-        })(i)
-    }
-    console.log('开始');
+    creatMessage(ing_1);
     setTimeout('showDecision()', speed * ing_1.msg.length - 1);
 }
 
@@ -421,22 +410,7 @@ function ing_2() { //逛街
 }
 `
         var ing_2 = JSON.parse(ing_2_2);
-        console.log('[SYSTEM]:加载json↓');
-        console.log(ing_2);
-        for (var i = 0; i < ing_2.msg.length; i++) {
-            (function(i) {
-                setTimeout(function() {
-                    var a = document.createElement('span');
-                    var msg = ing_2.msg[i].msg;
-                    a.innerText = msg;
-                    a.setAttribute('class', 'msg');
-                    msgBox.appendChild(a);
-                    console.log('[INFO]:' + msg);
-                    document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-                }, speed * i)
-            })(i)
-        }
-        console.log('开始');
+        creatMessage(ing_2);
     } else if (rand == 9 || rand == 8 || rand == 7) {
         var ing_2_3 = `
 {
@@ -456,22 +430,7 @@ function ing_2() { //逛街
 }
 `
         var ing_2 = JSON.parse(ing_2_3);
-        console.log('[SYSTEM]:加载json↓');
-        console.log(ing_2);
-        for (var i = 0; i < ing_2.msg.length; i++) {
-            (function(i) {
-                setTimeout(function() {
-                    var a = document.createElement('span');
-                    var msg = ing_2.msg[i].msg;
-                    a.innerText = msg;
-                    a.setAttribute('class', 'msg');
-                    msgBox.appendChild(a);
-                    console.log('[INFO]:' + msg);
-                    document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-                }, speed * i)
-            })(i)
-        }
-        console.log('开始');
+        creatMessage(ing_2)
     } else {
         money = money + 10;
         console.log('[INFO]:用户余额+10,余额:' + money);
@@ -493,22 +452,7 @@ function ing_2() { //逛街
 }
 `
         var ing_2 = JSON.parse(ing_2_1);
-        console.log('[SYSTEM]:加载json↓');
-        console.log(ing_2);
-        for (var i = 0; i < ing_2.msg.length; i++) {
-            (function(i) {
-                setTimeout(function() {
-                    var a = document.createElement('span');
-                    var msg = ing_2.msg[i].msg;
-                    a.innerText = msg;
-                    a.setAttribute('class', 'msg');
-                    msgBox.appendChild(a);
-                    console.log('[INFO]:' + msg);
-                    document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-                }, speed * i)
-            })(i)
-        }
-        console.log('开始');
+        creatMessage(ing_2)
     }
 }
 
@@ -535,22 +479,7 @@ function ing_3() { //进入商店
 }
 `
     var ing_3 = JSON.parse(ing_3);
-    console.log('[SYSTEM]:加载json↓');
-    console.log(ing_3);
-    for (var i = 0; i < ing_3.msg.length; i++) {
-        (function(i) {
-            setTimeout(function() {
-                var a = document.createElement('span');
-                var msg = ing_3.msg[i].msg;
-                a.innerText = msg;
-                a.setAttribute('class', 'msg');
-                msgBox.appendChild(a);
-                console.log('[INFO]:' + msg);
-                document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-            }, 200 * i)
-        })(i)
-    }
-    console.log('开始');
+    creatMessage(ing_3);
     setTimeout('showStore()', speed * ing_3.msg.length - 1);
 }
 
@@ -595,7 +524,8 @@ function ing_4() { //野外
     var a = Math.random() + "" //产生一个随机数
     var rand = parseInt(a.charAt(5)) //的到这个数的第五个字符(实际还是从0~9的数字)
 
-    if (rand == 0 || rand == 1 || rand == 2 || rand == 3 || rand == 4) {
+    if (rand == 0 || rand == 1 || rand == 2 || rand == 3 || rand == 4) { //50% 史莱姆事件
+        //总消息
         var ing_4_1 = `
 {
     "msg": [{
@@ -608,48 +538,34 @@ function ing_4() { //野外
 }
 `
         userAttribute()
-        if (HP <= 10) {
+        var enermyHP = 70; //史莱姆(敌人)的属性
+        var enermyAttact = 10;
+        var enermyRealAttack = enermyAttact / defense * 5; //敌人的实际攻击力(公式:敌人攻击力除以我的防御力乘以10)
+        //回合数
+        var round = Math.ceil(enermyHP / realAttack) < Math.ceil(HP / enermyRealAttack) ? Math.ceil(enermyHP / realAttack) : Math.ceil(HP / enermyRealAttack);
+        //我攻击敌人最多的次数 小于 敌人攻击我最多的次数 吗? 是 返回 我攻击敌人最多的次数 , 不是 返回  敌人攻击我最多的次数 (三元表达式)
+        //敌人血量除以我的实际攻击力是我用几次可以打败敌人(我的血量除以敌人的实际攻击力是敌人用几次可以打败我),大部分情况会出现小数,即敌人(我)有剩余血量,所以用Math.ceil()向上取整
+        //Math.ceil(enermyHP / realAttack) < Math.ceil(HP / enermyRealAttack)时,我能击败敌人,反之不能
+        if (Math.ceil(enermyHP / realAttack) > Math.ceil(HP / enermyRealAttack)) { //我不能击败敌人
+            hidDecision()
+            var ing_4 = JSON.parse(ing_4_1)
+            ing_4.msg[2] = { msg: userName + "   :  贸然出击肯定没我好果汁吃,先走吧" };
+            ing_4.msg[3] = { msg: "接下来你可以通过侧边栏来进行决定了" }
+            console.log('[SYSTEM]:加载json↓');
+            creatMessage(ing_4);
+        } else if (HP <= 10) { //生命值不够
             hidDecision()
             var ing_4 = JSON.parse(ing_4_1)
             ing_4.msg[2] = { msg: userName + "   :  现在生命值太少了,赶紧跑吧" };
             ing_4.msg[3] = { msg: "接下来你可以通过侧边栏来进行决定了" }
             console.log('[SYSTEM]:加载json↓');
-            console.log(ing_4);
-            for (var i = 0; i < ing_4.msg.length; i++) {
-                (function(i) {
-                    setTimeout(function() {
-                        var msg = ing_4.msg[i].msg;
-                        var a = document.createElement('span');
-                        a.innerText = msg;
-                        a.setAttribute('class', 'msg');
-                        msgBox.appendChild(a);
-                        console.log('[INFO]:' + msg);
-                        document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-                    }, speed * i)
-                })(i)
-            }
-            console.log('开始');
-        } else if (realAttack <= 15) {
+            creatMessage(ing_4);
+        } else if (realAttack <= 15) { //攻击力不够
             hidDecision();
             var ing_4 = JSON.parse(ing_4_1)
             ing_4.msg[2] = { msg: userName + "   :  打不过吧应该,赶紧跑吧" };
             ing_4.msg[3] = { msg: "接下来你可以通过侧边栏来进行决定了" }
-            console.log('[SYSTEM]:加载json↓');
-            console.log(ing_4);
-            for (var i = 0; i < ing_4.msg.length; i++) {
-                (function(i) {
-                    setTimeout(function() {
-                        var msg = ing_4.msg[i].msg;
-                        var a = document.createElement('span');
-                        a.innerText = msg;
-                        a.setAttribute('class', 'msg');
-                        msgBox.appendChild(a);
-                        console.log('[INFO]:' + msg);
-                        document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-                    }, speed * i)
-                })(i)
-            }
-            console.log('开始');
+            creatMessage(ing_4);
         } else {
             var ing_4 = JSON.parse(ing_4_1);
             var ing_4_1_1 = `
@@ -664,36 +580,12 @@ function ing_4() { //野外
             }
             `
             var ing_4_1_1 = JSON.parse(ing_4_1_1);
-            for (var i = 0; i < 2; i++) {
+            for (var i = 0; i < 2; i++) { //把迎战消息加进总消息;
                 ing_4.msg[i + 2] = ing_4_1_1.msg[i];
             }
-            var enermyHP = 70;
-            var enermyAttact = 10;
-            var enermyRealAttack = enermyAttact * defense * 0.05;
             var ing_4_1_2;
-            for (var i = 0; i <= 5; i++) {
-                if (enermyHP - realAttack <= 0) {
-                    ing_4_1_2 = `
-                    {
-                        "msg": [{
-                                "msg": "${userName}给了史莱姆一剑!"
-                            },
-                            {
-                                "msg": "史莱姆生命值-${realAttack},还剩0生命值"
-                            },
-                            {
-                                "msg": "${userName}成功击败了史莱姆!!!"
-                            }
-                        ]
-                    }
-                    `
-                    var ing_4_1_2 = JSON.parse(ing_4_1_2);
-                    let temp = ing_4.msg.length;
-                    for (var j = 0; j < temp - 31; j++) {
-                        ing_4.msg[j + temp - 13] = ing_4_1_2.msg[j];
-                    }
-                    break
-                } else {
+            for (var i = 0; i < round; i++) { //回合战
+                if (enermyHP - realAttack >= 0) { //如果不是最后一击
                     ing_4_1_2 = `
                     {
                         "msg": [{
@@ -711,31 +603,35 @@ function ing_4() { //野外
                         ]
                     }
                     `
+                        //计算我和敌人的剩余血量
                     enermyHP = enermyHP - realAttack;
                     HP = HP - enermyRealAttack;
                     var ing_4_1_2 = JSON.parse(ing_4_1_2);
-                    let temp = ing_4.msg.length - 1;
-                    for (var j = 0; j < temp; j++) {
-                        ing_4.msg[j + temp] = ing_4_1_2.msg[j];
+                    for (var j = 0; j <= 3; j++) { //将此回合消息插入总消息中
+                        ing_4.msg[ing_4.msg.length] = ing_4_1_2.msg[j];
+                    }
+                } else { //最后一击
+                    ing_4_1_2 = `
+                    {
+                        "msg": [{
+                                "msg": "${userName}给了史莱姆一剑!"
+                            },
+                            {
+                                "msg": "史莱姆生命值-${realAttack},还剩0生命值"
+                            },
+                            {
+                                "msg": "${userName}成功击败了史莱姆!!!"
+                            }
+                        ]
+                    }
+                    `
+                    var ing_4_1_2 = JSON.parse(ing_4_1_2);
+                    for (var j = 0; j <= 2; j++) { //将此胜利消息插入总消息中
+                        ing_4.msg[ing_4.msg.length] = ing_4_1_2.msg[j];
                     }
                 }
             }
-            console.log('[SYSTEM]:加载json↓');
-            console.log(ing_4);
-            for (var i = 0; i < ing_4.msg.length; i++) {
-                (function(i) {
-                    setTimeout(function() {
-                        var msg = ing_4.msg[i].msg;
-                        var a = document.createElement('span');
-                        a.innerText = msg;
-                        a.setAttribute('class', 'msg');
-                        msgBox.appendChild(a);
-                        console.log('[INFO]:' + msg);
-                        document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-                    }, speed * i)
-                })(i)
-            }
-            console.log('开始');
+            creatMessage(ing_4); //在消息框显示总消息
         }
     } else {
         var ing_4_2 = `
@@ -756,21 +652,6 @@ function ing_4() { //野外
         }
 `
         var ing_4 = JSON.parse(ing_4_2);
-        console.log('[SYSTEM]:加载json↓');
-        console.log(ing_4);
-        for (var i = 0; i < ing_4.msg.length; i++) {
-            (function(i) {
-                setTimeout(function() {
-                    var msg = ing_4.msg[i].msg;
-                    var a = document.createElement('span');
-                    a.innerText = msg;
-                    a.setAttribute('class', 'msg');
-                    msgBox.appendChild(a);
-                    console.log('[INFO]:' + msg);
-                    document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;;
-                }, speed * i)
-            })(i)
-        }
-        console.log('开始');
+        creatMessage(ing_4);
     }
 }
