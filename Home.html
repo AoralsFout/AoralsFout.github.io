@@ -198,7 +198,7 @@
                         document.getElementById('main').style.setProperty("display", "block");
                         document.getElementById('commentBox').style.setProperty("display", "block");
                         document.getElementById('footer').style.setProperty("display", "block");
-                        document.getElementById('hitokotoBox').style.setProperty("display", "none");
+                        document.getElementById('hitokotoBox').style.setProperty("display", "block");
                         document.getElementById('btnstart').style.setProperty("display", "block");
                         document.getElementById('btnend').style.setProperty("display", "none");
                     }
@@ -223,7 +223,7 @@
                     }
                 </script>
             </a>
-            <a class="navInside" onclick="fetchHikotoko()">
+            <a class="navInside" onclick="loadHitokoto()">
                 <p class="navhover">换一句</p>
             </a>
             <a class="navInside">
@@ -232,7 +232,25 @@
         </div>
         <div id="hitokotoBox">
             <script>
-                function fetchHikotoko() {
+                function creatLink(way) {
+                    var a = document.createElement("link");
+                    a.id = "hitokotoAnimei" + way
+                    a.rel = "stylesheet"
+                    a.href = "css/hitokotoAnimei" + way + ".css"
+                    document.head.appendChild(a);
+                }
+
+                function loadHitokoto() {
+                    setTimeout("document.getElementById('hitokotoAnimeiOut').remove()", 0)
+                    setTimeout("document.getElementById('hitokotoAnimeiIn').remove()", 0)
+                    setTimeout("creatLink('Out')", 1)
+                    setTimeout("document.getElementById('hitokotoBox').setAttribute('class', 'hitokotoAnimeiOut');", 1)
+                    setTimeout(fetchHitokoto, 300)
+                    setTimeout("creatLink('In')", 300)
+                    setTimeout("document.getElementById('hitokotoBox').setAttribute('class', 'hitokotoAnimeiIn');", 300)
+                }
+
+                function fetchHitokoto() {
                     /* 获取一言 */
                     fetch('https://v1.hitokoto.cn')
                         .then(response => response.json())
@@ -249,7 +267,7 @@
                         })
                         .catch(console.error)
                 }
-                fetchHikotoko();
+                window.onload = loadHitokoto();
             </script>
             <!-- 正文 -->
             <div id="hitokotoPosition">
