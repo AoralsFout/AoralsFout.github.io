@@ -1,0 +1,22 @@
+.hitokotoAnimeiOut {
+    animation-name: "hitokotoAnimeiOut";
+    animation-duration: 300ms;
+    animation-delay: 0ms;
+    animation-fill-mode: both;
+    -webkit-animation-name: "hitokotoAnimeiOut";
+    -webkit-animation-duration: 300ms;
+    -webkit-animation-delay: 0ms;
+    -webkit-animation-fill-mode: both;
+}
+
+@keyframes hitokotoAnimeiOut {
+    0% {
+        filter: blur(0px) brightness(100%);
+    }
+    80% {
+        filter: blur(15px) brightness(200%);
+    }
+    100% {
+        filter: blur(15px) brightness(200%);
+    }
+}
