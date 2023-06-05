@@ -28,6 +28,7 @@
     <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="css/styleDay.css">
+    <link rel="stylesheet" href="tools/Timeing/index.css">
     <title>AoralsFoutの个人网站</title>
     <link rel="shortcut icon" href="img/fav.ico">
     <link rel="bookmark" href="img/fav.ico">
@@ -43,10 +44,34 @@
 </head>
 
 <body>
+    <script>
+        function stopWelcome() {
+            document.getElementById("ifWelcome").remove();
+            document.getElementById("welcomeAnimation").remove();
+            document.getElementById("childBody").style.opacity = 1;
+            $('body').append($('<script src="tools/Timeing/index.js">'));
+            document.getElementById("jump").remove();
+        }
+    </script>
+    <a onclick="stopWelcome()" class="jump" id="jump">▶▶▶跳过</a>
+    <style>
+        .jump {
+            text-decoration: none;
+            color: #ffffff;
+            text-shadow: #ccc 1px 1px 1px;
+            position: fixed;
+            left: 110px;
+            z-index: 100;
+        }
+        
+        .jump:hover {
+            color: #ccc;
+        }
+    </style>
     <iframe src="welcome.html" frameborder="0" scrolling="no" id="ifWelcome"></iframe>
     <div id="childBody">
         <span class="MengBan"></span>
-        <style>
+        <style id="welcomeAnimation">
             #ifWelcome {
                 position: fixed;
                 width: 100%;
@@ -93,7 +118,8 @@
                 -webkit-animation-delay: 0s;
                 -webkit-animation-fill-mode: both;
             }
-            
+        </style>
+        <style>
             body {
                 min-width: 800px;
                 margin: 0px;
@@ -709,6 +735,30 @@
                         </script>
                     </div>
                     <div id="appContent">
+                        <div class="seat"></div>
+                        <div>
+                            <p class="tProgress">本年已过</p>
+                            <div>
+                                <p id="pYearProgress" class="pProgress"></p>
+                                <div class="g-progress" style="--progress: 0%" id="yearProgress"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="tProgress">本月已过</p>
+                            <div>
+                                <p id="pMonthProgress" class="pProgress"></p>
+                                <div class="g-progress" style="--progress: 0%" id="monthProgress"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="tProgress">本日已过</p>
+                            <div>
+                                <p id="pDayProgress" class="pProgress"></p>
+                                <div class="g-progress" style="--progress: 0%" id="dayProgress"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="appContent">
                         <!-- 关于我 -->
                         <div align="center">
                             <img src="img/Headphoto.png" height="35%" width="35%" loading="lazy">
@@ -998,7 +1048,11 @@
         <script src="comment/index.js"></script>
         <script>
             setTimeout("document.getElementById('ifWelcome').remove()", 37255)
+            setTimeout("document.getElementById('jump').remove()", 23000)
             setTimeout("document.getElementById('ifWelcome').style.zIndex = 0", 23000)
+            setTimeout(function() {
+                $('body').append($('<script src="tools/Timeing/index.js">'));
+            }, 25000)
         </script>
     </div>
 </body>

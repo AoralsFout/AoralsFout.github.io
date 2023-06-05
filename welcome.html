@@ -315,14 +315,8 @@
     <div class="textBox" id="textBox">
         <p class="kezhi" id="kezhi">"花径不曾缘客扫,蓬门今始为君开。"</p>
     </div>
-    <div class="control">
+    <div class="control" id="control">
         <a href="javascript:void(0);" onclick="toggleMute()" id="mute">静音/取消静音</a>
-        <!-- <a onclick="jump()">▶▶▶跳过</a>
-        <script>
-            function jump() {
-                document.body.remove();
-            }
-        </script> -->
     </div>
     <div>
         <audio autoplay="autoplay" preload="auto" src="hana.ogg" target="_blank" id="audio_player"></audio>
@@ -551,6 +545,7 @@
         setTimeout(saikounoRemove, 18412);
         setTimeout(omoidewo, 18412);
         setTimeout(omoidewoRemove, 21600);
+        setTimeout("document.getElementById('control').remove()", 23000)
     </script>
 </body>
 
