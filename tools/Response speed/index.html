@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,25 +11,25 @@
     <title>你反应有多快？</title>
 </head>
 <style>
-/*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/
-::-webkit-scrollbar
-{
-width:10px;
-height:10px;
-background-color:#F5F5F5;
-}
-/*定义滚动条轨道*/
-::-webkit-scrollbar-track
-{
-background-color:#F5F5F5;
-}
-/*定义滑块*/
-::-webkit-scrollbar-thumb
-{
-border-radius:10px;
-background-color:rgb(0, 225, 255);
-}
-
+    /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/
+    
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: #F5F5F5;
+    }
+    /*定义滚动条轨道*/
+    
+    ::-webkit-scrollbar-track {
+        background-color: #F5F5F5;
+    }
+    /*定义滑块*/
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgb(0, 225, 255);
+    }
+    
     .main {
         background-color: #ffffff00;
         height: 500px;
@@ -37,6 +38,7 @@ background-color:rgb(0, 225, 255);
         border-bottom: 5px solid #ccc;
         z-index: 5;
     }
+    
     .mainbackground {
         position: fixed;
         top: 5px;
@@ -45,6 +47,7 @@ background-color:rgb(0, 225, 255);
         background-color: rgb(43, 135, 209);
         z-index: -5;
     }
+    
     .maintips {
         position: fixed;
         margin: 0 auto;
@@ -54,10 +57,11 @@ background-color:rgb(0, 225, 255);
         left: 0;
         right: 0;
         top: 200px;
-        margin:0 auto;
+        margin: 0 auto;
         user-select: none;
         z-index: -1;
     }
+    
     .startTest {
         position: fixed;
         margin: 0 auto;
@@ -67,10 +71,11 @@ background-color:rgb(0, 225, 255);
         left: 0;
         right: 0;
         top: 400px;
-        margin:0 auto;
+        margin: 0 auto;
         user-select: none;
         z-index: 0;
     }
+    
     .time {
         position: fixed;
         margin: 0 auto;
@@ -80,16 +85,18 @@ background-color:rgb(0, 225, 255);
         left: 0;
         right: 0;
         top: 200px;
-        margin:0 auto;
+        margin: 0 auto;
         user-select: none;
         z-index: 0;
     }
+    
     body {
         margin: 0px;
         text-align: center;
         background-color: white;
     }
 </style>
+
 <body>
     <div>
         <b id="maintips" class="maintips"></b>
@@ -107,9 +114,10 @@ background-color:rgb(0, 225, 255);
             <div id="validate-result" class="info info-error no"></div>
         </div>
         <div>
-            <p>CSGO职业选手的反应速度大约是0.25s，你能超越他们吗？</p>
+            <p>CSGO职业选手的反应速度平均在200ms以内，你能超越他们吗？</p>
             <p>按开始测试键以开始测试。当方框区域内背景变为绿色立即按下停止测试键或方框区域以停止，即可测得反应时间。</p>
         </div>
     </div>
 </body>
+
 </html>
